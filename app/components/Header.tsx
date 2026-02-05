@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import WeatherWidget from "./WeatherWidget";
+
 
 
 const links = [
@@ -49,6 +51,9 @@ export default function Header() {
                         </Link>
                     );
                 })}
+                <div className="pl-4 border-l border-ink/10 ml-2">
+                    <WeatherWidget />
+                </div>
             </nav>
 
             <div className="md:hidden">

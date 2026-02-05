@@ -1,5 +1,8 @@
 "use client";
 
+import StylizedMap from "../components/StylizedMap";
+
+
 export default function LandPage() {
     return (
         <div className="bg-canvas min-h-screen">
@@ -10,6 +13,10 @@ export default function LandPage() {
                 </div>
                 {/* Background video or parallax image would go here */}
             </section>
+
+            <div className="max-w-5xl mx-auto px-6 py-24">
+                <StylizedMap />
+            </div>
 
             <div className="max-w-5xl mx-auto px-6 py-24 space-y-24">
 
