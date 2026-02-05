@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-paper py-20 px-6 md:px-12 border-t border-divider mt-20">
@@ -8,7 +10,13 @@ export default function Footer() {
         {/* Right Section: Contact & Info (Visual priority first on mobile, but second in grid for desktop logic, actually keeping left-right standard) */}
         
         <div className="space-y-8">
-            <h2 className="text-lg font-serif text-ink tracking-wide">SERENGÉ RETREAT</h2>
+            <Image 
+              src="/images/logo brown.PNG" 
+              alt="Serengé Retreat" 
+              width={160} 
+              height={60} 
+              className="w-40 h-auto object-contain"
+            />
             <div className="space-y-2 text-ink-soft font-light leading-relaxed">
                 <p>Khosar Gang Valley</p>
                 <p>Shigar, Gilgit-Baltistan</p>

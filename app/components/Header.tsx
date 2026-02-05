@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+
 
 const links = [
     { href: "/journeys", label: "Journeys" },
@@ -18,9 +20,14 @@ export default function Header() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-canvas/80 backdrop-blur-sm border-b border-transparent transition-all duration-500">
             <Link href="/" className="group">
-                <h1 className="text-xl font-medium tracking-wide text-ink font-serif hover:text-earth transition-colors duration-300">
-                    SERENGÉ
-                </h1>
+                <Image
+                    src="/images/logo brown.PNG"
+                    alt="Serengé"
+                    width={140}
+                    height={50}
+                    className="w-32 md:w-40 h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                    priority
+                />
             </Link>
 
             <nav className="hidden md:flex gap-8 items-center">
