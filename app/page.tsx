@@ -12,10 +12,18 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* SECTION 1: HERO */}
-      {/* Note: Using a placeholder color for now until we have real nature images. */}
-      {/* In a real scenario, this would be a high-quality Next.js Image component with a darken overlay. */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-stone/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[#E5E0D8]" /> {/* Placeholder for image */}
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
+        >
+          <source src="/videos/hero_placeholder.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-stone/20" /> {/* Slight overlay */}
 
         <div className="relative z-10 text-center px-6 max-w-2xl mx-auto space-y-6">
           <motion.h1
@@ -46,12 +54,25 @@ export default function Home() {
           >
             <Link
               href="/journeys"
-              className="inline-block px-8 py-3 bg-paper border border-ink/10 rounded-full text-sm uppercase tracking-widest text-ink hover:bg-white hover:border-earth/50 transition-all duration-500"
+              className="inline-block px-8 py-3 bg-paper/80 backdrop-blur-sm border border-ink/10 rounded-full text-sm uppercase tracking-widest text-ink hover:bg-white hover:border-earth/50 transition-all duration-500"
             >
               Begin Your Journey
             </Link>
           </motion.div>
         </div>
+      </section>
+
+      {/* SECTION 1.5: FOUNDER'S NOTE - "THE INVITATION" */}
+      <section className="py-20 px-6 max-w-2xl mx-auto text-center space-y-6">
+        <div className="w-px h-12 bg-earth/30 mx-auto" />
+        <p className="text-ink-soft font-light text-lg italic leading-relaxed">
+          "The mountains do not ask for your attention. They simply wait.
+          And in that waiting, you find the part of yourself that has been lost in the noise."
+        </p>
+        <div className="pt-4 font-serif text-ink text-xl">
+          — Tehseen, Founder
+        </div>
+        <div className="w-px h-12 bg-earth/30 mx-auto" />
       </section>
 
       {/* SECTION 2: THE CALL (Poetic Intro) */}

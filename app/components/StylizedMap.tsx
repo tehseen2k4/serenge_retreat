@@ -18,10 +18,13 @@ export default function StylizedMap() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="absolute top-[10%] left-[15%] text-center"
+                    className="absolute top-[10%] left-[15%] text-center group cursor-pointer"
                 >
-                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-ink/20 mx-auto mb-2" />
-                    <span>K2 (8611m)</span>
+                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-ink/20 mx-auto mb-2 group-hover:border-b-earth transition-colors duration-500" />
+                    <span className="group-hover:text-earth transition-colors">K2 (8611m)</span>
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-paper px-2 py-1 text-[10px] shadow-sm whitespace-nowrap transition-opacity duration-300">
+                        The Savage Mountain
+                    </div>
                 </motion.div>
 
                 {/* Serenge */}
@@ -29,11 +32,14 @@ export default function StylizedMap() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-center z-10"
+                    className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-center z-10 group cursor-pointer"
                 >
-                    <div className="w-3 h-3 bg-earth rounded-full mx-auto mb-2 ring-4 ring-earth/10 animate-pulse" />
-                    <span className="text-ink font-bold">Serengé Retreat</span>
+                    <div className="w-3 h-3 bg-earth rounded-full mx-auto mb-2 ring-4 ring-earth/10 animate-pulse group-hover:ring-earth/30 transition-all" />
+                    <span className="text-ink font-bold group-hover:text-earth transition-colors">Serengé Retreat</span>
                     <span className="block text-[8px] text-ink-muted mt-1">Shigar Valley</span>
+                    <div className="opacity-0 group-hover:opacity-100 absolute -bottom-8 left-1/2 -translate-x-1/2 bg-paper px-2 py-1 text-[10px] shadow-sm whitespace-nowrap transition-opacity duration-300">
+                        You are here
+                    </div>
                 </motion.div>
 
                 {/* Khosar Gang */}
@@ -41,10 +47,13 @@ export default function StylizedMap() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="absolute bottom-[20%] right-[20%] text-center"
+                    className="absolute bottom-[20%] right-[20%] text-center group cursor-pointer"
                 >
-                    <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-ink/20 mx-auto mb-2" />
-                    <span>Khosar Gang</span>
+                    <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-ink/20 mx-auto mb-2 group-hover:border-b-earth transition-colors duration-500" />
+                    <span className="group-hover:text-earth transition-colors">Khosar Gang</span>
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-paper px-2 py-1 text-[10px] shadow-sm whitespace-nowrap transition-opacity duration-300">
+                        Access via Base Camp (4hrs)
+                    </div>
                 </motion.div>
             </div>
 

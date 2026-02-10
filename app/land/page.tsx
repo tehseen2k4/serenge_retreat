@@ -1,6 +1,7 @@
 "use client";
 
-import StylizedMap from "../components/StylizedMap";
+import SeasonsScroll from "../components/SeasonsScroll";
+import InteractiveMap from "../components/InteractiveMap";
 
 
 export default function LandPage() {
@@ -14,8 +15,10 @@ export default function LandPage() {
                 {/* Background video or parallax image would go here */}
             </section>
 
-            <div className="max-w-5xl mx-auto px-6 py-24">
-                <StylizedMap />
+            <SeasonsScroll />
+
+            <div className="max-w-7xl mx-auto px-0 md:px-6 py-24 pt-0">
+                <InteractiveMap />
             </div>
 
             <div className="max-w-5xl mx-auto px-6 py-24 space-y-24">

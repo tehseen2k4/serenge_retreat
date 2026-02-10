@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import ItineraryAccordion from "../components/ItineraryAccordion";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -38,13 +39,24 @@ export default function JourneysPage() {
             {/* OFFERS */}
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-32">
 
-                {/* Journey 1 */}
-                <section id="soul" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="h-[500px] bg-stone/10 grayscale hover:grayscale-0 transition-all duration-1000 order-1 md:order-1 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-stone/5" />
-                        {/* Image placeholder */}
+                {/* Journey 1: SOUL */}
+                <section id="soul" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                    {/* Visual Side */}
+                    <div className="space-y-4 order-1 md:order-1">
+                        <div className="h-[500px] bg-stone/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
+                            <div className="absolute inset-0 bg-stone/5" />
+                            {/* Placeholder: Image of Meditation/Cabin */}
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Cabin</div>
+                        </div>
+                        {/* Inspiration Gallery (Mini Masonry) */}
+                        <div className="grid grid-cols-2 gap-4 h-48">
+                            <div className="bg-stone/20 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-stone/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                        </div>
                     </div>
-                    <div className="space-y-6 order-2 md:order-2 p-8">
+
+                    {/* Content Side */}
+                    <div className="space-y-6 order-2 md:order-2 p-4 md:p-8 sticky top-24">
                         <h2 className="text-3xl font-serif text-ink">Soul Journeys</h2>
                         <div className="w-12 h-[1px] bg-earth/50" />
                         <p className="text-ink-soft leading-relaxed font-light">
@@ -56,12 +68,24 @@ export default function JourneysPage() {
                             <li>· Organic, plant-based meals</li>
                             <li>· No fixed itinerary</li>
                         </ul>
+
+                        <ItineraryAccordion
+                            title="Sample Rhythm"
+                            items={[
+                                { time: "06:00 AM", activity: "Silence & Herbal Tea" },
+                                { time: "08:00 AM", activity: "Solitary Walk by the River" },
+                                { time: "01:00 PM", activity: "Plant-based Lunch in Garden" },
+                                { time: "04:00 PM", activity: "Journaling or Nap" },
+                                { time: "08:00 PM", activity: "Fire Meditation" }
+                            ]}
+                        />
                     </div>
                 </section>
 
-                {/* Journey 2 */}
-                <section id="wellness" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6 order-2 md:order-1 p-8">
+                {/* Journey 2: WELLNESS */}
+                <section id="wellness" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                    {/* Content Side */}
+                    <div className="space-y-6 order-2 md:order-1 p-4 md:p-8 sticky top-24">
                         <h2 className="text-3xl font-serif text-ink">Wellness Retreats</h2>
                         <div className="w-12 h-[1px] bg-earth/50" />
                         <p className="text-ink-soft leading-relaxed font-light">
@@ -73,18 +97,47 @@ export default function JourneysPage() {
                             <li>· Daily guided practice</li>
                             <li>· Sound healing sessions</li>
                         </ul>
+
+                        <ItineraryAccordion
+                            title="Daily Practice"
+                            items={[
+                                { time: "07:00 AM", activity: "Sunrise Yoga" },
+                                { time: "10:00 AM", activity: "Breathwork Session" },
+                                { time: "02:00 PM", activity: "Somatic Healing Workshop" },
+                                { time: "06:00 PM", activity: "Restorative Yoga" }
+                            ]}
+                        />
                     </div>
-                    <div className="h-[500px] bg-sand/10 grayscale hover:grayscale-0 transition-all duration-1000 order-1 md:order-2 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-sand/5" />
+
+                    {/* Visual Side */}
+                    <div className="space-y-4 order-1 md:order-2">
+                        <div className="h-[500px] bg-sand/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
+                            <div className="absolute inset-0 bg-sand/5" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Shala</div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 h-48">
+                            <div className="bg-sand/20 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-sand/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                        </div>
                     </div>
                 </section>
 
-                {/* Journey 3 */}
-                <section id="immersion" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="h-[500px] bg-earth/10 grayscale hover:grayscale-0 transition-all duration-1000 order-1 md:order-1 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-earth/5" />
+                {/* Journey 3: IMMERSION */}
+                <section id="immersion" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                    {/* Visual Side */}
+                    <div className="space-y-4 order-1 md:order-1">
+                        <div className="h-[500px] bg-earth/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
+                            <div className="absolute inset-0 bg-earth/5" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Glacier</div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 h-48">
+                            <div className="bg-earth/20 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-earth/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                        </div>
                     </div>
-                    <div className="space-y-6 order-2 md:order-2 p-8">
+
+                    {/* Content Side */}
+                    <div className="space-y-6 order-2 md:order-2 p-4 md:p-8 sticky top-24">
                         <h2 className="text-3xl font-serif text-ink">Nature Immersions</h2>
                         <div className="w-12 h-[1px] bg-earth/50" />
                         <p className="text-ink-soft leading-relaxed font-light">
@@ -92,10 +145,20 @@ export default function JourneysPage() {
                             glacial streams, and nights spent under the Milky Way.
                         </p>
                         <ul className="space-y-2 text-sm text-ink-muted">
-                            <li>· Guided treks</li>
-                            <li>· Wild swimming</li>
+                            <li>· Guided treks in Thalle La</li>
+                            <li>· Wild swimming in Katpana</li>
                             <li>· Star-gazing workshops</li>
                         </ul>
+
+                        <ItineraryAccordion
+                            title="Explorer's Day"
+                            items={[
+                                { time: "05:00 AM", activity: "Depart for Khosar Gang Base" },
+                                { time: "12:00 PM", activity: "Picnic by the stream" },
+                                { time: "03:00 PM", activity: "Cold Plunge" },
+                                { time: "09:00 PM", activity: "Astronomy Session" }
+                            ]}
+                        />
                     </div>
                 </section>
 

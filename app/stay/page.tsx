@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import RoomCarousel from "../components/RoomCarousel";
 
 export default function StayPage() {
     return (
@@ -15,6 +15,29 @@ export default function StayPage() {
                 </p>
             </section>
 
+            {/* Room Showcase (Carousel) */}
+            <section className="max-w-7xl mx-auto px-6 mb-20">
+                <RoomCarousel />
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-4xl mx-auto text-center">
+                    <div className="space-y-2">
+                        <div className="text-earth text-xs uppercase tracking-widest">Material</div>
+                        <div className="text-ink text-sm">Sun-baked Mud Bricks</div>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-earth text-xs uppercase tracking-widest">Heating</div>
+                        <div className="text-ink text-sm">Traditional Bukhari Stoves</div>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-earth text-xs uppercase tracking-widest">Bedding</div>
+                        <div className="text-ink text-sm">Organic Cotton & Wool</div>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-earth text-xs uppercase tracking-widest">Water</div>
+                        <div className="text-ink text-sm">Solar-Heated Glacial Melt</div>
+                    </div>
+                </div>
+            </section>
+
             {/* Architecture */}
             <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start py-12">
                 <div className="sticky top-32 space-y-8">
@@ -26,18 +49,13 @@ export default function StayPage() {
                             Thick mud walls keep the interiors cool in summer and warm in winter. No concrete. No plastic.
                         </p>
                     </div>
-                    <div className="bg-paper p-8 border border-border/50 space-y-4">
-                        <h3 className="text-lg font-medium text-earth">Solar & Sustainable</h3>
-                        <p className="text-ink-soft font-light leading-relaxed">
-                            We are 100% off-grid. Energy comes from the sun. Water comes from the glacial melt.
-                            Waste is returned to the earth as compost.
-                        </p>
-                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-8">
-                    <div className="aspect-[4/5] bg-stone/20 w-full" /> {/* Image: Mud walls */}
-                    <div className="aspect-square bg-sand/20 w-full" /> {/* Image: Interior */}
+                    <div className="aspect-[4/5] bg-stone/20 w-full relative">
+                        {/* Placeholder for detail shot */}
+                        <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">Mud Wall Texture</div>
+                    </div>
                 </div>
             </section>
 
