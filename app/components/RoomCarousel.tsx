@@ -12,9 +12,9 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-    { id: 1, src: "bg-stone/20", label: "Walnut Wood Interiors" },
-    { id: 2, src: "bg-earth/20", label: "Hand-Woven Rugs" },
-    { id: 3, src: "bg-sand/20", label: "Private Fireplace" },
+    { id: 1, src: "bg-stone/20", label: "Riverside Hut" },
+    { id: 2, src: "bg-earth/20", label: "Deluxe Room" },
+    { id: 3, src: "bg-sand/20", label: "Twin Room" },
 ];
 
 export default function RoomCarousel() {

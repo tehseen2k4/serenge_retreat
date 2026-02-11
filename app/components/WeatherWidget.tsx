@@ -1,47 +1,85 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Cloud, Sun, CloudRain, Snowflake, Wind } from "lucide-react";
+import { Cloud, Sun, CloudRain, Snowflake, Wind, Thermometer } from "lucide-react";
 
 type WeatherData = {
     temperature: number;
     condition: string;
 };
 
-// Shigar Coordinates: 35.4239° N, 75.7397° E
-const LAT = 35.42;
-const LON = 75.74;
-
 export default function WeatherWidget() {
     const [weather, setWeather] = useState<WeatherData | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchWeather() {
             try {
+                // Using wttr.in - completely free, no API key needed
+                // Format: JSON with current weather for Shigar, Pakistan
                 const res = await fetch(
-                    `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current_weather=true`
+                    `https://wttr.in/Shigar,Pakistan?format=j1`,
+                    {
+                        headers: {
+                            'User-Agent': 'curl/7.68.0' // wttr.in prefers curl user agent
+                        }
+                    }
                 );
+
+                if (!res.ok) {
+                    throw new Error(`API returned ${res.status}`);
+                }
+
                 const data = await res.json();
-                const code = data.current_weather.weathercode;
+                console.log("Weather API Response (wttr.in):", data);
+
+                // Get current weather
+                const current = data.current_condition[0];
+                const temp = parseInt(current.temp_C);
+                const weatherDesc = current.weatherDesc[0].value.toLowerCase();
 
                 let condition = "Clear";
-                if (code > 0 && code <= 3) condition = "Cloudy";
-                if (code > 3 && code <= 49) condition = "Fog";
-                if (code >= 50 && code <= 69) condition = "Rain";
-                if (code >= 70 && code <= 79) condition = "Snow";
-                if (code >= 80) condition = "Rain";
+                if (weatherDesc.includes("cloud") || weatherDesc.includes("overcast")) condition = "Cloudy";
+                if (weatherDesc.includes("rain") || weatherDesc.includes("drizzle")) condition = "Rain";
+                if (weatherDesc.includes("snow")) condition = "Snow";
+                if (weatherDesc.includes("mist") || weatherDesc.includes("fog")) condition = "Fog";
+
+                console.log("Parsed Weather:", {
+                    temperature: temp,
+                    condition,
+                    description: weatherDesc,
+                    feelsLike: current.FeelsLikeC
+                });
 
                 setWeather({
-                    temperature: Math.round(data.current_weather.temperature),
+                    temperature: temp,
                     condition,
                 });
             } catch (err) {
-                console.error("Failed to fetch weather", err);
+                console.error("Weather fetch error:", err);
+                setError(err instanceof Error ? err.message : "Failed to load weather");
             }
         }
 
         fetchWeather();
+
+        // Refresh every 30 minutes (wttr.in updates frequently)
+        const interval = setInterval(fetchWeather, 30 * 60 * 1000);
+        return () => clearInterval(interval);
     }, []);
+
+    // Show nothing while loading
+    if (!weather && !error) return null;
+
+    // Show error state
+    if (error) {
+        return (
+            <div className="flex items-center gap-2 text-ink-muted/50 text-xs">
+                <Thermometer size={14} />
+                <span>Shigar</span>
+            </div>
+        );
+    }
 
     if (!weather) return null;
 

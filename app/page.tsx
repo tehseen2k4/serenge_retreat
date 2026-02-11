@@ -25,14 +25,14 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-stone/20" /> {/* Slight overlay */}
 
-        <div className="relative z-10 text-center px-6 max-w-2xl mx-auto space-y-6">
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-6">
           <motion.h1
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-4xl md:text-6xl font-serif text-ink tracking-tight leading-tight"
+            className="text-4xl md:text-7xl font-serif text-ink tracking-tight uppercase leading-tight"
           >
-            A threshold into <br /> <span className="italic text-earth">stillness</span>.
+            Where Peace Meets <br /> <span className="italic text-earth">The Mountains</span>.
           </motion.h1>
 
           <motion.p
@@ -40,9 +40,9 @@ export default function Home() {
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-ink-soft font-light"
+            className="text-lg md:text-xl text-ink-soft font-light tracking-[0.1em]"
           >
-            Return to yourself in the heart of the Karakoram.
+            Experience serenity in the heart of Shigar.
           </motion.p>
 
           <motion.div
@@ -62,33 +62,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 1.5: FOUNDER'S NOTE - "THE INVITATION" */}
-      <section className="py-20 px-6 max-w-2xl mx-auto text-center space-y-6">
-        <div className="w-px h-12 bg-earth/30 mx-auto" />
-        <p className="text-ink-soft font-light text-lg italic leading-relaxed">
-          "The mountains do not ask for your attention. They simply wait.
-          And in that waiting, you find the part of yourself that has been lost in the noise."
-        </p>
-        <div className="pt-4 font-serif text-ink text-xl">
-          — Tehseen, Founder
+      {/* SECTION 1.5: THE MEANING (NEW) */}
+      <section className="py-24 px-6 max-w-3xl mx-auto text-center space-y-12">
+        <div className="space-y-4">
+          <p className="text-xs uppercase tracking-[0.3em] text-earth">The Name</p>
+          <h2 className="text-3xl md:text-4xl font-serif text-ink">Serengé</h2>
+          <p className="text-ink-soft font-light text-sm tracking-widest uppercase italic">/se-ren-ge/</p>
         </div>
-        <div className="w-px h-12 bg-earth/30 mx-auto" />
+
+        <div className="space-y-8 text-ink-soft font-light leading-relaxed">
+          <p className="text-lg md:text-xl">
+            Inspired by the Tibetan word <span className="text-ink font-serif italic">Tsering</span>, meaning "Long Life."
+            In the high valleys of Baltistan, it is a word of blessing, often heard in the greeting
+            <span className="text-earth italic"> Tashi Serengé</span> — An auspicious long life.
+          </p>
+          <div className="w-12 h-px bg-earth/20 mx-auto" />
+          <p className="max-w-xl mx-auto text-sm text-ink-muted italic">
+            "A name that echoes through the men and women of the mountains,
+            carrying the weight of a century-old prayer for peace and vitality."
+          </p>
+        </div>
       </section>
 
-      {/* SECTION 2: THE CALL (Poetic Intro) */}
+      {/* SECTION 2: THE CALL (Poetic Intro & Mission) */}
       <section className="py-24 md:py-32 px-6 md:px-12 bg-canvas">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <p className="text-sm uppercase tracking-widest text-earth">The Philosophy</p>
-          <h2 className="text-2xl md:text-3xl font-serif text-ink leading-relaxed">
-            We do not offer vacations. We offer <span className="italic">returns</span>.
-            <br />
-            To the land, to silence, and to your own center.
-          </h2>
-          <p className="text-ink-soft font-light leading-relaxed max-w-2xl mx-auto">
-            Serengé is not a hotel. It is a sanctuary built from the earth of Shigar.
-            Here, time slows down. The noise of the world fades into the sound of the wind
-            and the river. Come to breathe again.
-          </p>
+        <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div className="space-y-4">
+            <p className="text-sm uppercase tracking-widest text-earth">Our Mission</p>
+            <h2 className="text-2xl md:text-4xl font-serif text-ink leading-relaxed">
+              To offer not just a stay — but a sense of belonging,
+              calm, and <span className="italic">meaningful connection</span>.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 text-left pt-12 border-t border-earth/10">
+            <p className="text-ink-soft font-light leading-relaxed">
+              Serenge Retreat is an eco-conscious space where travelers can reconnect with nature,
+              experience authentic village life, and feel the warmth of Balti hospitality.
+            </p>
+            <p className="text-ink-soft font-light leading-relaxed">
+              We aim to create a sanctuary where the rhythm of the valley dictates the day,
+              allowing you to rediscover the peace that exists in the heart of the mountains.
+            </p>
+          </div>
+          <div className="pt-8 text-center md:text-left">
+            <p className="font-serif italic text-xl text-ink">— Aslam Shigri</p>
+            <p className="text-[10px] uppercase tracking-widest text-ink-muted mt-1">Founder & High-Altitude Guide</p>
+          </div>
         </div>
       </section>
 

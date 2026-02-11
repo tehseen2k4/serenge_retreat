@@ -15,72 +15,90 @@ export default function StayPage() {
                 </p>
             </section>
 
-            {/* Room Showcase (Carousel) */}
-            <section className="max-w-7xl mx-auto px-6 mb-20">
-                <RoomCarousel />
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-4xl mx-auto text-center">
-                    <div className="space-y-2">
-                        <div className="text-earth text-xs uppercase tracking-widest">Material</div>
-                        <div className="text-ink text-sm">Sun-baked Mud Bricks</div>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="text-earth text-xs uppercase tracking-widest">Heating</div>
-                        <div className="text-ink text-sm">Traditional Bukhari Stoves</div>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="text-earth text-xs uppercase tracking-widest">Bedding</div>
-                        <div className="text-ink text-sm">Organic Cotton & Wool</div>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="text-earth text-xs uppercase tracking-widest">Water</div>
-                        <div className="text-ink text-sm">Solar-Heated Glacial Melt</div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Architecture */}
-            <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start py-12">
-                <div className="sticky top-32 space-y-8">
-                    <h2 className="text-3xl font-serif text-ink">Architecture of Silence</h2>
-                    <div className="bg-paper p-8 border border-border/50 space-y-4">
-                        <h3 className="text-lg font-medium text-earth">Traditional Balti Wisdom</h3>
-                        <p className="text-ink-soft font-light leading-relaxed">
-                            We employed local artisans to build Serengé using techniques that have stood for centuries.
-                            Thick mud walls keep the interiors cool in summer and warm in winter. No concrete. No plastic.
+            {/* Choose Your Room Section */}
+            <section className="max-w-7xl mx-auto px-6 py-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
+                    <div className="space-y-6">
+                        <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Choose Your Room</h2>
+                        <h3 className="text-3xl md:text-5xl font-serif text-ink italic leading-tight">
+                            A cozy space for <br /> slow mornings.
+                        </h3>
+                        <p className="text-ink-soft font-light text-lg">
+                            Large windows, warm wood details, and serene views of the mountains and river.
+                            Ideal for those who love comfort blended with nature.
                         </p>
                     </div>
+                    <div className="space-y-4 text-ink-soft font-light">
+                        <p className="italic">Riverside Hut / Deluxe Room / Twin Room</p>
+                        <div className="bg-paper p-6 rounded-lg space-y-4">
+                            <h4 className="text-ink font-medium uppercase text-xs tracking-widest">Included Amenities</h4>
+                            <ul className="grid grid-cols-2 gap-y-2 text-xs">
+                                <li>• Welcome drink</li>
+                                <li>• Complimentary water</li>
+                                <li>• Running Hot Water</li>
+                                <li>• Room Service</li>
+                                <li>• Kitchen Available</li>
+                                <li>• 1 Water Bottle/Day</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                <RoomCarousel />
+            </section>
 
-                <div className="grid grid-cols-1 gap-8">
-                    <div className="aspect-[4/5] bg-stone/20 w-full relative">
-                        {/* Placeholder for detail shot */}
-                        <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">Mud Wall Texture</div>
+            {/* Our Facilities Section */}
+            <section className="bg-paper py-24 px-6">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16 space-y-4">
+                        <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Our Facilities</h2>
+                        <h3 className="text-3xl md:text-4xl font-serif text-ink">Comfort. Culture. Calm.</h3>
+                        <p className="text-ink-soft font-light max-w-2xl mx-auto">
+                            Everything at Serenge Retreat is designed for slow, soulful stays in the heart of Shigar.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+                        {[
+                            { title: "Comfort", items: ["Deluxe, Twin, Riverside Rooms", "Hot Water & Private Baths", "Laundry on Request"] },
+                            { title: "Nourishment", items: ["Traditional Balti Meals", "Organic Garden", "Farm-to-Table Dining"] },
+                            { title: "Connection", items: ["Riverfront Sitting Area", "Bonfire Spot", "Guided Village Tours"] },
+                            { title: "Wellness", items: ["Yoga/Meditation Space", "Nature Walks", "Herbal Teas"] },
+                            { title: "Eco-Living", items: ["Eco-Friendly Materials", "Natural Cooling", "Solar Lighting"] },
+                            { title: "Logistics", items: ["Car Parking Space", "Transport Assistance", "4x4 Access (pickup on request)"] },
+                        ].map((group, idx) => (
+                            <div key={idx} className="space-y-4">
+                                <h4 className="text-earth text-xs uppercase tracking-[0.2em] font-medium border-b border-earth/20 pb-2">
+                                    {group.title}
+                                </h4>
+                                <ul className="space-y-2">
+                                    {group.items.map((item, i) => (
+                                        <li key={i} className="text-ink-soft font-light text-sm">{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Food */}
-            <section className="bg-paper py-24 mt-20 px-6">
-                <div className="max-w-5xl mx-auto text-center space-y-12">
-                    <h2 className="text-3xl font-serif text-ink">Nourishment</h2>
-                    <p className="max-w-2xl mx-auto text-ink-soft font-light leading-relaxed text-lg">
-                        We believe food is medicine. Our kitchen uses only what is grown in our organic gardens
-                        or sourced from the immediate valley. Simple, clean, and deeply nourishing.
-                        (Apricots, buckwheat, walnuts, and glacial water).
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left pt-8">
-                        <div className="border-t border-earth/30 pt-4">
-                            <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Breakfast</h4>
-                            <p className="text-ink-soft text-sm">Buckwheat pancakes, fresh apricot jam, herbal tea.</p>
-                        </div>
-                        <div className="border-t border-earth/30 pt-4">
-                            <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Lunch</h4>
-                            <p className="text-ink-soft text-sm">Lentil stew, fresh greens, whole grain flatbread.</p>
-                        </div>
-                        <div className="border-t border-earth/30 pt-4">
-                            <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Dinner</h4>
-                            <p className="text-ink-soft text-sm">Vegetable broth, roasted roots, communal connection.</p>
-                        </div>
+            {/* Food (Relocated and Refined) */}
+            <section className="py-24 px-6 max-w-5xl mx-auto text-center space-y-12">
+                <h2 className="text-3xl font-serif text-ink">Home-Cooked Nourishment</h2>
+                <p className="text-ink-soft font-light leading-relaxed text-lg italic">
+                    "From riverside bonfires to farm-fresh meals... soulful stays in the heart of Shigar."
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left pt-8">
+                    <div className="border-t border-earth/30 pt-4">
+                        <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Breakfast</h4>
+                        <p className="text-ink-soft text-sm">Buckwheat pancakes, fresh apricot jam, Balti bread.</p>
+                    </div>
+                    <div className="border-t border-earth/30 pt-4">
+                        <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Traditional Tea</h4>
+                        <p className="text-ink-soft text-sm">Herbal blends and local Chai available all day.</p>
+                    </div>
+                    <div className="border-t border-earth/30 pt-4">
+                        <h4 className="text-earth mb-2 uppercase tracking-widest text-xs">Communal Dinner</h4>
+                        <p className="text-ink-soft text-sm">Seasonal organic produce from our own garden.</p>
                     </div>
                 </div>
             </section>

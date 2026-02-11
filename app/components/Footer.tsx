@@ -20,34 +20,31 @@ export default function Footer() {
             className="w-40 h-auto object-contain"
           />
           <div className="space-y-2 text-ink-soft font-light leading-relaxed">
-            <p>Khosar Gang Valley</p>
-            <p>Shigar, Gilgit-Baltistan</p>
-            <p>Pakistan</p>
+            <p className="font-medium text-ink">Alchori Ranga, Shigar</p>
+            <p>Gilgit-Baltistan, Pakistan</p>
+            <div className="pt-2 flex flex-col gap-1">
+              <a href="tel:+923349669198" className="hover:text-earth transition-colors">+92-334-966-9198</a>
+              <a href="mailto:hello@reegoadventure.com" className="hover:text-earth transition-colors">hello@reegoadventure.com</a>
+            </div>
           </div>
-          <div className="pt-4">
-            <a href="mailto:hello@serenge.com" className="text-earth hover:text-ink transition-colors duration-300 border-b border-earth/30 pb-1">
-              hello@serenge.com
-            </a>
+          <div className="pt-4 flex gap-8 text-xs uppercase tracking-widest text-ink-muted">
+            <a href="https://www.reegoadventure.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth underline underline-offset-4">Tour Partner</a>
+            <a href="/faq" className="hover:text-earth underline underline-offset-4">Clarity (FAQ)</a>
           </div>
         </div>
 
-        {/* Left Section: Newsletter mockup */}
+        {/* Left Section: Context */}
         <div className="space-y-6">
-          <p className="text-ink-soft italic font-light">
-            "Silence is the language of God, all else is poor translation."
+          <p className="text-ink-soft italic font-light max-w-sm">
+            "We aim to offer not just a stay — but a sense of belonging, calm, and meaningful connection with the land and its people."
           </p>
-          <form className="flex flex-col gap-4 max-w-sm" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="email" className="sr-only">Email for updates</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Receive quiet updates"
-              className="bg-transparent border-b border-border py-2 text-ink outline-none focus:border-earth transition-colors duration-300 placeholder:text-ink-muted/50"
-            />
-            <button type="submit" className="text-left text-xs uppercase tracking-widest text-ink-muted hover:text-earth transition-colors duration-300 mt-2">
-              Subscribe
-            </button>
-          </form>
+          <div className="pt-6 space-y-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-earth">Social</p>
+            <div className="flex gap-6 text-sm text-ink-soft">
+              <span className="hover:text-earth cursor-pointer">Instagram</span>
+              <span className="hover:text-earth cursor-pointer">FaceBook</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -56,9 +53,8 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Serengé Retreat. All rights reserved.</p>
           <WeatherWidget />
         </div>
-        <div className="flex gap-6 mt-4 md:mt-0">
-          <span>Instagram</span>
-          <span>FaceBook</span>
+        <div className="flex gap-6 mt-4 md:mt-0 italic">
+          <span>Inhale. Exhale. Repeat.</span>
         </div>
       </div>
     </footer>
