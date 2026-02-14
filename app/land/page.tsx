@@ -9,7 +9,7 @@ export default function LandPage() {
         <div className="bg-canvas min-h-screen">
             <section className="h-[70vh] flex items-center justify-center bg-stone/30 relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img src="/images/land/Land Hero.webp" alt="Shigar Valley" className="object-cover w-full h-full opacity-90" />
+                    <img src="/images/land/land_hero.webp" alt="Shigar Valley" className="object-cover w-full h-full opacity-90" />
                     <div className="absolute inset-0 bg-black/20" />
                 </div>
                 <div className="text-center space-y-4 z-10 px-6">
@@ -114,7 +114,7 @@ export default function LandPage() {
                     </div>
                     <div className="flex-1 aspect-video relative bg-stone/20 w-full overflow-hidden rounded-sm group">
                         <img
-                            src="/images/land/Land Hero.webp"
+                            src="/images/land/land_hero.webp"
                             alt="Shigar Valley"
                             className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
                         />

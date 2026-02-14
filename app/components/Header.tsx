@@ -27,7 +27,7 @@ export default function Header() {
             <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-canvas/80 backdrop-blur-sm border-b border-transparent transition-all duration-500">
                 <Link href="/" className="group">
                     <Image
-                        src="/images/logo brown.PNG"
+                        src="/images/logo_brown.png"
                         alt="Serengé"
                         width={140}
                         height={50}

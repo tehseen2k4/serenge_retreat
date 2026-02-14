@@ -16,7 +16,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/home/Serenge Retreat Hero.jpg"
+            src="/images/home/serenge_retreat_hero.jpg"
             alt="Serenge Retreat Hero"
             className="w-full h-full object-cover opacity-90"
           />

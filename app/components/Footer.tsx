@@ -13,7 +13,7 @@ export default function Footer() {
 
         <div className="space-y-8">
           <Image
-            src="/images/logo brown.PNG"
+            src="/images/logo_brown.png"
             alt="Serengé Retreat"
             width={160}
             height={60}
