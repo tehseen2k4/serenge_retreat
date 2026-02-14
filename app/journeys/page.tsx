@@ -48,7 +48,7 @@ export default function JourneysPage() {
                     <div className="space-y-4 order-1 md:order-1">
                         <div className="h-[500px] bg-stone/10 relative overflow-hidden rounded-sm">
                             <img src="/images/journeys/Soul Journey Pic 2.webp" alt="Soul Journey Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Cabin</div>
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Valley</div>
                         </div>
                         {/* Inspiration Gallery (Mini Masonry) */}
                         <div className="grid grid-cols-2 gap-4 h-48">
@@ -117,16 +117,16 @@ export default function JourneysPage() {
 
                     {/* Visual Side */}
                     <div className="space-y-4 order-1 md:order-2">
-                        <div className="h-[500px] bg-sand/10 relative overflow-hidden rounded-sm">
-                            <img src="/images/journeys/Wellness Retreat Pic 2.webp" alt="Wellness Retreat Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Shala</div>
+                        <div className="h-[500px] bg-sand/10 relative overflow-hidden rounded-sm  image-bottom">
+                            <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreat Main" className="w-full h-full object-cover" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Healing</div>
                         </div>
                         <div className="grid grid-cols-2 gap-4 h-48">
                             <div className="bg-sand/20 overflow-hidden rounded-sm">
-                                <img src="/images/journeys/Wellness Retreat Pic 3.webp" alt="Wellness Retreat Detail 1" className="w-full h-full object-cover" />
+                                <img src="/images/journeys/Wellness Retreat Pic 2.webp" alt="Wellness Retreat Detail 1" className="w-full h-full object-cover" />
                             </div>
                             <div className="bg-sand/30 overflow-hidden rounded-sm">
-                                <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreat Detail 2" className="w-full h-full object-cover" />
+                                <img src="/images/journeys/Wellness Retreat Pic 3.webp" alt="Wellness Retreat Detail 2" className="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
@@ -137,12 +137,12 @@ export default function JourneysPage() {
                     {/* Visual Side */}
                     <div className="space-y-4 order-1 md:order-1">
                         <div className="h-[500px] bg-earth/10 relative overflow-hidden rounded-sm">
-                            <img src="/images/journeys/Nature Immersion Pic 3.webp" alt="Nature Immersion Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Glacier</div>
+                            <img src="/images/home/Nature Immersions.webp" alt="Nature Immersion Main" className="w-full h-full object-cover" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Glacial Streams</div>
                         </div>
                         <div className="grid grid-cols-2 gap-4 h-48">
                             <div className="bg-earth/20 overflow-hidden rounded-sm">
-                                <img src="/images/home/Nature Immersions.webp" alt="Nature Immersion Detail 1" className="w-full h-full object-cover" />
+                                <img src="/images/journeys/Nature Immersion Pic 2.webp" alt="Nature Immersion Detail 1" className="w-full h-full object-cover" />
                             </div>
                             <div className="bg-earth/30 overflow-hidden rounded-sm">
                                 {/* Use Image 2 specifically */}
