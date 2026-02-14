@@ -19,8 +19,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://serengeretreat.com"),
   title: "Serengé Retreat | A Threshold into Silence",
   description: "A soulful retreat and wellness sanctuary in Karakoram, Baltistan. Join us for slow, grounded journeys.",
+  icons: {
+    icon: "/images/logo_brown.png",
+    shortcut: "/images/logo_brown.png",
+  },
+  openGraph: {
+    title: "Serengé Retreat",
+    description: "Where Peace Meets The Mountains. A sanctuary in Shigar Valley.",
+    images: [
+      {
+        url: "/images/logo_brown.png",
+        width: 800,
+        height: 600,
+        alt: "Serengé Retreat Logo",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

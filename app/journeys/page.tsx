@@ -13,13 +13,16 @@ export default function JourneysPage() {
         <div className="bg-paper min-h-screen">
 
             {/* HEADER */}
-            <section className="pt-32 pb-20 px-6 md:px-12 bg-canvas">
-                <div className="max-w-4xl mx-auto text-center space-y-6">
+            <section className="relative pt-32 pb-20 px-6 md:px-12 bg-canvas overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-40">
+                    <img src="/images/journeys/Journeys Hero.webp" alt="Journeys Hero" className="w-full h-full object-cover" />
+                </div>
+                <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
                     <motion.h1
                         initial="hidden"
                         animate="visible"
                         variants={fadeUp}
-                        className="text-4xl md:text-5xl font-serif text-ink"
+                        className="text-4xl md:text-5xl font-serif text-ink drop-shadow-md"
                     >
                         Not a Vacation. A Return.
                     </motion.h1>
@@ -28,7 +31,7 @@ export default function JourneysPage() {
                         animate="visible"
                         variants={fadeUp}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed"
+                        className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
                     >
                         We do not sell packages. We curate journeys. Each experience is designed to
                         hold space for what you need to find.
@@ -43,15 +46,18 @@ export default function JourneysPage() {
                 <section id="soul" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     {/* Visual Side */}
                     <div className="space-y-4 order-1 md:order-1">
-                        <div className="h-[500px] bg-stone/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-stone/5" />
-                            {/* Placeholder: Image of Meditation/Cabin */}
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Cabin</div>
+                        <div className="h-[500px] bg-stone/10 relative overflow-hidden rounded-sm">
+                            <img src="/images/journeys/Soul Journey Pic 2.webp" alt="Soul Journey Main" className="w-full h-full object-cover" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Cabin</div>
                         </div>
                         {/* Inspiration Gallery (Mini Masonry) */}
                         <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-stone/20 grayscale hover:grayscale-0 transition-all duration-700" />
-                            <div className="bg-stone/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-stone/20 overflow-hidden rounded-sm">
+                                <img src="/images/journeys/Soul Journey Pic 3.webp" alt="Soul Journey Detail 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="bg-stone/30 overflow-hidden rounded-sm">
+                                <img src="/images/home/Soul Journeys.webp" alt="Soul Journey Detail 2" className="w-full h-full object-cover" />
+                            </div>
                         </div>
                     </div>
 
@@ -111,13 +117,17 @@ export default function JourneysPage() {
 
                     {/* Visual Side */}
                     <div className="space-y-4 order-1 md:order-2">
-                        <div className="h-[500px] bg-sand/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-sand/5" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Shala</div>
+                        <div className="h-[500px] bg-sand/10 relative overflow-hidden rounded-sm">
+                            <img src="/images/journeys/Wellness Retreat Pic 2.webp" alt="Wellness Retreat Main" className="w-full h-full object-cover" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Shala</div>
                         </div>
                         <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-sand/20 grayscale hover:grayscale-0 transition-all duration-700" />
-                            <div className="bg-sand/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-sand/20 overflow-hidden rounded-sm">
+                                <img src="/images/journeys/Wellness Retreat Pic 3.webp" alt="Wellness Retreat Detail 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="bg-sand/30 overflow-hidden rounded-sm">
+                                <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreat Detail 2" className="w-full h-full object-cover" />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -126,13 +136,18 @@ export default function JourneysPage() {
                 <section id="immersion" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     {/* Visual Side */}
                     <div className="space-y-4 order-1 md:order-1">
-                        <div className="h-[500px] bg-earth/10 grayscale hover:grayscale-0 transition-all duration-1000 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-earth/5" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/80">The Glacier</div>
+                        <div className="h-[500px] bg-earth/10 relative overflow-hidden rounded-sm">
+                            <img src="/images/journeys/Nature Immersion Pic 3.webp" alt="Nature Immersion Main" className="w-full h-full object-cover" />
+                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Glacier</div>
                         </div>
                         <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-earth/20 grayscale hover:grayscale-0 transition-all duration-700" />
-                            <div className="bg-earth/30 grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="bg-earth/20 overflow-hidden rounded-sm">
+                                <img src="/images/home/Nature Immersions.webp" alt="Nature Immersion Detail 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="bg-earth/30 overflow-hidden rounded-sm">
+                                {/* Use Image 2 specifically */}
+                                <img src="/images/journeys/Nature Immersion Pic 3.webp" alt="Nature Immersion Detail 2" className="w-full h-full object-cover" />
+                            </div>
                         </div>
                     </div>
 

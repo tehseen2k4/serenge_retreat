@@ -13,26 +13,24 @@ export default function Home() {
     <div className="flex flex-col">
       {/* SECTION 1: HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-stone/20 overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
-        >
-          <source src="/videos/hero_placeholder.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-stone/20" /> {/* Slight overlay */}
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/home/Serenge Retreat Hero.jpg"
+            alt="Serenge Retreat Hero"
+            className="w-full h-full object-cover opacity-90"
+          />
+          <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay */}
+        </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-6">
           <motion.h1
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-4xl md:text-7xl font-serif text-ink tracking-tight uppercase leading-tight"
+            className="text-4xl md:text-7xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
-            Where Peace Meets <br /> <span className="italic text-earth">The Mountains</span>.
+            Where Peace Meets <br /> <span className="italic text-earth-light">The Mountains</span>.
           </motion.h1>
 
           <motion.p
@@ -40,7 +38,7 @@ export default function Home() {
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-ink-soft font-light tracking-[0.1em]"
+            className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-md"
           >
             Experience serenity in the heart of Shigar.
           </motion.p>
@@ -54,7 +52,7 @@ export default function Home() {
           >
             <Link
               href="/journeys"
-              className="inline-block px-8 py-3 bg-paper/80 backdrop-blur-sm border border-ink/10 rounded-full text-sm uppercase tracking-widest text-ink hover:bg-white hover:border-earth/50 transition-all duration-500"
+              className="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm uppercase tracking-widest text-white hover:bg-white hover:text-ink transition-all duration-500"
             >
               Begin Your Journey
             </Link>
@@ -118,9 +116,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <Link href="/journeys#soul" className="group block space-y-4">
-              <div className="h-96 w-full bg-stone/20 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out overflow-hidden relative">
-                <div className="absolute inset-0 bg-stone/10" />
-                {/* Image would go here */}
+              <div className="h-96 w-full bg-stone/20 overflow-hidden relative rounded-sm">
+                <img src="/images/home/Soul Journeys.webp" alt="Soul Journeys" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Soul Journeys</h3>
               <p className="text-sm text-ink-muted leading-relaxed">
@@ -130,8 +128,9 @@ export default function Home() {
 
             {/* Card 2 */}
             <Link href="/journeys#wellness" className="group block space-y-4">
-              <div className="h-96 w-full bg-sand/30 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out overflow-hidden relative">
-                <div className="absolute inset-0 bg-sand/10" />
+              <div className="h-96 w-full bg-sand/30 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
+                <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreats" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-sand/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Wellness Retreats</h3>
               <p className="text-sm text-ink-muted leading-relaxed">
@@ -141,8 +140,9 @@ export default function Home() {
 
             {/* Card 3 */}
             <Link href="/journeys#immersion" className="group block space-y-4">
-              <div className="h-96 w-full bg-earth/20 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out overflow-hidden relative">
-                <div className="absolute inset-0 bg-earth/10" />
+              <div className="h-96 w-full bg-earth/20 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
+                <img src="/images/home/Nature Immersions.webp" alt="Nature Immersions" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-earth/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Nature Immersions</h3>
               <p className="text-sm text-ink-muted leading-relaxed">

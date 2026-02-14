@@ -29,9 +29,25 @@ export default function StoryPage() {
 
                 {/* The Narrative */}
                 <div className="grid md:grid-cols-2 gap-16 items-start">
+                    {/* Column 1: Image Only */}
                     <motion.div
                         initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-                        className="space-y-8 text-ink-soft font-light text-lg leading-relaxed"
+                        className="relative"
+                    >
+                        <div className="relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-sm shadow-lg sticky top-32">
+                            <img
+                                src="/images/story/Founder.webp"
+                                alt="Aslam Shigri"
+                                className="object-cover w-full h-full hover:scale-105 transition-transform duration-1000"
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* Column 2: All Text */}
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+                        transition={{ delay: 0.2 }}
+                        className="space-y-8 text-ink-soft font-light text-lg leading-relaxed pt-2"
                     >
                         <p>
                             I am <span className="text-ink font-medium">Aslam Shigri</span>, born and raised in the village of Alchori.
@@ -46,13 +62,6 @@ export default function StoryPage() {
                             In 2017, I founded <a href="https://www.reegoadventure.com" target="_blank" rel="noopener noreferrer" className="text-earth underline underline-offset-4 hover:text-ink transition-colors">Reego Adventure Pakistan</a> —
                             a dream to share the hidden valleys and towering peaks of Gilgit-Baltistan with the world.
                         </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-                        transition={{ delay: 0.2 }}
-                        className="space-y-8 text-ink-soft font-light text-lg leading-relaxed pt-4 md:pt-16"
-                    >
                         <p>
                             Leading hundreds of travelers through these landscapes taught me that while the climb requires strength,
                             the soul requires silence. Recently, I summited <span className="text-ink font-medium">Khosar Gang (6,400m)</span> in just 48 hours —

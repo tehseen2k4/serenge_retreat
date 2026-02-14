@@ -1,10 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+
+const faqs = [
+    {
+        question: "How far is Serenge Retreat from Skardu Airport?",
+        answer: "Serenge Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough track, best for 4x4 vehicles — drive slowly or request a pickup."
+    },
+    {
+        question: "Do you provide Rent-a-Car Services?",
+        answer: "Yes, we arrange all kinds of vehicles as per guest requirements through our partner network."
+    },
+    {
+        question: "Do you provide Airport Pick/Drop Services?",
+        answer: "Yes, we provide Airport Pick/Drop services on guest request. Please coordinate with us at least 24 hours in advance."
+    },
+    {
+        question: "Do you have Hiking Guides?",
+        answer: "Yes, we have local hiking guides and high-altitude porters for K2 Base Camp treks and Khosar Gang peak expeditions."
+    },
+    {
+        question: "Is Deosai Road open?",
+        answer: "It usually opens between June 5-15 and closes between October 5-15, depending on the snowfall. Always check with us for real-time updates."
+    }
+];
 
 export default function BookPage() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -57,6 +82,7 @@ export default function BookPage() {
                     </p>
                 </header>
 
+
                 <form onSubmit={handleSubmit} className="space-y-8 bg-paper p-8 md:p-12 border border-border shadow-sm">
                     <div className="space-y-2">
                         <label htmlFor="name" className="text-xs uppercase tracking-widest text-ink-muted">Name</label>
@@ -101,7 +127,44 @@ export default function BookPage() {
                         <p className="text-center text-red-800 text-sm">Something went wrong. Please try again or email us directly.</p>
                     )}
                 </form>
+
+                {/* FAQ Section - Moved Above Form */}
+                <div className="max-w-3xl mx-auto space-y-8">
+                    <header className="text-center space-y-2">
+                        <h2 className="text-2xl md:text-3xl font-serif text-ink">Clarity</h2>
+                        <p className="text-ink-soft font-light text-sm">Frequent questions on the journey to Shigar.</p>
+                    </header>
+
+                    <div className="space-y-4">
+                        {faqs.map((faq, idx) => (
+                            <div key={idx} className="border-b border-earth/10">
+                                <button
+                                    onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                                    className="w-full py-6 flex justify-between items-center text-left hover:text-earth transition-colors"
+                                >
+                                    <span className="text-lg font-serif text-ink">{faq.question}</span>
+                                    {openIndex === idx ? <Minus size={18} /> : <Plus size={18} />}
+                                </button>
+                                <AnimatePresence>
+                                    {openIndex === idx && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="pb-8 text-ink-soft font-light leading-relaxed">
+                                                {faq.answer}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
+
         </div>
     );
 }

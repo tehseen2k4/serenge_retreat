@@ -1,31 +1,31 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const seasons = [
     {
         name: "Spring",
         desc: "Apricot Blossoms. The valley turns white and pink. Life returns after the deep freeze.",
-        color: "bg-pink-50/50",
+        image: "/images/land/Spring Season.webp",
         month: "April - May"
     },
     {
         name: "Summer",
         desc: "Glacial Melt. The fields are emerald green. The fruit is sweet. The river roars.",
-        color: "bg-green-50/50",
+        image: "/images/land/Summer Season.webp",
         month: "June - August"
     },
     {
         name: "Autumn",
         desc: "The Golden Hour. Poplars turn to gold. The air is crisp. The harvest is gathered.",
-        color: "bg-amber-50/50",
+        image: "/images/land/Autumn Season.webp",
         month: "September - October"
     },
     {
         name: "Winter",
         desc: "Deep Silence. Snow covers the mud walls. The Bukhari stove is the heart of the home.",
-        color: "bg-slate-50/50",
+        image: "/images/land/Winter Season.JPG",
         month: "November - March"
     }
 ];
@@ -42,21 +42,39 @@ export default function SeasonsScroll() {
 
             <div
                 ref={containerRef}
-                className="flex overflow-x-auto gap-6 px-6 md:px-12 pb-12 snap-x snap-mandatory hide-scrollbar"
+                className="flex overflow-x-auto gap-6 px-6 md:px-12 pb-12 snap-x snap-mandatory no-scrollbar"
                 style={{ scrollBehavior: "smooth" }}
             >
+                <style jsx>{`
+                    .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .no-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                `}</style>
                 {seasons.map((season, i) => (
                     <div
                         key={i}
-                        className={`min-w-[300px] md:min-w-[400px] aspect-[3/4] ${season.color} border border-ink/5 p-8 flex flex-col justify-end snap-center relative group overflow-hidden transition-all duration-500 hover:shadow-lg`}
+                        className="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative border border-ink/5 flex flex-col justify-end snap-center group overflow-hidden transition-all duration-500 hover:shadow-lg rounded-sm"
                     >
-                        {/* Background Placeholder */}
-                        <div className="absolute inset-0 opacity-20 mix-blend-multiply transition-transform duration-700 group-hover:scale-105" />
+                        {/* Background Image */}
+                        <div className="absolute inset-0">
+                            <Image
+                                src={season.image}
+                                alt={season.name}
+                                fill
+                                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
+                        </div>
 
-                        <div className="relative z-10 space-y-2">
-                            <span className="text-xs uppercase tracking-widest text-earth">{season.month}</span>
-                            <h3 className="text-2xl font-serif text-ink">{season.name}</h3>
-                            <p className="text-ink-soft text-sm leading-relaxed">{season.desc}</p>
+                        <div className="relative z-10 p-8 space-y-2">
+                            <span className="text-xs uppercase tracking-widest text-white/80">{season.month}</span>
+                            <h3 className="text-3xl font-serif text-white">{season.name}</h3>
+                            <p className="text-white/90 text-sm leading-relaxed font-light">{season.desc}</p>
                         </div>
                     </div>
                 ))}

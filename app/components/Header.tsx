@@ -14,7 +14,6 @@ const links = [
     { href: "/journeys", label: "Journeys" },
     { href: "/stay", label: "Stay" },
     { href: "/land", label: "Land" },
-    { href: "/mosaic", label: "Mosaic" },
     { href: "/story", label: "Story" },
     { href: "/book", label: "Book" },
 ];

@@ -29,7 +29,6 @@ export default function Footer() {
           </div>
           <div className="pt-4 flex gap-8 text-xs uppercase tracking-widest text-ink-muted">
             <a href="https://www.reegoadventure.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth underline underline-offset-4">Tour Partner</a>
-            <a href="/faq" className="hover:text-earth underline underline-offset-4">Clarity (FAQ)</a>
           </div>
         </div>
 
