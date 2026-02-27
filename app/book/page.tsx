@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import Image from "next/image";
 
 const faqs = [
     {
@@ -46,7 +47,6 @@ export default function BookPage() {
             });
 
             if (!res.ok) throw new Error("Failed");
-
             setStatus("success");
         } catch (err) {
             console.error(err);
@@ -56,84 +56,98 @@ export default function BookPage() {
 
     if (status === "success") {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-canvas px-6 text-center">
-                <div className="max-w-md space-y-6">
-                    <h1 className="text-3xl font-serif text-ink">Message Received</h1>
-                    <p className="text-ink-soft">
-                        Thank you for reaching out. We read every message with care.
-                        Tehseen or a member of our team will correspond with you via email or WhatsApp shortly.
+            <div className="min-h-screen bg-canvas flex items-center justify-center px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center space-y-6 max-w-md"
+                >
+                    <h1 className="text-4xl font-serif text-ink">Inquiry Received</h1>
+                    <p className="text-ink-soft font-light">
+                        Thank you for your interest in Serenge Retreat.
+                        We will correspond with you via email or WhatsApp shortly.
                     </p>
-                    <div className="pt-8">
-                        <a href="/" className="text-earth hover:text-ink underline underline-offset-4">Return Home</a>
-                    </div>
-                </div>
+                    <button
+                        onClick={() => setStatus("idle")}
+                        className="text-earth underline underline-offset-4 uppercase tracking-widest text-xs"
+                    >
+                        Send another request
+                    </button>
+                </motion.div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-canvas py-32 px-6">
-            <div className="max-w-2xl mx-auto space-y-12">
-                <header className="text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-serif text-ink">Start the Conversation</h1>
-                    <p className="text-ink-soft font-light">
-                        We prefer human connection over automated bookings. Tell us about yourself,
-                        and let us design your journey.
-                    </p>
-                </header>
+        <div className="bg-canvas min-h-screen pt-32 pb-20 px-6">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
 
-
-                <form onSubmit={handleSubmit} className="space-y-8 bg-paper p-8 md:p-12 border border-border shadow-sm">
-                    <div className="space-y-2">
-                        <label htmlFor="name" className="text-xs uppercase tracking-widest text-ink-muted">Name</label>
-                        <input required type="text" name="name" id="name" className="w-full bg-transparent border-b border-border active:border-earth focus:border-earth outline-none py-2 text-ink transition-colors" />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="space-y-2">
-                            <label htmlFor="email" className="text-xs uppercase tracking-widest text-ink-muted">Email</label>
-                            <input required type="email" name="email" id="email" className="w-full bg-transparent border-b border-border active:border-earth focus:border-earth outline-none py-2 text-ink transition-colors" />
-                        </div>
-                        <div className="space-y-2">
-                            <label htmlFor="country" className="text-xs uppercase tracking-widest text-ink-muted">Country</label>
-                            <input type="text" name="country" id="country" className="w-full bg-transparent border-b border-border active:border-earth focus:border-earth outline-none py-2 text-ink transition-colors" />
-                        </div>
-                    </div>
-
-                    <div className="space-y-2">
-                        <label htmlFor="journey" className="text-xs uppercase tracking-widest text-ink-muted">Interested In</label>
-                        <select name="journey" id="journey" className="w-full bg-transparent border-b border-border active:border-earth focus:border-earth outline-none py-2 text-ink transition-colors appearance-none rounded-none">
-                            <option value="Soul Journey">Soul Journey (Unstructured)</option>
-                            <option value="Wellness Retreat">Wellness Retreat (Guided)</option>
-                            <option value="Immersion">Nature Immersion (Trekking)</option>
-                            <option value="Undecided">I am not sure yet</option>
-                        </select>
-                    </div>
-
-                    <div className="space-y-2">
-                        <label htmlFor="intention" className="text-xs uppercase tracking-widest text-ink-muted">Your Intention / Message</label>
-                        <textarea required name="intention" id="intention" rows={4} className="w-full bg-transparent border-b border-border active:border-earth focus:border-earth outline-none py-2 text-ink transition-colors resize-none" placeholder="Why now? What are you seeking?"></textarea>
-                    </div>
-
-                    <button
-                        disabled={status === "submitting"}
-                        type="submit"
-                        className="w-full py-4 bg-ink text-canvas uppercase tracking-widest text-sm hover:bg-earth transition-colors duration-300 disabled:opacity-50"
-                    >
-                        {status === "submitting" ? "Sending..." : "Send Request"}
-                    </button>
-
-                    {status === "error" && (
-                        <p className="text-center text-red-800 text-sm">Something went wrong. Please try again or email us directly.</p>
-                    )}
-                </form>
-
-                {/* FAQ Section - Moved Above Form */}
-                <div className="max-w-3xl mx-auto space-y-8">
-                    <header className="text-center space-y-2">
-                        <h2 className="text-2xl md:text-3xl font-serif text-ink">Clarity</h2>
-                        <p className="text-ink-soft font-light text-sm">Frequent questions on the journey to Shigar.</p>
+                {/* Form Section */}
+                <div className="space-y-12">
+                    <header className="space-y-4">
+                        <h2 className="text-xs uppercase tracking-[0.4em] text-earth">Reservation</h2>
+                        <h1 className="text-4xl md:text-5xl font-serif text-ink">Start the Conversation</h1>
+                        <p className="text-ink-soft font-light max-w-xl">
+                            Tell us about your planned journey. We prefer human connection
+                            to design your bespoke sanctuary experience.
+                        </p>
                     </header>
+
+                    <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 md:p-12 border border-earth/10 shadow-sm">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-2">
+                                <label className="text-[10px] uppercase tracking-widest text-ink/40">Check In</label>
+                                <input required type="date" name="checkIn" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-[10px] uppercase tracking-widest text-ink/40">Check Out</label>
+                                <input required type="date" name="checkOut" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-2">
+                                <label className="text-[10px] uppercase tracking-widest text-ink/40">Adults</label>
+                                <select name="adults" className="w-full bg-canvas border-none p-4 text-ink outline-none appearance-none font-light">
+                                    {[1, 2, 3, 4, 5, 6, 7, 8].map(n => <option key={n} value={n}>{n} {n === 1 ? 'Adult' : 'Adults'}</option>)}
+                                </select>
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-[10px] uppercase tracking-widest text-ink/40">Local Guide</label>
+                                <select name="needsGuide" className="w-full bg-canvas border-none p-4 text-ink outline-none appearance-none font-light">
+                                    <option value="false">Not required</option>
+                                    <option value="true">Required</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="space-y-4">
+                            <input required type="text" name="name" placeholder="Full Name" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            <input required type="email" name="email" placeholder="Email Address" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            <input required type="tel" name="phone" placeholder="WhatsApp / Phone" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-[10px] uppercase tracking-widest text-ink/40">Special Requirements</label>
+                            <textarea name="specialRequirements" placeholder="Dietary needs, room preferences, etc." className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all min-h-[120px] resize-none font-light"></textarea>
+                        </div>
+
+                        <button
+                            disabled={status === "submitting"}
+                            type="submit"
+                            className="w-full py-4 bg-ink text-white uppercase tracking-widest text-xs hover:bg-earth transition-colors disabled:opacity-50"
+                        >
+                            {status === "submitting" ? "Sending..." : "Submit Inquiry"}
+                        </button>
+                    </form>
+                </div>
+
+                {/* FAQ Section */}
+                <div className="space-y-16">
+                    <div className="space-y-6">
+                        <h2 className="text-xs uppercase tracking-[0.4em] text-earth">Clarity</h2>
+                        <h3 className="text-4xl font-serif text-ink italic">Frequent questions.</h3>
+                    </div>
 
                     <div className="space-y-4">
                         {faqs.map((faq, idx) => (
@@ -153,7 +167,7 @@ export default function BookPage() {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="pb-8 text-ink-soft font-light leading-relaxed">
+                                            <div className="pb-8 text-ink-soft font-light leading-relaxed text-sm">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>
@@ -162,9 +176,20 @@ export default function BookPage() {
                             </div>
                         ))}
                     </div>
+
+                    {/* Trust / Visual */}
+                    <div className="pt-12">
+                        <div className="relative aspect-video bg-paper rounded-sm overflow-hidden grayscale opacity-60">
+                            <Image
+                                src="/images/land/Land Seasons.webp"
+                                alt="Serenge Retreat Landscape"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     );
 }

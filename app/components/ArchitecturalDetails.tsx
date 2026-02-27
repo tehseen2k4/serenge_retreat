@@ -59,8 +59,8 @@ export default function ArchitecturalDetails() {
         <section className="bg-paper py-24 px-6">
             <div className="max-w-7xl mx-auto space-y-24">
                 <header className="text-center space-y-4 max-w-3xl mx-auto">
-                    <h2 className="text-sm uppercase tracking-[0.4em] text-earth">The Texture of Silence</h2>
-                    <h3 className="text-3xl md:text-5xl font-serif text-ink italic">Every stone has a story.</h3>
+                    <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Our Craft</h2>
+                    <h3 className="text-3xl md:text-5xl font-serif text-ink italic">The Building Story.</h3>
                     <p className="text-ink-soft font-light text-lg">
                         Serengé is not just built on the land; it is built of the land.
                         Every material tells a story of sustainability, heritage, and hand-craftsmanship.

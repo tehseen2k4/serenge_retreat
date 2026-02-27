@@ -23,12 +23,13 @@ export default function Footer() {
             <p className="font-medium text-ink">Alchori Ranga, Shigar</p>
             <p>Gilgit-Baltistan, Pakistan</p>
             <div className="pt-2 flex flex-col gap-1">
-              <a href="tel:+923349669198" className="hover:text-earth transition-colors">+92-334-966-9198</a>
-              <a href="mailto:hello@reegoadventure.com" className="hover:text-earth transition-colors">hello@reegoadventure.com</a>
+              <a href="https://wa.me/923349669198" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">+92 334 9669198</a>
+              <a href="mailto:axlamshigri@gmail.com" className="hover:text-earth transition-colors">axlamshigri@gmail.com</a>
             </div>
           </div>
-          <div className="pt-4 flex gap-8 text-xs uppercase tracking-widest text-ink-muted">
-            <a href="https://www.reegoadventure.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth underline underline-offset-4">Tour Partner</a>
+          <div className="pt-4 flex flex-col gap-2 text-xs uppercase tracking-widest text-ink-muted">
+            <a href="https://www.reegoadventure.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth underline underline-offset-4">Tour Partner: Reego Adventure</a>
+            <a href="mailto:reegoadventure@gmail.com" className="hover:text-earth transition-colors lowercase font-sans">reegoadventure@gmail.com</a>
           </div>
         </div>
 
@@ -38,10 +39,10 @@ export default function Footer() {
             "We aim to offer not just a stay — but a sense of belonging, calm, and meaningful connection with the land and its people."
           </p>
           <div className="pt-6 space-y-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-earth">Social</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-earth">Social connection</p>
             <div className="flex gap-6 text-sm text-ink-soft">
-              <span className="hover:text-earth cursor-pointer">Instagram</span>
-              <span className="hover:text-earth cursor-pointer">FaceBook</span>
+              <a href="https://www.instagram.com/serengeretreat" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">Instagram</a>
+              <a href="https://www.facebook.com/share/1Ctpfh7Lwf/" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">Facebook</a>
             </div>
           </div>
         </div>

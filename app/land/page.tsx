@@ -1,7 +1,7 @@
-"use client";
-
 import SeasonsScroll from "../components/SeasonsScroll";
 import InteractiveMap from "../components/InteractiveMap";
+import Image from "next/image";
+import Link from "next/link";
 
 
 export default function LandPage() {
@@ -9,11 +9,17 @@ export default function LandPage() {
         <div className="bg-canvas min-h-screen">
             <section className="h-[70vh] flex items-center justify-center bg-stone/30 relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img src="/images/land/land_hero.webp" alt="Shigar Valley" className="object-cover w-full h-full opacity-90" />
+                    <Image
+                        src="/images/land/land_hero.webp"
+                        alt="Serene landscape of Shigar Valley, Baltistan - The Land surrounding Serengé Retreat"
+                        fill
+                        className="object-cover opacity-90"
+                        priority
+                    />
                     <div className="absolute inset-0 bg-black/20" />
                 </div>
                 <div className="text-center space-y-4 z-10 px-6">
-                    <h1 className="text-5xl md:text-7xl font-serif text-white mix-blend-overlay drop-shadow-lg">The Land</h1>
+                    <h1 className="text-4xl md:text-7xl font-serif text-white mix-blend-overlay drop-shadow-lg">The Land: Shigar Valley & Baltistan</h1>
                     <p className="text-white/90 text-lg tracking-widest uppercase drop-shadow-md">Shigar Valley · Baltistan</p>
                 </div>
             </section>
@@ -52,10 +58,12 @@ export default function LandPage() {
                     </div>
                     {/* Image Side - Refactored to match other sections */}
                     <div className="flex-1 aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
-                        <img
+                        <Image
                             src="/images/land/Khosar Gang.webp"
-                            alt="Khosar Gang"
-                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Khosar Gang peak (6,040m) overlooking Serengé Retreat in Shigar Valley"
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
                     </div>
@@ -73,10 +81,12 @@ export default function LandPage() {
                     </div>
                     {/* Image Side - Refactored to match other sections */}
                     <div className="order-1 md:order-2 flex-1 aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
-                        <img
+                        <Image
                             src="/images/land/Spantik Peak.webp"
-                            alt="Spantik & Golden Peak"
-                            className="w-full h-full object-cover object-bottom transition-transform duration-1000 group-hover:scale-105"
+                            alt="Spantik Golden Peak (7,027m) in Baltistan at sunset"
+                            fill
+                            className="object-cover object-bottom transition-transform duration-1000 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
                     </div>
@@ -90,13 +100,33 @@ export default function LandPage() {
                         <p className="text-ink-soft font-light leading-relaxed">
                             Shigar is the gateway to Askole, the last village before the trek to K2 (8,611m).
                             The Baltoro Glacier, one of the longest outside the polar regions, winds through
-                            this cathedral of granite giants.
+                            this cathedral of granite giants. We offer guided{" "}
+                            <Link href="/journeys#immersion" className="text-earth hover:underline transition-all underline-offset-4">
+                                trekking experiences
+                            </Link>
+                            {" "}for those seeking the edge of the world.
                         </p>
                     </div>
                     <div className="flex-1 aspect-video relative bg-stone/20 w-full overflow-hidden rounded-sm group">
-                        <div className="grid grid-cols-2 h-full w-full">
-                            <img src="/images/land/K2 Basecamp.webp" alt="K2 Basecamp" className="object-cover w-full h-full" />
-                            <img src="/images/land/Baltoro Glacier.webp" alt="Baltoro Glacier" className="object-cover w-full h-full" />
+                        <div className="grid grid-cols-2 h-full w-full relative">
+                            <div className="relative h-full w-full">
+                                <Image
+                                    src="/images/land/K2 Basecamp.webp"
+                                    alt="Trekking route to K2 Basecamp near Shigar"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 50vw, 25vw"
+                                />
+                            </div>
+                            <div className="relative h-full w-full">
+                                <Image
+                                    src="/images/land/Baltoro Glacier.webp"
+                                    alt="View of the Baltoro Glacier in the Karakoram range"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 50vw, 25vw"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,10 +143,12 @@ export default function LandPage() {
                         </p>
                     </div>
                     <div className="flex-1 aspect-video relative bg-stone/20 w-full overflow-hidden rounded-sm group">
-                        <img
+                        <Image
                             src="/images/land/land_hero.webp"
-                            alt="Shigar Valley"
-                            className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
+                            alt="Alchori village and the surrounding Shigar mountains"
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
                     </div>

@@ -2,6 +2,8 @@
 
 import { motion, Variants } from "framer-motion";
 import ItineraryAccordion from "../components/ItineraryAccordion";
+import Image from "next/image";
+import Link from "next/link";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -10,170 +12,281 @@ const fadeUp: Variants = {
 
 export default function JourneysPage() {
     return (
-        <div className="bg-paper min-h-screen">
+        <div className="bg-canvas min-h-screen">
 
             {/* HEADER */}
-            <section className="relative pt-32 pb-20 px-6 md:px-12 bg-canvas overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-40">
-                    <img src="/images/journeys/Journeys Hero.webp" alt="Journeys Hero" className="w-full h-full object-cover" />
+            <section className="relative pt-32 pb-20 px-6 md:px-12 bg-paper overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-20">
+                    <Image
+                        src="/images/journeys/Journeys Hero.webp"
+                        alt="Serengé Retreat Wellness Journeys"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
                 </div>
                 <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
                     <motion.h1
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeUp}
-                        className="text-4xl md:text-5xl font-serif text-ink drop-shadow-md"
+                        initial="hidden" animate="visible" variants={fadeUp}
+                        className="text-4xl md:text-6xl font-serif text-ink italic leading-tight"
                     >
-                        Not a Vacation. A Return.
+                        Wellness Journeys & <br /> Spiritual Retreats.
                     </motion.h1>
                     <motion.p
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeUp}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
+                        initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.1 }}
+                        className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed font-light"
                     >
-                        We do not sell packages. We curate journeys. Each experience is designed to
-                        hold space for what you need to find.
+                        We do not sell packages. We curate space. Each experience is designed to
+                        hold what you need to find in the silence of the Karakoram.
                     </motion.p>
                 </div>
             </section>
 
-            {/* OFFERS */}
-            <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-32">
+            {/* OFFERS CONTAINER */}
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-32 space-y-48">
 
-                {/* Journey 1: SOUL */}
-                <section id="soul" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Visual Side */}
-                    <div className="space-y-4 order-1 md:order-1">
-                        <div className="h-[500px] bg-stone/10 relative overflow-hidden rounded-sm">
-                            <img src="/images/journeys/Soul Journey Pic 2.webp" alt="Soul Journey Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Valley</div>
+                {/* Journey 1: SOUL JOURNEY RETREAT */}
+                <section id="soul" className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                    {/* Visual Side: 3 Photos in a Column */}
+                    <div className="grid grid-cols-1 gap-6 order-1">
+                        <div className="aspect-[4/5] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/home/Soul Journeys.webp" alt="Soul Journey" fill className="object-cover" />
                         </div>
-                        {/* Inspiration Gallery (Mini Masonry) */}
-                        <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-stone/20 overflow-hidden rounded-sm">
-                                <img src="/images/journeys/Soul Journey Pic 3.webp" alt="Soul Journey Detail 1" className="w-full h-full object-cover" />
-                            </div>
-                            <div className="bg-stone/30 overflow-hidden rounded-sm">
-                                <img src="/images/home/Soul Journeys.webp" alt="Soul Journey Detail 2" className="w-full h-full object-cover" />
-                            </div>
+                        <div className="aspect-[4/3] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Soul Journey Pic 2.webp" alt="Soul Journey" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Soul Journey Pic 3.webp" alt="Soul Journey" fill className="object-cover" />
                         </div>
                     </div>
 
-                    {/* Content Side */}
-                    <div className="space-y-6 order-2 md:order-2 p-4 md:p-8 sticky top-24">
-                        <h2 className="text-3xl font-serif text-ink">Soul Journeys</h2>
-                        <div className="w-12 h-[1px] bg-earth/50" />
-                        <p className="text-ink-soft leading-relaxed font-light">
-                            For the seeker. These journeys are unstructured, allowing the silence of the
-                            valley to do the work. Long walks, unguided meditation, and deep rest.
-                        </p>
-                        <ul className="space-y-2 text-sm text-ink-muted">
-                            <li>· Private cabin accomodation</li>
-                            <li>· Organic, plant-based meals</li>
-                            <li>· No fixed itinerary</li>
-                        </ul>
-
-                        <ItineraryAccordion
-                            title="Sample Rhythm"
-                            items={[
-                                { time: "06:00 AM", activity: "Silence & Herbal Tea" },
-                                { time: "08:00 AM", activity: "Solitary Walk by the River" },
-                                { time: "01:00 PM", activity: "Plant-based Lunch in Garden" },
-                                { time: "04:00 PM", activity: "Journaling or Nap" },
-                                { time: "08:00 PM", activity: "Fire Meditation" }
-                            ]}
-                        />
-                    </div>
-                </section>
-
-                {/* Journey 2: WELLNESS */}
-                <section id="wellness" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Content Side */}
-                    <div className="space-y-6 order-2 md:order-1 p-4 md:p-8 sticky top-24">
-                        <h2 className="text-3xl font-serif text-ink">Wellness Retreats</h2>
-                        <div className="w-12 h-[1px] bg-earth/50" />
-                        <p className="text-ink-soft leading-relaxed font-light">
-                            Guided by visiting practitioners. Breathwork, somatic healing, and yoga
-                            practiced in the open air, under the shadow of Khosar Gang.
-                        </p>
-                        <ul className="space-y-2 text-sm text-ink-muted">
-                            <li>· Small group (max 8)</li>
-                            <li>· Daily guided practice</li>
-                            <li>· Sound healing sessions</li>
-                        </ul>
-
-                        <ItineraryAccordion
-                            title="Daily Practice"
-                            items={[
-                                { time: "07:00 AM", activity: "Sunrise Yoga" },
-                                { time: "10:00 AM", activity: "Breathwork Session" },
-                                { time: "02:00 PM", activity: "Somatic Healing Workshop" },
-                                { time: "06:00 PM", activity: "Restorative Yoga" }
-                            ]}
-                        />
-                    </div>
-
-                    {/* Visual Side */}
-                    <div className="space-y-4 order-1 md:order-2">
-                        <div className="h-[500px] bg-sand/10 relative overflow-hidden rounded-sm  image-bottom">
-                            <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreat Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Healing</div>
+                    {/* Content Side: Modern Text Layout */}
+                    <div className="space-y-12 order-2 md:sticky md:top-32">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-earth text-xs uppercase tracking-[0.4em] font-medium">Seasonal Silence</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">1. SOUL JOURNEY <br /> RETREAT</h2>
+                            </div>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed">
+                                For the Seeker. For the One Who Needs Silence. A slow, unstructured retreat where the silence of Shigar Valley does the work.
+                            </p>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-sand/20 overflow-hidden rounded-sm">
-                                <img src="/images/journeys/Wellness Retreat Pic 2.webp" alt="Wellness Retreat Detail 1" className="w-full h-full object-cover" />
+
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-earth pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Deep Rest</h4>
+                                <p className="text-sm text-ink-soft font-light">Mountains, space, and deep rest. Long walks, unguided meditation, and meaningful cultural connection.</p>
                             </div>
-                            <div className="bg-sand/30 overflow-hidden rounded-sm">
-                                <img src="/images/journeys/Wellness Retreat Pic 3.webp" alt="Wellness Retreat Detail 2" className="w-full h-full object-cover" />
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">The Seeker</h4>
+                                <p className="text-sm text-ink-soft font-light">Ideal for solo travelers seeking clarity, creatives in transition, and those feeling burned out.</p>
                             </div>
+                        </div>
+
+                        <div className="pt-8 flex flex-col gap-6">
+                            <Link href="/journeys/soulful-retreat" className="text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 self-start hover:text-ink hover:border-ink transition-all font-medium">
+                                View Full Details →
+                            </Link>
+                            <Link href="/stay#booking-form" className="inline-block px-10 py-4 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all self-start">
+                                Apply to Join
+                            </Link>
                         </div>
                     </div>
                 </section>
 
-                {/* Journey 3: IMMERSION */}
-                <section id="immersion" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Visual Side */}
-                    <div className="space-y-4 order-1 md:order-1">
-                        <div className="h-[500px] bg-earth/10 relative overflow-hidden rounded-sm">
-                            <img src="/images/home/Nature Immersions.webp" alt="Nature Immersion Main" className="w-full h-full object-cover" />
-                            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-white/90 drop-shadow-md">The Glacial Streams</div>
+                {/* Journey 2: WELLNESS & HEALING RETREAT */}
+                <section id="wellness" className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                    {/* Content Side (Flipped for alternating) */}
+                    <div className="space-y-12 order-2 md:order-1 md:sticky md:top-32">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-earth text-xs uppercase tracking-[0.4em] font-medium">Guided Healing</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">2. WELLNESS & <br /> HEALING RETREAT</h2>
+                            </div>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed">
+                                Guided by Visiting Practitioners. Breathwork, somatic healing, and yoga practiced in open air under the Karakoram sky.
+                            </p>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 h-48">
-                            <div className="bg-earth/20 overflow-hidden rounded-sm">
-                                <img src="/images/journeys/Nature Immersion Pic 2.webp" alt="Nature Immersion Detail 1" className="w-full h-full object-cover" />
+
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Nervous System Reset</h4>
+                                <p className="text-sm text-ink-soft font-light">A structured healing experience for those healing emotional stress or seeking a deep reset.</p>
                             </div>
-                            <div className="bg-earth/30 overflow-hidden rounded-sm">
-                                {/* Use Image 2 specifically */}
-                                <img src="/images/journeys/Nature Immersion Pic 3.webp" alt="Nature Immersion Detail 2" className="w-full h-full object-cover" />
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Body & Breath</h4>
+                                <p className="text-sm text-ink-soft font-light">Inspirational settings for yoga practitioners and wellness enthusiasts.</p>
                             </div>
+                        </div>
+
+                        <div className="pt-8 flex flex-col gap-6">
+                            <Link href="/journeys/wellness-healing-retreat" className="text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 self-start hover:text-ink hover:border-ink transition-all font-medium">
+                                View Full Details →
+                            </Link>
+                            <Link href="/stay#booking-form" className="inline-block px-10 py-4 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all self-start">
+                                Inquire for Groups
+                            </Link>
                         </div>
                     </div>
 
-                    {/* Content Side */}
-                    <div className="space-y-6 order-2 md:order-2 p-4 md:p-8 sticky top-24">
-                        <h2 className="text-3xl font-serif text-ink">Nature Immersions</h2>
-                        <div className="w-12 h-[1px] bg-earth/50" />
-                        <p className="text-ink-soft leading-relaxed font-light">
-                            Connect with the raw power of Baltistan. Glacier walks, cold plunges in
-                            glacial streams, and nights spent under the Milky Way.
-                        </p>
-                        <ul className="space-y-2 text-sm text-ink-muted">
-                            <li>· Guided treks in Thalle La</li>
-                            <li>· Wild swimming in Katpana</li>
-                            <li>· Star-gazing workshops</li>
-                        </ul>
+                    {/* Visual Side: 3 Photos in a Column */}
+                    <div className="grid grid-cols-1 gap-6 order-1 md:order-2">
+                        <div className="aspect-[4/5] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/home/Wellness Retreat.webp" alt="Wellness Retreat" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Wellness Retreat Pic 2.webp" alt="Wellness Retreat" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Wellness Retreat Pic 3.webp" alt="Wellness Retreat" fill className="object-cover" />
+                        </div>
+                    </div>
+                </section>
 
-                        <ItineraryAccordion
-                            title="Explorer's Day"
-                            items={[
-                                { time: "05:00 AM", activity: "Depart for Khosar Gang Base" },
-                                { time: "12:00 PM", activity: "Picnic by the stream" },
-                                { time: "03:00 PM", activity: "Cold Plunge" },
-                                { time: "09:00 PM", activity: "Astronomy Session" }
-                            ]}
-                        />
+                {/* Journey 3: HIKING & MOUNTAIN IMMERSION RETREAT */}
+                <section id="hiking" className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                    {/* Visual Side: 3 Photos in a Column */}
+                    <div className="grid grid-cols-1 gap-6 order-1">
+                        <div className="aspect-[4/5] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/land/Summer Season.webp" alt="Hiking & Mountain Immersion" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/land/Khosar Gang.webp" alt="Hiking & Mountain Immersion" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-stone/10 rounded-sm overflow-hidden">
+                            <Image src="/images/land/Spantik Peak.webp" alt="Hiking & Mountain Immersion" fill className="object-cover" />
+                        </div>
+                    </div>
+
+                    {/* Content Side: Modern Text Layout */}
+                    <div className="space-y-12 order-2 md:sticky md:top-32">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-earth text-xs uppercase tracking-[0.4em] font-medium">Active Adventure</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">3. HIKING & <br /> MOUNTAIN IMMERSION</h2>
+                            </div>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed">
+                                For explorers who want movement, mountains, and culture combined. Gentle to moderate hikes blended with grounding.
+                            </p>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Shigar Broq & Thalle La</h4>
+                                <p className="text-sm text-ink-soft font-light">Scenic treks toward alpine meadows and high mountain passes.</p>
+                            </div>
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Explorers & Artists</h4>
+                                <p className="text-sm text-ink-soft font-light">Perfect for nature lovers, active travelers, and photographers seeking inspiration.</p>
+                            </div>
+                        </div>
+
+                        <div className="pt-8 flex flex-col gap-6">
+                            <Link href="/journeys/hiking-mountain-immersion" className="text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 self-start hover:text-ink hover:border-ink transition-all font-medium">
+                                View Full Details →
+                            </Link>
+                            <Link href="/stay#booking-form" className="inline-block px-10 py-4 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all self-start shadow-sm">
+                                Book Your Trek
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Journey 4: SPRING BLOSSOM RETREAT */}
+                <section id="spring" className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                    {/* Content Side (Flipped for alternating) */}
+                    <div className="space-y-12 order-2 md:order-1 md:sticky md:top-32">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-earth text-xs uppercase tracking-[0.4em] font-medium">Seasonal Bloom</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">4. SPRING <br /> BLOSSOM RETREAT</h2>
+                            </div>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed">
+                                Experience Shigar during apricot blossom season. Pink trees, snow peaks, and peaceful village life.
+                            </p>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Village Blossom Walks</h4>
+                                <p className="text-sm text-ink-soft font-light">Gentle morning walks through blooming orchards and grounding circles.</p>
+                            </div>
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Slow Travelers</h4>
+                                <p className="text-sm text-ink-soft font-light">Curated for couples, artists, and photographers in the heart of spring.</p>
+                            </div>
+                        </div>
+
+                        <div className="pt-8 flex flex-col gap-6">
+                            <Link href="/journeys/spring-blossom-retreat" className="text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 self-start hover:text-ink hover:border-ink transition-all font-medium">
+                                View Full Details →
+                            </Link>
+                            <Link href="/stay#booking-form" className="inline-block px-10 py-4 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all self-start">
+                                Join the Bloom
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Visual Side: 3 Photos in a Column */}
+                    <div className="grid grid-cols-1 gap-6 order-1 md:order-2">
+                        <div className="aspect-[4/5] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/land/Spring Season.webp" alt="Spring Blossom" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Soul Journey Pic 2.webp" alt="Spring Blossom" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-sand/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Soul Journey Pic 3.webp" alt="Spring Blossom" fill className="object-cover" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* Journey 5: NATURE IMMERSION & STAR GAZING RETREAT */}
+                <section id="immersion" className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                    {/* Visual Side: 3 Photos in a Column */}
+                    <div className="grid grid-cols-1 gap-6 order-1">
+                        <div className="aspect-[4/5] relative bg-earth/10 rounded-sm overflow-hidden">
+                            <Image src="/images/home/Nature Immersions.webp" alt="Nature Immersion" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-earth/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Nature Immersion Pic 2.webp" alt="Nature Immersion" fill className="object-cover" />
+                        </div>
+                        <div className="aspect-[4/3] relative bg-earth/10 rounded-sm overflow-hidden">
+                            <Image src="/images/journeys/Nature Immersion Pic 3.webp" alt="Nature Immersion" fill className="object-cover" />
+                        </div>
+                    </div>
+
+                    {/* Content Side: Modern Text Layout */}
+                    <div className="space-y-12 order-2 md:sticky md:top-32">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-earth text-xs uppercase tracking-[0.4em] font-medium">Cosmic Connection</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">5. NATURE IMMERSION <br /> & STAR GAZING</h2>
+                            </div>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed">
+                                Connect with the raw power of Baltistan. Glacial streams, powerful landscapes, and nights under the Milky Way.
+                            </p>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Glacial Energy</h4>
+                                <p className="text-sm text-ink-soft font-light">Guided hikes toward glacial water and deep star-gazing nights.</p>
+                            </div>
+                            <div className="border-l-2 border-earth/20 pl-6 py-2">
+                                <h4 className="font-serif text-xl text-ink">Minimalists & Explorers</h4>
+                                <p className="text-sm text-ink-soft font-light">For those seeking reconnection and explorers of silence.</p>
+                            </div>
+                        </div>
+
+                        <div className="pt-8 flex flex-col gap-6">
+                            <Link href="/journeys/nature-immersion-star-gazing" className="text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 self-start hover:text-ink hover:border-ink transition-all font-medium">
+                                View Full Details →
+                            </Link>
+                            <Link href="/stay#booking-form" className="inline-block px-10 py-4 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all self-start">
+                                Inquire for Dates
+                            </Link>
+                        </div>
                     </div>
                 </section>
 

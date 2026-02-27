@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const fadeUp: Variants = {
@@ -15,10 +16,13 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-stone/20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="/images/home/serenge_retreat_hero.jpg"
-            alt="Serenge Retreat Hero"
-            className="w-full h-full object-cover opacity-90"
+          <Image
+            src="/images/home/Hero.png"
+            alt="Serengé Retreat hero image showing the eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
+            fill
+            className="object-cover opacity-90"
+            priority
+            quality={90}
           />
           <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay */}
         </div>
@@ -31,6 +35,7 @@ export default function Home() {
             className="text-4xl md:text-7xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
             Where Peace Meets <br /> <span className="italic text-earth-light">The Mountains</span>.
+            <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
           </motion.h1>
 
           <motion.p
@@ -48,13 +53,19 @@ export default function Home() {
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.4 }}
-            className="pt-8"
+            className="pt-8 flex flex-col md:flex-row gap-4 justify-center items-center"
           >
             <Link
-              href="/journeys"
-              className="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm uppercase tracking-widest text-white hover:bg-white hover:text-ink transition-all duration-500"
+              href="/stay#booking-form"
+              className="inline-block px-8 py-3 bg-white text-ink rounded-full text-sm uppercase tracking-widest hover:bg-earth hover:text-white transition-all duration-500 shadow-xl"
             >
-              Begin Your Journey
+              Find Your Sanctuary
+            </Link>
+            <Link
+              href="/story"
+              className="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm uppercase tracking-widest text-white hover:bg-white/20 transition-all duration-500"
+            >
+              Our Story
             </Link>
           </motion.div>
         </div>
@@ -63,8 +74,8 @@ export default function Home() {
       {/* SECTION 1.5: THE MEANING (NEW) */}
       <section className="py-24 px-6 max-w-3xl mx-auto text-center space-y-12">
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-earth">The Name</p>
-          <h2 className="text-3xl md:text-4xl font-serif text-ink">Serengé</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-earth">The Philosophy</p>
+          <h2 className="text-3xl md:text-4xl font-serif text-ink">The Meaning of Serengé</h2>
           <p className="text-ink-soft font-light text-sm tracking-widest uppercase italic">/se-ren-ge/</p>
         </div>
 
@@ -82,42 +93,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: THE CALL (Poetic Intro & Mission) */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-canvas">
-        <div className="max-w-4xl mx-auto text-center space-y-12">
+      {/* SECTION 2: THE STORY PREVIEW (NEW) */}
+      <section className="py-24 px-6 md:px-12 bg-canvas">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="relative aspect-[4/5] bg-stone/20 rounded-sm overflow-hidden shadow-2xl"
+          >
+            <Image
+              src="/images/story/Aslam.webp"
+              alt="Aslam Shigri's journey from K2 Trail to Serengé Retreat"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <p className="text-sm uppercase tracking-widest text-earth">Our Heritage</p>
+              <h2 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">
+                From the K2 Trail <br /> to the River House.
+              </h2>
+            </div>
+            <p className="text-ink-soft font-light text-lg leading-relaxed">
+              Before Serengé was a sanctuary, it was a dream born on the glaciers of the Karakoram.
+              Founder Aslam Shigri spent years as a porter on the K2 Base Camp route,
+              learning that while the climb requires strength, the soul requires stillness.
+            </p>
+            <div className="pt-4">
+              <Link href="/story" className="text-xs uppercase tracking-[0.3em] text-earth border-b border-earth/20 pb-1 hover:text-ink hover:border-ink transition-all">
+                The Heritage Story →
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 2.5: MISSION (REFINED) */}
+      <section className="py-24 bg-paper/50">
+        <div className="max-w-4xl mx-auto text-center px-6 space-y-12">
           <div className="space-y-4">
-            <p className="text-sm uppercase tracking-widest text-earth">Our Mission</p>
+            <p className="text-xs uppercase tracking-widest text-earth">The Mission</p>
             <h2 className="text-2xl md:text-4xl font-serif text-ink leading-relaxed">
-              To offer not just a stay — but a sense of belonging,
-              calm, and <span className="italic">meaningful connection</span>.
+              Eco-Conscious Wellness & <span className="italic">Meaningful Connection</span> in Baltistan
             </h2>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-12 text-left pt-12 border-t border-earth/10">
-            <p className="text-ink-soft font-light leading-relaxed">
-              Serenge Retreat is an eco-conscious space where travelers can reconnect with nature,
-              experience authentic village life, and feel the warmth of Balti hospitality.
-            </p>
-            <p className="text-ink-soft font-light leading-relaxed">
-              We aim to create a sanctuary where the rhythm of the valley dictates the day,
-              allowing you to rediscover the peace that exists in the heart of the mountains.
-            </p>
-          </div>
-          <div className="pt-8 text-center md:text-left">
-            <p className="font-serif italic text-xl text-ink">— Aslam Shigri</p>
-            <p className="text-[10px] uppercase tracking-widest text-ink-muted mt-1">Founder & High-Altitude Guide</p>
-          </div>
+          <p className="text-ink-soft font-light text-lg leading-relaxed max-w-2xl mx-auto italic">
+            "A sanctuary where the rhythm of the valley dictates the day,
+            allowing you to rediscover the peace that exists in the heart of mountain silence."
+          </p>
         </div>
       </section>
 
       {/* SECTION 3: PATHWAYS */}
       <section className="py-20 px-6 md:px-12 bg-paper">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <p className="text-xs uppercase tracking-[0.4em] text-earth">Your Path</p>
+            <h2 className="text-3xl md:text-5xl font-serif text-ink italic">Choose Your Journey</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <Link href="/journeys#soul" className="group block space-y-4">
               <div className="h-96 w-full bg-stone/20 overflow-hidden relative rounded-sm">
-                <img src="/images/home/Soul Journeys.webp" alt="Soul Journeys" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <Image
+                  src="/images/home/Soul Journeys.webp"
+                  alt="Soul Journeys - Guided introspection and silence at Serengé Retreat"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Soul Journeys</h3>
@@ -129,7 +176,13 @@ export default function Home() {
             {/* Card 2 */}
             <Link href="/journeys#wellness" className="group block space-y-4">
               <div className="h-96 w-full bg-sand/30 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
-                <img src="/images/home/Wellness Retreat.webp" alt="Wellness Retreats" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <Image
+                  src="/images/home/Wellness Retreat.webp"
+                  alt="Wellness Retreats - Breathwork and yoga in the Karakoram mountains"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-sand/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Wellness Retreats</h3>
@@ -141,7 +194,13 @@ export default function Home() {
             {/* Card 3 */}
             <Link href="/journeys#immersion" className="group block space-y-4">
               <div className="h-96 w-full bg-earth/20 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
-                <img src="/images/home/Nature Immersions.webp" alt="Nature Immersions" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <Image
+                  src="/images/home/Nature Immersions.webp"
+                  alt="Nature Immersions - Glacier walks and star-gazing in Shigar Valley"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-earth/10 group-hover:bg-transparent transition-colors" />
               </div>
               <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Nature Immersions</h3>
@@ -168,13 +227,20 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: FINAL CTA */}
-      <section className="py-20 bg-paper text-center">
-        <Link
-          href="/book"
-          className="inline-block px-12 py-4 bg-ink text-canvas text-sm uppercase tracking-widest hover:bg-earth transition-colors duration-500"
-        >
-          Start Your Conversation
-        </Link>
+      <section className="py-32 bg-paper text-center space-y-8 px-6 border-t border-earth/5">
+        <h3 className="text-3xl md:text-5xl font-serif text-ink italic">Ready to step into the silence?</h3>
+        <p className="text-ink-soft font-light max-w-xl mx-auto">
+          We prefer human connection over automated systems.
+          Message us to begin planning your stay at Serengé.
+        </p>
+        <div className="pt-6">
+          <Link
+            href="/stay#booking-form"
+            className="inline-block px-12 py-4 bg-earth text-white text-sm uppercase tracking-widest hover:bg-ink transition-colors duration-500 shadow-lg"
+          >
+            Start the Conversation
+          </Link>
+        </div>
       </section>
     </div>
   );

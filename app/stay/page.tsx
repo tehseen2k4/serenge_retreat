@@ -1,64 +1,129 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 import RoomCarousel from "../components/RoomCarousel";
-import ArchitecturalDetails from "../components/ArchitecturalDetails";
 import Image from "next/image";
+import Link from "next/link";
+import BookingWizard from "../components/BookingWizard";
+import StructuredData from "../components/StructuredData";
 
 export default function StayPage() {
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How far is Serengé Retreat from Skardu Airport?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Serengé Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough mountain track."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a 4x4 vehicle to reach the retreat?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The final 1.4 km to the retreat is a rough track best suited for 4x4 vehicles. We provide pickup assistance on request for guests arriving in standard cars."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What type of food is served at Serengé Retreat?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We serve traditional Balti meals, organic garden-fresh vegetables, and farm-to-table dining inspired by the seasons of Shigar Valley."
+                }
+            }
+        ]
+    };
+
     return (
         <div className="bg-canvas min-h-screen pb-20">
+            <StructuredData data={faqSchema} />
 
             {/* Hero with Image */}
             <div className="relative h-[60vh] w-full">
                 <Image
                     src="/images/stay/Stay Hero.webp"
-                    alt="Serenge Stay"
+                    alt="Serengé Retreat Sanctuary - Sustainable mud brick accommodation in Shigar Valley, Baltistan"
                     fill
                     className="object-cover"
                     priority
                 />
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-center">
-                    <h1 className="text-4xl md:text-6xl font-serif text-white mb-2">Built from the Earth</h1>
+                    <h1 className="text-4xl md:text-6xl font-serif text-white mb-2">Built from the Earth: Eco-Stays in Shigar</h1>
                     <p className="text-white/90 text-lg font-light max-w-2xl mx-auto">
-                        Our walls are made of mud, straw, and stone. They breathe with you.
+                        Our walls are made of mud, straw, and stone. A sustainable sanctuary in Baltistan.
                     </p>
                 </div>
             </div>
 
-            {/* Choose Your Room Section */}
-            <section className="max-w-7xl mx-auto px-6 py-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
-                    <div className="space-y-6">
-                        <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Choose Your Room</h2>
-                        <h3 className="text-3xl md:text-5xl font-serif text-ink italic leading-tight">
-                            A cozy space for <br /> slow mornings.
-                        </h3>
-                        <p className="text-ink-soft font-light text-lg">
-                            Large windows, warm wood details, and serene views of the mountains and river.
-                            Ideal for those who love comfort blended with nature.
-                        </p>
+            {/* SECTION 1: THE ROOMS & BOOKING WIZARD (NEW LAYOUT) */}
+            <section id="booking-form" className="py-32 px-6 max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    {/* Left Column: Context */}
+                    <div className="space-y-12 lg:sticky lg:top-32">
+                        <div className="space-y-6">
+                            <h2 className="text-xs uppercase tracking-[0.4em] text-earth">Sanctuary Rooms</h2>
+                            <h3 className="text-4xl md:text-6xl font-serif text-ink italic leading-tight">
+                                Choose your home <br /> <span className="text-earth">in Shigar Valley.</span>
+                            </h3>
+                            <p className="text-ink-soft text-lg font-light leading-relaxed max-w-md">
+                                Large windows, warm wood details, and serene views of the mountains and river.
+                                Ideal for those who love comfort blended with nature.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-8 pt-8 border-t border-earth/10">
+                            <div className="space-y-2">
+                                <h4 className="text-xs uppercase tracking-widest text-ink font-medium">Included</h4>
+                                <ul className="text-[10px] text-ink-soft space-y-1 uppercase tracking-wider">
+                                    <li>• Organic Breakfast</li>
+                                    <li>• Running Hot Water</li>
+                                    <li>• High Speed Wi-Fi</li>
+                                    <li>• Room Service</li>
+                                </ul>
+                            </div>
+                            <div className="space-y-2">
+                                <h4 className="text-xs uppercase tracking-widest text-ink font-medium">Boutique</h4>
+                                <p className="text-[10px] text-ink-soft uppercase tracking-wider leading-relaxed">
+                                    Only 8 exclusive rooms to ensure silence and privacy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="pt-8 text-xs text-ink-muted italic">
+                            "The rhythm of the valley dictates the day."
+                        </div>
                     </div>
-                    <div className="space-y-4 text-ink-soft font-light">
-                        <p className="italic">Riverside Hut / Deluxe Room / Twin Room</p>
-                        <div className="bg-paper p-6 rounded-lg space-y-4">
-                            <h4 className="text-ink font-medium uppercase text-xs tracking-widest">Included Amenities</h4>
-                            <ul className="grid grid-cols-2 gap-y-2 text-xs">
-                                <li>• Welcome drink</li>
-                                <li>• Complimentary water</li>
-                                <li>• Running Hot Water</li>
-                                <li>• Room Service</li>
-                                <li>• Kitchen Available</li>
-                                <li>• 1 Water Bottle/Day</li>
-                            </ul>
+
+                    {/* Right Column: The Wizard */}
+                    <div className="space-y-8">
+                        <BookingWizard />
+                        <div className="p-8 bg-paper/50 border border-earth/5 text-center">
+                            <p className="text-xs text-ink-soft font-light italic">
+                                Prefer a standard form? <Link href="/book" className="text-earth underline underline-offset-4">Visit our Booking Page</Link>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <RoomCarousel />
             </section>
 
-            {/* Architectural Details Mosaic */}
-            <ArchitecturalDetails />
+            {/* Room Details Overlay/Carousel */}
+            <section className="pb-32 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-12 flex justify-between items-end">
+                        <h3 className="text-2xl font-serif text-ink italic">The Aesthetic</h3>
+                        <p className="text-xs uppercase tracking-widest text-ink/40">Scroll to explore rooms</p>
+                    </div>
+                    <RoomCarousel />
+                </div>
+            </section>
 
             {/* Our Facilities Section */}
             <section className="bg-paper py-24 px-6 border-t border-earth/10">
@@ -67,7 +132,7 @@ export default function StayPage() {
                         <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Our Facilities</h2>
                         <h3 className="text-3xl md:text-4xl font-serif text-ink">Comfort. Culture. Calm.</h3>
                         <p className="text-ink-soft font-light max-w-2xl mx-auto">
-                            Everything at Serenge Retreat is designed for slow, soulful stays in the heart of Shigar.
+                            Everything at Serengé Retreat is designed for slow, soulful stays in the heart of <Link href="/land" className="text-earth hover:underline">Shigar</Link>.
                         </p>
                     </div>
 
@@ -215,7 +280,6 @@ export default function StayPage() {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }

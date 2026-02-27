@@ -15,7 +15,7 @@ const links = [
     { href: "/stay", label: "Stay" },
     { href: "/land", label: "Land" },
     { href: "/story", label: "Story" },
-    { href: "/book", label: "Book" },
+    { href: "/stay#booking-form", label: "Book" },
 ];
 
 export default function Header() {
@@ -39,6 +39,26 @@ export default function Header() {
                 <nav className="hidden md:flex gap-8 items-center">
                     {links.map((link) => {
                         const isActive = pathname === link.href;
+                        const isBookLink = link.label === "Book";
+
+                        if (isBookLink) {
+                            return (
+                                <button
+                                    key={link.href}
+                                    onClick={() => {
+                                        if (pathname === "/stay") {
+                                            document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
+                                        } else {
+                                            window.location.href = "/stay#booking-form";
+                                        }
+                                    }}
+                                    className="relative text-sm uppercase tracking-widest text-ink focus:text-earth hover:text-earth transition-colors duration-300 font-medium"
+                                >
+                                    {link.label}
+                                </button>
+                            );
+                        }
+
                         return (
                             <Link
                                 key={link.href}

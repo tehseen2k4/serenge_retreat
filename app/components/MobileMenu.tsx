@@ -31,7 +31,7 @@ const links = [
     { href: "/stay", label: "Stay" },
     { href: "/land", label: "Land" },
     { href: "/story", label: "Story" },
-    { href: "/book", label: "Book" },
+    { href: "/stay#booking-form", label: "Book" },
 ];
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
@@ -55,21 +55,42 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                     {/* Links */}
                     <nav className="flex flex-col items-center gap-8">
-                        {links.map((link, i) => (
-                            <motion.div
-                                key={link.href}
-                                custom={i}
-                                variants={linkVariants}
-                            >
-                                <Link
-                                    href={link.href}
-                                    onClick={onClose}
-                                    className="text-3xl md:text-4xl font-serif text-ink hover:text-earth hover:italic transition-all duration-300"
+                        {links.map((link, i) => {
+                            const isBookLink = link.label === "Book";
+                            return (
+                                <motion.div
+                                    key={link.href}
+                                    custom={i}
+                                    variants={linkVariants}
                                 >
-                                    {link.label}
-                                </Link>
-                            </motion.div>
-                        ))}
+                                    {isBookLink ? (
+                                        <button
+                                            onClick={() => {
+                                                onClose();
+                                                setTimeout(() => {
+                                                    if (window.location.pathname === "/stay") {
+                                                        document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
+                                                    } else {
+                                                        window.location.href = "/stay#booking-form";
+                                                    }
+                                                }, 500);
+                                            }}
+                                            className="text-3xl md:text-4xl font-serif text-ink hover:text-earth hover:italic transition-all duration-300"
+                                        >
+                                            {link.label}
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            onClick={onClose}
+                                            className="text-3xl md:text-4xl font-serif text-ink hover:text-earth hover:italic transition-all duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    )}
+                                </motion.div>
+                            );
+                        })}
                     </nav>
 
                     {/* Footer / Widget */}
