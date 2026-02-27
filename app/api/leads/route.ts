@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
     try {
         const body = await request.json();
@@ -52,6 +50,7 @@ export async function POST(request: Request) {
         // --- 2. Resend Email Notification ---
         if (RESEND_API_KEY) {
             try {
+                const resend = new Resend(RESEND_API_KEY);
                 await resend.emails.send({
                     from: 'Serengé Retreat <onboarding@resend.dev>', // Update to your domain once verified
                     to: ['tehseen2k4@gmail.com'], // Primary notification email
