@@ -46,10 +46,15 @@ export default function BookPage() {
                 body: JSON.stringify(data),
             });
 
-            if (!res.ok) throw new Error("Failed");
+            const result = await res.json();
+
+            if (!res.ok) {
+                throw new Error(result.details || result.error || "Failed");
+            }
             setStatus("success");
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
+            alert(`Error: ${err.message}`);
             setStatus("error");
         }
     }
@@ -181,7 +186,7 @@ export default function BookPage() {
                     <div className="pt-12">
                         <div className="relative aspect-video bg-paper rounded-sm overflow-hidden grayscale opacity-60">
                             <Image
-                                src="/images/land/Land Seasons.webp"
+                                src="/images/snow.webp"
                                 alt="Serenge Retreat Landscape"
                                 fill
                                 className="object-cover"

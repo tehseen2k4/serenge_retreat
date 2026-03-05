@@ -50,16 +50,17 @@ export default function BookingWizard() {
                 body: JSON.stringify(data),
             });
 
-            if (!res.ok) throw new Error("Failed to submit inquiry");
+            const result = await res.json();
 
-            // Optional: Also send email via Resend if configured
-            // fetch("/api/send-email", { ... })
+            if (!res.ok) {
+                throw new Error(result.details || result.error || "Failed to submit inquiry");
+            }
 
             setStatus("success");
-        } catch (err) {
+        } catch (err: any) {
             console.error("Booking Error:", err);
             setStatus("idle");
-            alert("Something went wrong. Please try again or contact us via WhatsApp.");
+            alert(`Booking Error: ${err.message}. Please try again or contact us via WhatsApp.`);
         }
     };
 
