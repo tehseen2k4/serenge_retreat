@@ -17,7 +17,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/night retreat.PNG"
+            src="/images/night retreat.png"
             alt="Serengé Retreat hero image showing the eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
             fill
             className="object-cover opacity-95"
