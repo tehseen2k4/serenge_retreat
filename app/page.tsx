@@ -20,33 +20,34 @@ export default function Home() {
             src="/images/night retreat.png"
             alt="Serengé Retreat hero image showing the eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
             fill
-            className="object-cover opacity-95"
+            className="object-cover opacity-96"
             priority
-            quality={90}
+            quality={100}
           />
           <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay */}
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-6">
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-16">
           <motion.h1
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             className="text-3xl md:text-6xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
-            Experience The Serenity <br /> <span className="italic text-earth-light">In The Heart Of Shigar</span>
+            Experience The Serenity <br /> <span className="italic text-earth-light"></span>
             <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
           </motion.h1>
-
-          {/* <motion.p
+          <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-md"
+            className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-lg"
           >
-            Experience serenity in the heart of Shigar.
-          </motion.p> */}
+            in the heart of Shigar
+          </motion.p>
+
+          <div className="h-5" />
 
           <motion.div
             initial="hidden"
@@ -68,6 +69,8 @@ export default function Home() {
               Our Story
             </Link>
           </motion.div>
+
+
         </div>
       </section>
 
