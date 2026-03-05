@@ -17,10 +17,10 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/home/Hero.png"
+            src="/images/night retreat.PNG"
             alt="Serengé Retreat hero image showing the eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
             fill
-            className="object-cover opacity-90"
+            className="object-cover opacity-95"
             priority
             quality={90}
           />
@@ -32,13 +32,13 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-4xl md:text-7xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
+            className="text-3xl md:text-6xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
-            Where Peace Meets <br /> <span className="italic text-earth-light">The Mountains</span>.
+            Experience The Serenity <br /> <span className="italic text-earth-light">In The Heart Of Shigar</span>
             <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
           </motion.h1>
 
-          <motion.p
+          {/* <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
@@ -46,7 +46,7 @@ export default function Home() {
             className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-md"
           >
             Experience serenity in the heart of Shigar.
-          </motion.p>
+          </motion.p> */}
 
           <motion.div
             initial="hidden"
