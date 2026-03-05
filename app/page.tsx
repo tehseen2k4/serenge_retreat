@@ -34,10 +34,10 @@ export default function Home() {
             variants={fadeUp}
             className="text-3xl md:text-6xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
-            Experience The Serenity <br /> <span className="italic text-earth-light"></span>
+            Experience <br /> <span className="italic text-earth-light">The Serenity in the heart of Shigar</span>
             <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
           </motion.h1>
-          <motion.p
+          {/* <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
@@ -45,7 +45,7 @@ export default function Home() {
             className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-lg"
           >
             in the heart of Shigar
-          </motion.p>
+          </motion.p> */}
 
           <div className="h-5" />
 
