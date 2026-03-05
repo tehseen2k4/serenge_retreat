@@ -28,24 +28,24 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-16">
-          <motion.h1
+          {/* <motion.h1
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             className="text-3xl md:text-6xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
           >
-            Experience <br /> <span className="italic text-earth-light">The Serenity in the heart of Shigar</span>
+             <br /> <span className="italic text-earth-light">The Serenity in the heart of Shigar</span>
             <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
-          </motion.h1>
-          {/* <motion.p
+          </motion.h1> */}
+          <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/90 font-light tracking-[0.1em] drop-shadow-lg"
+            className="text-lg md:text-4xl text-white/90 font-light tracking-[0.1em] drop-shadow-lg"
           >
-            in the heart of Shigar
-          </motion.p> */}
+            EXPERIENCE THE SERENITY  <br /> in the heart of Shigar
+          </motion.p>
 
           <div className="h-5" />
 
@@ -58,16 +58,16 @@ export default function Home() {
           >
             <Link
               href="/stay#booking-form"
-              className="inline-block px-8 py-3 bg-white text-ink rounded-full text-sm uppercase tracking-widest hover:bg-earth hover:text-white transition-all duration-500 shadow-xl"
+              className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full text-sm uppercase tracking-[0.01em] hover:bg-earth hover:text-white transition-all duration-500 shadow-xl"
             >
               Find Your Sanctuary
             </Link>
-            <Link
+            {/* <Link
               href="/story"
               className="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm uppercase tracking-widest text-white hover:bg-white/20 transition-all duration-500"
             >
               Our Story
-            </Link>
+            </Link> */}
           </motion.div>
 
 
@@ -238,7 +238,7 @@ export default function Home() {
         </p>
         <div className="pt-6">
           <Link
-            href="/stay#booking-form"
+            href="/stay#book"
             className="inline-block px-12 py-4 bg-earth text-white text-sm uppercase tracking-widest hover:bg-ink transition-colors duration-500 shadow-lg"
           >
             Start the Conversation

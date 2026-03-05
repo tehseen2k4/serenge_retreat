@@ -53,7 +53,7 @@ export async function POST(request: Request) {
                 const resend = new Resend(RESEND_API_KEY);
                 await resend.emails.send({
                     from: 'Serengé Retreat <onboarding@resend.dev>', // Update to your domain once verified
-                    to: ['tehseen2k4@gmail.com'], // Primary notification email
+                    to: ['tehseen2k4@gmail.com', 'reegoadventure@gmail.com'], // Primary notification email
                     subject: `New Inquiry: ${name} from Serengé Website`,
                     html: `
                         <div style="font-family: serif; color: #1c1917; max-width: 600px; margin: auto; padding: 40px; border: 1px solid #e7e5e4;">
