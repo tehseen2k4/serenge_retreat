@@ -53,7 +53,7 @@ export async function POST(request: Request) {
                 const resend = new Resend(RESEND_API_KEY);
                 await resend.emails.send({
                     from: 'Serengé Retreat <onboarding@resend.dev>', // Update to your domain once verified
-                    to: ['tehseen2k4@gmail.com', 'reegoadventure@gmail.com'], // Primary notification email
+                    to: ['reegoadventure@gmail.com'], // Primary notification email
                     subject: `New Inquiry: ${name} from Serengé Website`,
                     html: `
                         <div style="font-family: serif; color: #1c1917; max-width: 600px; margin: auto; padding: 40px; border: 1px solid #e7e5e4;">
@@ -79,11 +79,19 @@ export async function POST(request: Request) {
                         </div>
                     `
                 });
-            } catch (emailErr) {
+            } catch (emailErr: any) {
                 console.error('Resend Email Error:', emailErr);
+                return NextResponse.json({
+                    error: 'Email failed to send',
+                    details: emailErr.message || 'Unknown error'
+                }, { status: 500 });
             }
         } else {
-            console.log('Resend Mock Data (Missing API Key):', body);
+            console.error('CRITICAL: RESEND_API_KEY is missing in production environment');
+            return NextResponse.json({
+                error: 'Configuration Error',
+                details: 'Email service is not configured (API Key missing)'
+            }, { status: 500 });
         }
 
         return NextResponse.json({ message: 'Inquiry processed successfully' }, { status: 200 });

@@ -22,7 +22,7 @@ export default function Home() {
             fill
             className="object-cover opacity-96"
             priority
-            quality={100}
+            quality={90}
           />
           <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay */}
         </div>
