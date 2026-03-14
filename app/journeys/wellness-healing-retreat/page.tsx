@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ItineraryAccordion from "../../components/ItineraryAccordion";
 import StructuredData from "../../components/StructuredData";
-import Breathwork from "../../components/Breathwork";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -155,23 +154,6 @@ export default function WellnessHealingRetreatPage() {
                                 { time: "Departure", activity: "Departure from Shigar." }
                             ]}
                         />
-                    </div>
-                </section>
-
-                {/* Digital Breathwork Experience */}
-                <section className="space-y-12">
-                    <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-sm uppercase tracking-widest text-earth">Interactive Ritual</h2>
-                        <h3 className="text-4xl font-serif text-ink italic">Breathe with Shigar</h3>
-                        <p className="text-ink-soft font-light leading-relaxed">
-                            A preview of the somatic practices we offer. At 2,300m, conscious breathing becomes a bridge between your body and the mountain air. Practice this 4-4-4-4 rhythm to center your nervous system before your journey.
-                        </p>
-                    </div>
-                    <div className="max-w-4xl mx-auto">
-                        <Breathwork />
-                    </div>
-                    <div className="text-center">
-                        <p className="text-xs text-ink/40 italic uppercase tracking-widest">Best experienced with audio enabled.</p>
                     </div>
                 </section>
 

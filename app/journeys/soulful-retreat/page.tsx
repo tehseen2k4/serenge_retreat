@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ItineraryAccordion from "../../components/ItineraryAccordion";
 import StructuredData from "../../components/StructuredData";
-import TheRelease from "../../components/TheRelease";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -147,23 +146,6 @@ export default function SoulfulRetreatPage() {
                                 { time: "Departure", activity: "Departure with intention." }
                             ]}
                         />
-                    </div>
-                </section>
-
-                {/* Digital Release Ritual */}
-                <section className="space-y-12">
-                    <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-sm uppercase tracking-widest text-earth">Sacred Intention</h2>
-                        <h3 className="text-4xl font-serif text-ink italic">The Digital Release</h3>
-                        <p className="text-ink-soft font-light leading-relaxed">
-                            Sacred rituals have been part of Himalayan life for centuries. This digital fire ceremony is an invitation to leave behind what no longer serves you. Type a burden, watch it dissolve into the mountain winds, and prepare your heart for the silence of Alchori.
-                        </p>
-                    </div>
-                    <div className="max-w-4xl mx-auto">
-                        <TheRelease />
-                    </div>
-                    <div className="text-center">
-                        <p className="text-xs text-ink/40 italic uppercase tracking-widest">Symbolic preparation for your Soul Journey.</p>
                     </div>
                 </section>
 

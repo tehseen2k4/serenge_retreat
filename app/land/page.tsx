@@ -57,7 +57,7 @@ export default function LandPage() {
                         </p>
                     </div>
                     {/* Image Side - Refactored to match other sections */}
-                    <div className="flex-1 aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
+                    <div className="flex-1 w-full aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
                         <Image
                             src="/images/land/Khosar Gang.webp"
                             alt="Khosar Gang peak (6,040m) overlooking Serengé Retreat in Shigar Valley"
@@ -80,7 +80,7 @@ export default function LandPage() {
                         </p>
                     </div>
                     {/* Image Side - Refactored to match other sections */}
-                    <div className="order-1 md:order-2 flex-1 aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
+                    <div className="order-1 md:order-2 flex-1 w-full aspect-video relative bg-stone/10 overflow-hidden rounded-sm group">
                         <Image
                             src="/images/land/Spantik Peak.webp"
                             alt="Spantik Golden Peak (7,027m) in Baltistan at sunset"

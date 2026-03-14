@@ -92,7 +92,7 @@ export default function StayPage() {
                             <div className="space-y-2">
                                 <h4 className="text-xs uppercase tracking-widest text-ink font-medium">Boutique</h4>
                                 <p className="text-[10px] text-ink-soft uppercase tracking-wider leading-relaxed">
-                                    Only 8 exclusive rooms to ensure silence and privacy.
+                                    Exclusive rooms to ensure silence and privacy.
                                 </p>
                             </div>
                         </div>

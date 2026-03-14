@@ -30,7 +30,7 @@ export default function StoryPage() {
                 "url": "https://serengeretreat.com/images/logo_brown.png"
             }
         },
-        "datePublished": "2024-01-01",
+        "datePublished": "2026-01-01",
         "image": "https://serengeretreat.com/images/story/Aslam.webp",
         "articleBody": "In the quiet village of Alchori, along the banks of the Shigar River and beneath the vast sky of the Karakoram, a childhood dream slowly took root...",
         "mainEntityOfPage": {
@@ -66,7 +66,7 @@ export default function StoryPage() {
                     {/* Left Small Detail Image */}
                     <motion.div
                         initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-                        className="hidden md:block md:col-span-4 aspect-[3/4] relative bg-paper rounded-sm overflow-hidden"
+                        className="block md:col-span-4 aspect-[3/4] relative bg-paper rounded-sm overflow-hidden mb-8 md:mb-0 w-2/3 md:w-full mx-auto"
                     >
                         <Image
                             src="/images/story/Aslam.webp"
@@ -194,14 +194,6 @@ export default function StoryPage() {
                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
                     className="relative py-32 overflow-hidden text-center"
                 >
-                    <div className="absolute inset-0 z-0 opacity-10">
-                        <Image
-                            src="/images/land/Land Seasons.webp"
-                            alt="Background texture"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
 
                     <div className="relative z-10 max-w-2xl mx-auto space-y-8 px-6">
                         <h2 className="text-sm uppercase tracking-[0.4em] text-earth">A Living Story</h2>
