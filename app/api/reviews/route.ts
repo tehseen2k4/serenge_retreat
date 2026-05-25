@@ -6,11 +6,11 @@ export const revalidate = 86400;
 const PLACE_ID = 'ChIJ3SqGYQBZ5DgR16RUTq_f2zc';
 
 export async function GET() {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
   if (!apiKey) {
     return NextResponse.json(
-      { error: 'GOOGLE_PLACES_API_KEY is not configured' },
+      { error: 'Google Places API key is not configured' },
       { status: 500 }
     );
   }
