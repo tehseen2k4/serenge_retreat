@@ -7,27 +7,66 @@ import Image from "next/image";
 
 const faqs = [
     {
+        question: "Where is Serenge Retreat located?",
+        answer: "Serenge Retreat is located in Alchori village, Shigar Valley, Skardu — surrounded by mountains, rivers, forests, and authentic Balti culture."
+    },
+    {
         question: "How far is Serenge Retreat from Skardu Airport?",
-        answer: "Serenge Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough track, best for 4x4 vehicles — drive slowly or request a pickup."
+        answer: "It is approximately 57 km from Skardu Airport (around 1 hour 30 minutes to 1 hour 45 minutes depending on road and weather conditions)."
     },
     {
-        question: "Do you provide Rent-a-Car Services?",
-        answer: "Yes, we arrange all kinds of vehicles as per guest requirements through our partner network."
+        question: "What types of rooms are available at Serenge Retreat?",
+        answer: "We offer traditional and deluxe rooms with mountain views, cozy interiors, and architecture inspired by Balti heritage."
     },
     {
-        question: "Do you provide Airport Pick/Drop Services?",
-        answer: "Yes, we provide Airport Pick/Drop services on guest request. Please coordinate with us at least 24 hours in advance."
+        question: "Is food available at the retreat?",
+        answer: "Yes, we serve homemade Balti cuisine, Pakistani dishes, organic village food, tea, and seasonal fresh local ingredients."
     },
     {
-        question: "Do you have Hiking Guides?",
-        answer: "Yes, we have local hiking guides and high-altitude porters for K2 Base Camp treks and Khosar Gang peak expeditions."
+        question: "Do you provide airport pickup and transport services?",
+        answer: "Yes, we offer airport pick-up/drop-off, jeep rentals, local transport, and customized travel arrangements across Skardu and Shigar Valley."
     },
     {
-        question: "Is Deosai Road open?",
-        answer: "It usually opens between June 5-15 and closes between October 5-15, depending on the snowfall. Always check with us for real-time updates."
+        question: "Is Serenge Retreat suitable for families and solo travelers?",
+        answer: "Yes, it is ideal for families, couples, solo travelers, photographers, hikers, and anyone seeking a peaceful nature escape."
+    },
+    {
+        question: "What activities can guests do at and around Serenge Retreat?",
+        answer: "Guests can enjoy village walks, river walks, hiking trails, waterfalls, cultural experiences, bonfires, stargazing, photography, camping, and day trips around Shigar Valley."
+    },
+    {
+        question: "Is WiFi available at the retreat?",
+        answer: "Yes, WiFi is available, though speeds may vary due to the remote mountain location and weather conditions."
+    },
+    {
+        question: "What is the best time to visit Serenge Retreat?",
+        answer: "The best time to visit is from April to October for green landscapes, trekking, cultural experiences, and clear mountain views."
+    },
+    {
+        question: "Do you organize tours and trekking?",
+        answer: "Yes, through our partners we organize guided tours, cultural trips, hiking, trekking, camping, and photography experiences across Northern Pakistan."
+    },
+    {
+        question: "Is Serenge Retreat eco-friendly?",
+        answer: "Yes, we follow eco-friendly practices including low-impact tourism, local community support, sustainable materials, and responsible travel experiences."
+    },
+    {
+        question: "How can guests book a stay?",
+        answer: "You can book directly via WhatsApp, Instagram, Airbnb, Booking.com, or by submitting an inquiry through our website."
+    },
+    {
+        question: "What makes Serenge Retreat different from hotels in Skardu?",
+        answer: "Unlike standard hotels, Serenge Retreat offers an immersive village experience with authentic Balti culture, peaceful surroundings, personalized hospitality, and slow living in nature."
+    },
+    {
+        question: "Can guests experience local Balti culture and village life?",
+        answer: "Yes, guests can experience Balti traditions, local food, village walks, farming culture, storytelling, music, and interactions with local communities."
+    },
+    {
+        question: "Is Serenge Retreat good for remote work or slow travel?",
+        answer: "Yes, it is ideal for remote workers, writers, photographers, and slow travelers, offering peaceful surroundings, mountain views, WiFi, and cultural immersion experiences including bonfires and local evenings."
     }
 ];
-
 export default function BookPage() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [openIndex, setOpenIndex] = useState<number | null>(null);
