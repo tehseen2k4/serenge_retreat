@@ -223,7 +223,7 @@ export default function BookPage() {
 
                     {/* Trust / Visual */}
                     <div className="pt-12">
-                        <div className="relative aspect-video bg-paper rounded-sm overflow-hidden grayscale opacity-60">
+                        <div className="relative aspect-video bg-paper rounded-sm">
                             <Image
                                 src="/images/snow.webp"
                                 alt="Serenge Retreat Landscape"
