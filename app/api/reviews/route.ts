@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 
-// Revalidate every 24 hours — cached by Next.js edge/ISR
-export const revalidate = 86400;
+export const dynamic = 'force-dynamic';
 
 const PLACE_ID = 'ChIJ3SqGYQBZ5DgR16RUTq_f2zc';
 

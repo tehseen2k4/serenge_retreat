@@ -77,5 +77,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.6,
         },
+        // GEO-Optimized AI Query Pages
+        {
+            url: `${baseUrl}/eco-retreat-shigar-valley`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/best-riverside-stays-skardu`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/serenge-retreat-experience`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/digital-detox-pakistan`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/how-to-reach-serenge-retreat`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/things-to-do-shigar-valley`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        // Deep Narrative Articles
+        {
+            url: `${baseUrl}/journal/story-behind-serenge`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/journal/life-in-shigar-valley`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/journal/why-we-built-riverside-eco-retreat`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
     ]
 }

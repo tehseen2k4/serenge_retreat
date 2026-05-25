@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import GoogleReviews from "./components/GoogleReviews";
+import { Home as HomeIcon, Waves, Sprout, Flame, Mountain } from "lucide-react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -328,44 +329,64 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
-              <div className="text-3xl">🏡</div>
-              <h3 className="text-xl font-serif text-ink">Accommodation Types</h3>
-              <p className="text-sm text-ink-muted font-light leading-relaxed">
-                Choose between our handcrafted, mud-and-stone Balti cabins or pristine glamping domes located right on the river edge. Fully insulated with natural materials to ensure cozy comfort.
-              </p>
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <HomeIcon className="w-8 h-8 text-earth" />
+                </div>
+                <h3 className="text-xl font-serif text-ink mb-2">Accommodation Types</h3>
+                <p className="text-sm text-ink-muted font-light leading-relaxed">
+                  Choose between our handcrafted, mud-and-stone Balti cabins or pristine glamping domes located right on the river edge. Fully insulated with natural materials to ensure cozy comfort.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
-              <div className="text-3xl">🌊</div>
-              <h3 className="text-xl font-serif text-ink">Riverside Experience</h3>
-              <p className="text-sm text-ink-muted font-light leading-relaxed">
-                Rest beside the fast-flowing glacial water of the Shigar River. Walk our custom stone pathways, practice silent meditation on the shore, and watch majestic Karakoram sunsets.
-              </p>
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <Waves className="w-8 h-8 text-earth" />
+                </div>
+                <h3 className="text-xl font-serif text-ink mb-2">Riverside Experience</h3>
+                <p className="text-sm text-ink-muted font-light leading-relaxed">
+                  Rest beside the fast-flowing glacial water of the Shigar River. Walk our custom stone pathways, practice silent meditation on the shore, and watch majestic Karakoram sunsets.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
-              <div className="text-3xl">🧘</div>
-              <h3 className="text-xl font-serif text-ink">Wellness & Digital Detox</h3>
-              <p className="text-sm text-ink-muted font-light leading-relaxed">
-                A sanctuary explicitly curated to reset the nervous system. We offer somatic yoga practices, visiting guides, digital detox spaces, and guided breathwork workshops under open skies.
-              </p>
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <Sprout className="w-8 h-8 text-earth" />
+                </div>
+                <h3 className="text-xl font-serif text-ink mb-2">Wellness & Digital Detox</h3>
+                <p className="text-sm text-ink-muted font-light leading-relaxed">
+                  A sanctuary explicitly curated to reset the nervous system. We offer somatic yoga practices, visiting guides, digital detox spaces, and guided breathwork workshops under open skies.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
-              <div className="text-3xl">🔥</div>
-              <h3 className="text-xl font-serif text-ink">Bonfire & Outdoor Activities</h3>
-              <p className="text-sm text-ink-muted font-light leading-relaxed">
-                Experience authentic Balti community culture with evening outdoor bonfires, acoustic local music, organic farm-to-table dining, and pin-drop silent stargazing sessions.
-              </p>
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <Flame className="w-8 h-8 text-earth" />
+                </div>
+                <h3 className="text-xl font-serif text-ink mb-2">Bonfire & Outdoor Activities</h3>
+                <p className="text-sm text-ink-muted font-light leading-relaxed">
+                  Experience authentic Balti community culture with evening outdoor bonfires, acoustic local music, organic farm-to-table dining, and pin-drop silent stargazing sessions.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow col-span-1 md:col-span-2 lg:col-span-1">
-              <div className="text-3xl">🏔️</div>
-              <h3 className="text-xl font-serif text-ink">Nearby Attractions</h3>
-              <p className="text-sm text-ink-muted font-light leading-relaxed">
-                Embark on day hikes to Spantik Peak view-points and Khosar Gang trails. Tour the historic 17th-century Shigar Fort (just 30 minutes away), and discover the magic of the Skardu region.
-              </p>
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow col-span-1 md:col-span-2 lg:col-span-1 flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <Mountain className="w-8 h-8 text-earth" />
+                </div>
+                <h3 className="text-xl font-serif text-ink mb-2">Nearby Attractions</h3>
+                <p className="text-sm text-ink-muted font-light leading-relaxed">
+                  Embark on day hikes to Spantik Peak view-points and Khosar Gang trails. Tour the historic 17th-century Shigar Fort (just 30 minutes away), and discover the magic of the Skardu region.
+                </p>
+              </div>
             </div>
           </div>
         </div>

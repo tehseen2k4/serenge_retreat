@@ -31,6 +31,7 @@ const links = [
     { href: "/stay", label: "Stay" },
     { href: "/land", label: "Land" },
     { href: "/story", label: "Story" },
+    { href: "/journal", label: "Journal" },
     { href: "/stay#booking-form", label: "Book" },
 ];
 

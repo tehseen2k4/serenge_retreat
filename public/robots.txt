@@ -1,19 +1,45 @@
 # Serengé Retreat - robots.txt
+# Updated: 2026-05-26
+
+# ── Standard crawlers ──────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://serengeretreat.com/sitemap.xml
-
-# Block admin/api routes
+Allow: /eco-retreat-shigar-valley
+Allow: /best-riverside-stays-skardu
+Allow: /serenge-retreat-experience
+Allow: /digital-detox-pakistan
+Allow: /how-to-reach-serenge-retreat
+Allow: /things-to-do-shigar-valley
+Allow: /journal
+Allow: /journal/
+Allow: /images/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Crawl-delay: 1
 
-# Allow all images
+# ── Googlebot image crawler ────────────────────────────────────
 User-agent: Googlebot-Image
 Allow: /images/
 
-# Crawl delay for slower bots
-User-agent: *
-Crawl-delay: 1
+# ── AI crawlers (GEO — allow full indexing) ────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# ── Sitemap ────────────────────────────────────────────────────
+Sitemap: https://serengeretreat.com/sitemap.xml
