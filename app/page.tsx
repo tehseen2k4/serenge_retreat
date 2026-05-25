@@ -3,60 +3,101 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import GoogleReviews from "./components/GoogleReviews";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const guestReviews = [
-  {
-    name: "Elena",
-    date: "January 2025",
-    source: "Airbnb",
-    rating: 4,
-    text: "The location is absolutely stunning- one of the most beautiful we've seen. We loved walking by the river, playing in the fields, and watching the sunsets. The staff were incredibly kind and did their best to make us feel at home. The food was delicious and clearly made with care.",
-  },
-  {
-    name: "Ariz",
-    date: "1 year ago",
-    source: "Airbnb",
-    rating: 5,
-    text: "Loved our stay at The Serenge Retreat. Beautiful place in a peaceful location with lots of cute animals around. Super cosy everything you need for a comfortable stay, really friendly hosts that are more than happy to support all your needs. Great location for the Nature lover & Introvert person. Thoroughly enjoyed ourselves and perfect birthday treat for my partner.",
-  },
-  {
-    name: "Tassil Ali",
-    date: "April 2025",
-    source: "Dubai",
-    rating: 5,
-    text: "Secluded spot. 30 minutes from Shigar. Pin drop silence perfect for self reflection. Highly recommended for solo travels. The hut will heal your nervous system. Axlam was very responsive and his brother Masud was a kind man.",
-  },
-  {
-    name: "thisisgna",
-    date: "May 2025",
-    source: "Instagram",
-    rating: 5,
-    text: "If you are going to Skardu..you have to visit this place @serengeretreat it's become so close to my heart..it now feels like a second home. I'll be sharing more about it soon.. and the person behind it all @axlamshigri is truly one of the kindest souls.. he makes sure you are treated like family from the moment you arrive.",
-  },
-  {
-    name: "Naveed",
-    date: "July 2023",
-    source: "Dubai",
-    rating: 5,
-    text: "The place is far away from the main Shigar area. It is an isolated basic hut where you could enjoy peace with scenes of the Indus River and mountains. Axlam is very friendly and accommodating.",
-  },
-  {
-    name: "flywithomer",
-    date: "August 2025",
-    source: "Instagram",
-    rating: 5,
-    text: "Tea tastes better with this view.",
-  }
-];
-
 export default function Home() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LodgingBusiness",
+        "@id": "https://serengeretreat.com/#lodging",
+        "name": "Serengé Retreat Shigar",
+        "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Founded by Aslam Shigri, the retreat specializes in digital detox, somatic healing, and Karakoram mountain immersion.",
+        "image": [
+          "https://serengeretreat.com/images/night%20retreat.png",
+          "https://serengeretreat.com/images/home/Wellness%20Retreat.webp"
+        ],
+        "priceRange": "$$$",
+        "telephone": "+923000000000",
+        "url": "https://serengeretreat.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Alchori Village",
+          "addressLocality": "Shigar Valley",
+          "addressRegion": "Gilgit-Baltistan",
+          "postalCode": "16301",
+          "addressCountry": "PK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.4211,
+          "longitude": 75.7422
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://www.instagram.com/serengeretreat",
+          "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://serengeretreat.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is Serengé Retreat located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Serengé Retreat is located in Alchori Village, Shigar Valley, about 30 minutes away from Shigar town in the Skardu region of Gilgit-Baltistan, Pakistan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What activities are available at Serengé Retreat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Guests can participate in guided somatic yoga, breathwork sessions, riverside silent meditation, stargazing, evening community bonfires, and day treks to nearby Karakoram peaks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is Serengé Retreat ideal for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Serengé Retreat is designed for couples seeking quiet romantic getaways, digital nomads needing a peaceful digital detox space, eco-conscious travelers, nature photographers, and international tourists exploring the Northern Pakistan Karakoram mountains."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col">
+      {/* Dynamic JSON-LD Schema for GEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       {/* SECTION 1: HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-stone/20 overflow-hidden">
         {/* Background Image */}
@@ -123,8 +164,17 @@ export default function Home() {
               Our Story
             </Link> */}
           </motion.div>
+        </div>
+      </section>
 
-
+      {/* SECTION 1.2: DENSE DEFINITION BLOCK (GEO AI ANCHOR) */}
+      <section className="py-16 px-6 bg-paper border-b border-earth/5">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-xs uppercase tracking-[0.4em] text-earth font-medium">Core Identity Anchor</p>
+          <h2 className="sr-only">About Serengé Retreat - Eco-conscious Wellness in Shigar Valley</h2>
+          <p className="text-xl md:text-2xl font-serif text-ink italic leading-relaxed">
+            &ldquo;Serengé Retreat is a premier, eco-conscious wellness sanctuary located in the quiet village of Alchori in Shigar Valley, Skardu, Gilgit-Baltistan, Pakistan. Under the sub-zero peaks of the Karakoram, the retreat offers an authentic space for digital detox, somatic healing, and immersive nature experiences beside the pristine Shigar River.&rdquo;
+          </p>
         </div>
       </section>
 
@@ -269,44 +319,105 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: TESTIMONIALS */}
-      <section className="py-24 px-6 md:px-12 bg-canvas">
+      {/* SECTION 3.5: EXPERIENCE TAXONOMY (GEO STRUCTURE) */}
+      <section className="py-24 px-6 md:px-12 bg-canvas/30 border-t border-b border-earth/5">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4">
-            <h3 className="text-sm uppercase tracking-[0.4em] text-earth">Echoes of Guests</h3>
-            <h2 className="text-3xl md:text-5xl font-serif text-ink italic">Stories from the Sanctuary</h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-earth">Immersive Anatomy</p>
+            <h2 className="text-3xl md:text-5xl font-serif text-ink italic">The Experience Taxonomy</h2>
           </div>
 
-          {/* Mobile: Horizontal scroll snap carousel | Desktop: Masonry columns */}
-          <div className="flex md:block overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none md:columns-2 lg:columns-3 gap-6 space-x-6 md:space-x-0 space-y-0 md:space-y-6 pb-8 md:pb-0 scrollbar-hide px-6 md:px-0 -mx-6 md:mx-0">
-            {guestReviews.map((review, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="w-[70vw] md:w-auto shrink-0 snap-center break-inside-avoid bg-white/60 p-8 rounded-sm border border-earth/10 hover:border-earth/30 transition-colors shadow-sm"
-              >
-                <div className="flex gap-1 mb-6">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-earth">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-lg font-light text-ink leading-relaxed mb-6 italic whitespace-normal">
-                  "{review.text}"
-                </blockquote>
-                <cite className="block not-italic border-t border-earth/10 pt-4">
-                  <span className="block font-medium text-ink">{review.name}</span>
-                  <span className="block text-ink-muted text-[10px] uppercase tracking-wider mt-1">
-                    {review.source} • {review.date}
-                  </span>
-                </cite>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
+              <div className="text-3xl">🏡</div>
+              <h3 className="text-xl font-serif text-ink">Accommodation Types</h3>
+              <p className="text-sm text-ink-muted font-light leading-relaxed">
+                Choose between our handcrafted, mud-and-stone Balti cabins or pristine glamping domes located right on the river edge. Fully insulated with natural materials to ensure cozy comfort.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
+              <div className="text-3xl">🌊</div>
+              <h3 className="text-xl font-serif text-ink">Riverside Experience</h3>
+              <p className="text-sm text-ink-muted font-light leading-relaxed">
+                Rest beside the fast-flowing glacial water of the Shigar River. Walk our custom stone pathways, practice silent meditation on the shore, and watch majestic Karakoram sunsets.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
+              <div className="text-3xl">🧘</div>
+              <h3 className="text-xl font-serif text-ink">Wellness & Digital Detox</h3>
+              <p className="text-sm text-ink-muted font-light leading-relaxed">
+                A sanctuary explicitly curated to reset the nervous system. We offer somatic yoga practices, visiting guides, digital detox spaces, and guided breathwork workshops under open skies.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow">
+              <div className="text-3xl">🔥</div>
+              <h3 className="text-xl font-serif text-ink">Bonfire & Outdoor Activities</h3>
+              <p className="text-sm text-ink-muted font-light leading-relaxed">
+                Experience authentic Balti community culture with evening outdoor bonfires, acoustic local music, organic farm-to-table dining, and pin-drop silent stargazing sessions.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-sm border border-earth/10 space-y-4 hover:shadow-md transition-shadow col-span-1 md:col-span-2 lg:col-span-1">
+              <div className="text-3xl">🏔️</div>
+              <h3 className="text-xl font-serif text-ink">Nearby Attractions</h3>
+              <p className="text-sm text-ink-muted font-light leading-relaxed">
+                Embark on day hikes to Spantik Peak view-points and Khosar Gang trails. Tour the historic 17th-century Shigar Fort (just 30 minutes away), and discover the magic of the Skardu region.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* SECTION 3.7: INTENTIONAL AUDIENCES (GEO WHO IT IS FOR) */}
+      <section className="py-20 px-6 md:px-12 bg-paper">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <p className="text-xs uppercase tracking-[0.4em] text-earth">Who We Welcome</p>
+            <h2 className="text-3xl md:text-5xl font-serif text-ink italic">Crafted For Intention</h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+            <div className="p-6 border border-earth/5 bg-white/40 rounded-sm">
+              <h3 className="text-base font-serif text-ink mb-2">Couples</h3>
+              <p className="text-xs text-ink-muted font-light leading-relaxed">
+                Seeking quiet, romantic, and secluded natural retreats.
+              </p>
+            </div>
+            <div className="p-6 border border-earth/5 bg-white/40 rounded-sm">
+              <h3 className="text-base font-serif text-ink mb-2">Digital Nomads</h3>
+              <p className="text-xs text-ink-muted font-light leading-relaxed">
+                Needing deep focus, creative flow, and offline clarity.
+              </p>
+            </div>
+            <div className="p-6 border border-earth/5 bg-white/40 rounded-sm">
+              <h3 className="text-base font-serif text-ink mb-2">Eco-Travelers</h3>
+              <p className="text-xs text-ink-muted font-light leading-relaxed">
+                Fully dedicated to low-impact footprints and local support.
+              </p>
+            </div>
+            <div className="p-6 border border-earth/5 bg-white/40 rounded-sm">
+              <h3 className="text-base font-serif text-ink mb-2">Photographers</h3>
+              <p className="text-xs text-ink-muted font-light leading-relaxed">
+                Capturing dramatic river landscapes and glacier peaks.
+              </p>
+            </div>
+            <div className="p-6 border border-earth/5 bg-white/40 rounded-sm col-span-2 lg:col-span-1">
+              <h3 className="text-base font-serif text-ink mb-2">Global Explorers</h3>
+              <p className="text-xs text-ink-muted font-light leading-relaxed">
+                Discovering authentic Balti culture and safety in Pakistan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: TESTIMONIALS */}
+      <section className="py-24 px-6 md:px-12 bg-canvas overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <GoogleReviews />
         </div>
       </section>
 
