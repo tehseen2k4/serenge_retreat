@@ -87,48 +87,174 @@ export const metadata: Metadata = {
   verification: {
     // Add Google Search Console verification code here when available
     // google: 'your-verification-code',
+    google: "DblswjaZFD3jQ7etzDBs3LdHUISECoYWZ8dypzcui6w",
   },
 };
 
-// Organization Schema for SEO
+// Global Site-Wide Schema — Server Component (guaranteed crawler-visible)
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  "name": "Serengé Retreat",
-  "description": "Eco-conscious wellness retreat and boutique accommodation in Shigar Valley, Baltistan, Pakistan",
-  "url": "https://serengeretreat.com",
-  "logo": "https://serengeretreat.com/images/logo_brown.png",
-  "image": "https://serengeretreat.com/images/home/serenge_retreat_hero.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Alchori Village",
-    "addressLocality": "Shigar",
-    "addressRegion": "Gilgit-Baltistan",
-    "addressCountry": "PK"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "35.4167",
-    "longitude": "75.7333"
-  },
-  "priceRange": "$$-$$$",
-  "amenityFeature": [
-    { "@type": "LocationFeatureSpecification", "name": "Organic Meals" },
-    { "@type": "LocationFeatureSpecification", "name": "Yoga & Meditation Space" },
-    { "@type": "LocationFeatureSpecification", "name": "Eco-Friendly Architecture" },
-    { "@type": "LocationFeatureSpecification", "name": "Mountain Views" },
-    { "@type": "LocationFeatureSpecification", "name": "Riverside Location" }
-  ],
-  "starRating": {
-    "@type": "Rating",
-    "ratingValue": "5"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Aslam Shigri",
-    "jobTitle": "Founder & High-Altitude Guide",
-    "sameAs": "https://www.reegoadventure.com"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://serengeretreat.com/#organization",
+      "name": "Serenge Retreat",
+      "url": "https://serengeretreat.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://serengeretreat.com/images/logo_brown.png",
+        "caption": "Serengé Retreat - Eco Wellness Sanctuary in Shigar Valley"
+      },
+      "sameAs": [
+        "https://www.instagram.com/serengeretreat",
+        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://serengeretreat.com/#founder",
+        "name": "Aslam Shigri",
+        "jobTitle": "Founder & High-Altitude Guide",
+        "sameAs": "https://www.reegoadventure.com"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://serengeretreat.com/#website",
+      "url": "https://serengeretreat.com",
+      "name": "Serenge Retreat",
+      "description": "Eco-conscious wellness sanctuary in Shigar Valley, Baltistan, Pakistan",
+      "publisher": {
+        "@id": "https://serengeretreat.com/#organization"
+      }
+    },
+    {
+      "@type": ["LocalBusiness", "LodgingBusiness"],
+      "@id": "https://serengeretreat.com/#lodging",
+      "name": "Serengé Retreat Shigar",
+      "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Specializing in digital detox, somatic healing, and Karakoram mountain immersion.",
+      "url": "https://serengeretreat.com",
+      "telephone": "+923349669198",
+      "priceRange": "$$$",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://serengeretreat.com/images/night%20retreat.png",
+          "caption": "Serengé Retreat beside the Shigar River at night"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://serengeretreat.com/images/home/Wellness%20Retreat.webp",
+          "caption": "Eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alchori Village",
+        "addressLocality": "Shigar Valley",
+        "addressRegion": "Gilgit-Baltistan",
+        "postalCode": "16301",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.4211,
+        "longitude": 75.7422
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "14",
+        "bestRating": "5.0",
+        "worstRating": "1.0"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Organic Farm-to-Table Meals", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Yoga & Meditation Space", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Eco-Friendly Mud-and-Stone Architecture", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Karakoram Mountain Views", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Riverside Location on Shigar River", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Digital Detox Space", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Guided Wellness Retreats", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "WiFi Available", "value": true }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/serengeretreat",
+        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+      ]
+    },
+    {
+      "@type": "TouristAttraction",
+      "@id": "https://serengeretreat.com/#attraction",
+      "name": "Serengé Retreat — Eco Wellness Sanctuary in Shigar Valley",
+      "description": "A boutique eco-wellness sanctuary and tourist destination in Alchori Village, Shigar Valley, Baltistan, Pakistan. Offering somatic healing, cultural immersion, and Karakoram mountain experiences.",
+      "url": "https://serengeretreat.com",
+      "touristType": ["Eco-Travelers", "Wellness Seekers", "Couples", "Digital Nomads", "Nature Photographers", "Trekkers"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alchori Village",
+        "addressLocality": "Shigar Valley",
+        "addressRegion": "Gilgit-Baltistan",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.4211,
+        "longitude": 75.7422
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://serengeretreat.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Serengé Retreat located in Gilgit-Baltistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Serengé Retreat is located in Alchori Village, Shigar Valley, about 30 minutes from Shigar town in the Skardu region of Gilgit-Baltistan, Pakistan. Unlike standard hotels in Skardu city, it offers a peaceful, slow-living riverside environment surrounded by Karakoram peaks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Serengé Retreat from Skardu Airport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is approximately 57 km (about 1 hour 45 minutes drive) from Skardu Airport. We offer airport pickup assistance for all guests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Serengé Retreat different from hotels in Skardu and Shigar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike typical concrete hotels in Shigar or Skardu, Serengé Retreat offers an immersive eco-village stay using traditional mud-and-stone Balti architecture, organic local farm-to-table dining, and dedicated wellness programs including somatic yoga and digital detox."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What wellness activities are offered at Serengé Retreat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Guests can participate in guided somatic yoga, breathwork sessions, riverside silent meditation, stargazing, evening community bonfires, day treks to Karakoram peaks, and guided cultural experiences in Alchori Village."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Serengé Retreat eco-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Serengé Retreat is fully dedicated to low-impact tourism using traditional mud brick and poplar wood construction, organic food sourced from Alchori farms, solar lighting, and local community employment."
+          }
+        }
+      ]
+    }
+  ]
 };
 
 export default function RootLayout({
