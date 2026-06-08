@@ -12,36 +12,72 @@ const fadeIn = {
 };
 
 export default function StoryPage() {
-    const articleSchema = {
+    const storySchema = {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
-        "author": {
-            "@type": "Person",
-            "name": "Aslam Shigri",
-            "jobTitle": "Founder & Storyteller",
-            "url": "https://www.reegoadventure.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Serengé Retreat",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://serengeretreat.com/images/logo_brown.png"
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://serengeretreat.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Our Story",
+                        "item": "https://serengeretreat.com/story"
+                    }
+                ]
+            },
+            {
+                "@type": ["LocalBusiness", "LodgingBusiness"],
+                "@id": "https://serengeretreat.com/#lodging",
+                "name": "Serengé Retreat Shigar",
+                "url": "https://serengeretreat.com"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://serengeretreat.com/#founder",
+                "name": "Aslam Shigri",
+                "jobTitle": "Founder & Storyteller",
+                "worksFor": {
+                    "@id": "https://serengeretreat.com/#lodging"
+                },
+                "sameAs": [
+                    "https://www.reegoadventure.com"
+                ]
+            },
+            {
+                "@type": "Article",
+                "headline": "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
+                "author": {
+                    "@id": "https://serengeretreat.com/#founder"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Serengé Retreat",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://serengeretreat.com/images/logo_brown.png"
+                    }
+                },
+                "datePublished": "2026-01-01",
+                "image": "https://serengeretreat.com/images/story/Aslam.webp",
+                "articleBody": "In the quiet village of Alchori, along the banks of the Shigar River and beneath the vast sky of the Karakoram, a childhood dream slowly took root...",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://serengeretreat.com/story"
+                }
             }
-        },
-        "datePublished": "2026-01-01",
-        "image": "https://serengeretreat.com/images/story/Aslam.webp",
-        "articleBody": "In the quiet village of Alchori, along the banks of the Shigar River and beneath the vast sky of the Karakoram, a childhood dream slowly took root...",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://serengeretreat.com/story"
-        }
+        ]
     };
 
     return (
         <div className="bg-canvas min-h-screen pt-32 pb-20 px-6">
-            <StructuredData data={articleSchema} />
+            <StructuredData data={storySchema} />
             <article className="max-w-5xl mx-auto space-y-32">
 
                 {/* HEADER: CONDENSED & ELEGANT */}

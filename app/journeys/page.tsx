@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import ItineraryAccordion from "../components/ItineraryAccordion";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../components/StructuredData";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -11,8 +12,90 @@ const fadeUp: Variants = {
 };
 
 export default function JourneysPage() {
+    const journeysSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://serengeretreat.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Journeys",
+                        "item": "https://serengeretreat.com/journeys"
+                    }
+                ]
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": "https://serengeretreat.com/journeys/#collection",
+                "url": "https://serengeretreat.com/journeys",
+                "name": "Wellness Journeys & Spiritual Retreats | Serengé Retreat",
+                "description": "Explore our hand-curated wellness journeys, spiritual retreats, K2 hiking preparations, and nature immersions in the Karakoram mountains.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Serenge Retreat",
+                    "url": "https://serengeretreat.com"
+                },
+                "hasPart": [
+                    {
+                        "@type": "CreativeWork",
+                        "name": "Soul Journey Retreat",
+                        "description": "A slow, unstructured retreat where the silence of Shigar Valley does the work.",
+                        "url": "https://serengeretreat.com/journeys/soulful-retreat"
+                    },
+                    {
+                        "@type": "CreativeWork",
+                        "name": "Wellness & Healing Retreat",
+                        "description": "Breathwork, somatic healing, and yoga practiced in open air under the Karakoram sky.",
+                        "url": "https://serengeretreat.com/journeys/wellness-healing-retreat"
+                    },
+                    {
+                        "@type": "CreativeWork",
+                        "name": "Hiking & Mountain Immersion",
+                        "description": "Gentle to moderate hikes toward alpine meadows and high mountain passes, combined with grounding.",
+                        "url": "https://serengeretreat.com/journeys/hiking-mountain-immersion"
+                    },
+                    {
+                        "@type": "CreativeWork",
+                        "name": "Spring Blossom Retreat",
+                        "description": "Experience Shigar during apricot blossom season. Pink trees, snow peaks, and peaceful village life.",
+                        "url": "https://serengeretreat.com/journeys/spring-blossom-retreat"
+                    },
+                    {
+                        "@type": "CreativeWork",
+                        "name": "Nature Immersion & Star Gazing",
+                        "description": "Glacial streams, powerful landscapes, and nights under the Milky Way.",
+                        "url": "https://serengeretreat.com/journeys/nature-immersion-star-gazing"
+                    }
+                ]
+            },
+            {
+                "@type": ["LocalBusiness", "LodgingBusiness"],
+                "@id": "https://serengeretreat.com/#lodging",
+                "name": "Serengé Retreat Shigar",
+                "url": "https://serengeretreat.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Alchori Village",
+                    "addressLocality": "Shigar Valley",
+                    "addressRegion": "Gilgit-Baltistan",
+                    "postalCode": "16301",
+                    "addressCountry": "PK"
+                }
+            }
+        ]
+    };
+
     return (
         <div className="bg-canvas min-h-screen">
+            <StructuredData data={journeysSchema} />
 
             {/* HEADER */}
             <section className="relative pt-32 pb-20 px-6 md:px-12 bg-paper overflow-hidden">

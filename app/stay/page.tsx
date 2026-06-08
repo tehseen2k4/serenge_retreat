@@ -10,40 +10,115 @@ import BookingWizard from "../components/BookingWizard";
 import StructuredData from "../components/StructuredData";
 
 export default function StayPage() {
-    const faqSchema = {
+    const staySchema = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
             {
-                "@type": "Question",
-                "name": "How far is Serengé Retreat from Skardu Airport?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Serengé Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough mountain track."
-                }
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://serengeretreat.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Stay",
+                        "item": "https://serengeretreat.com/stay"
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "Do I need a 4x4 vehicle to reach the retreat?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The final 1.4 km to the retreat is a rough track best suited for 4x4 vehicles. We provide pickup assistance on request for guests arriving in standard cars."
-                }
+                "@type": ["LocalBusiness", "LodgingBusiness"],
+                "@id": "https://serengeretreat.com/#lodging",
+                "name": "Serengé Retreat Shigar",
+                "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Providing traditional mud-and-stone cabin stays.",
+                "url": "https://serengeretreat.com/stay",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Alchori Village",
+                    "addressLocality": "Shigar Valley",
+                    "addressRegion": "Gilgit-Baltistan",
+                    "postalCode": "16301",
+                    "addressCountry": "PK"
+                },
+                "containsPlace": [
+                    {
+                        "@type": "Accommodation",
+                        "name": "Traditional Deluxe Mud-and-Stone Cabin",
+                        "description": "Authentic Balti design mud-and-stone cabin with mountain and river views, fully insulated and eco-friendly.",
+                        "offers": {
+                          "@type": "Offer",
+                          "priceCurrency": "USD",
+                          "price": "120.00",
+                          "availability": "https://schema.org/InStock",
+                          "validFrom": "2026-01-01"
+                        }
+                    },
+                    {
+                        "@type": "Accommodation",
+                        "name": "Cozy Twin Heritage Room",
+                        "description": "Poplar timber interiors and hand-carved details with standard amenities for families or solo adventurers.",
+                        "offers": {
+                          "@type": "Offer",
+                          "priceCurrency": "USD",
+                          "price": "90.00",
+                          "availability": "https://schema.org/InStock",
+                          "validFrom": "2026-01-01"
+                        }
+                    },
+                    {
+                        "@type": "Accommodation",
+                        "name": "Riverside Glamping Dome",
+                        "description": "Luxury geodesic dome on the edge of the Shigar River, perfect for stargazing and couples seeking romantic getaways.",
+                        "offers": {
+                          "@type": "Offer",
+                          "priceCurrency": "USD",
+                          "price": "150.00",
+                          "availability": "https://schema.org/InStock",
+                          "validFrom": "2026-01-01"
+                        }
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "What type of food is served at Serengé Retreat?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We serve traditional Balti meals, organic garden-fresh vegetables, and farm-to-table dining inspired by the seasons of Shigar Valley."
-                }
+                "@type": "FAQPage",
+                "@id": "https://serengeretreat.com/stay/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How far is Serengé Retreat from Skardu Airport?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Serengé Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough mountain track."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need a 4x4 vehicle to reach the retreat?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The final 1.4 km to the retreat is a rough track best suited for 4x4 vehicles. We provide pickup assistance on request for guests arriving in standard cars."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What type of food is served at Serengé Retreat?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We serve traditional Balti meals, organic garden-fresh vegetables, and farm-to-table dining inspired by the seasons of Shigar Valley."
+                        }
+                    }
+                ]
             }
         ]
     };
 
     return (
         <div className="bg-canvas min-h-screen pb-20">
-            <StructuredData data={faqSchema} />
+            <StructuredData data={staySchema} />
 
             {/* Hero with Image */}
             <div className="relative h-[60vh] w-full">

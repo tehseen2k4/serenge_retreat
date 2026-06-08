@@ -54,9 +54,9 @@ export default async function JournalPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const articleSchema = {
+  const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
     "image": `https://serengeretreat.com${post.image}`,
@@ -107,7 +107,7 @@ export default async function JournalPostPage({ params }: PageProps) {
 
   return (
     <div className="bg-canvas min-h-screen pt-12 pb-20 px-6 md:px-12">
-      <StructuredData data={articleSchema} />
+      <StructuredData data={blogPostingSchema} />
       <StructuredData data={breadcrumbSchema} />
 
       <article className="max-w-3xl mx-auto space-y-12">

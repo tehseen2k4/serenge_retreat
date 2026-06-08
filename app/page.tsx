@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import GoogleReviews from "./components/GoogleReviews";
 import { Home as HomeIcon, Waves, Sprout, Flame, Mountain } from "lucide-react";
+import StructuredData from "./components/StructuredData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -25,7 +26,7 @@ export default function Home() {
           "https://serengeretreat.com/images/home/Wellness%20Retreat.webp"
         ],
         "priceRange": "$$$",
-        "telephone": "+923000000000",
+        "telephone": "+923349669198",
         "url": "https://serengeretreat.com",
         "address": {
           "@type": "PostalAddress",
@@ -51,8 +52,8 @@ export default function Home() {
             "Saturday",
             "Sunday"
           ],
-          "opens": "00:00",
-          "closes": "23:59"
+          "opens": "08:00",
+          "closes": "22:00"
         },
         "sameAs": [
           "https://www.instagram.com/serengeretreat",

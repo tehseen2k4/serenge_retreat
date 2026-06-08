@@ -3,10 +3,63 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { postsData } from "./postsData";
+import StructuredData from "../components/StructuredData";
 
 export default function JournalPage() {
+    const journalSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://serengeretreat.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Journal",
+                        "item": "https://serengeretreat.com/journal"
+                    }
+                ]
+            },
+            {
+                "@type": "Blog",
+                "@id": "https://serengeretreat.com/journal/#blog",
+                "url": "https://serengeretreat.com/journal",
+                "name": "The Serengé Journal | Stories from Baltistan",
+                "description": "Timeless notes from Shigar Valley. Stories of ancient mountain land, slow-paced Balti culture, the craft of sustainable sanctuary building, and somatic mindfulness.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Serengé Retreat",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://serengeretreat.com/images/logo_brown.png"
+                    }
+                },
+                "blogPost": postsData.map((post) => ({
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.excerpt,
+                    "datePublished": post.date,
+                    "url": `https://serengeretreat.com/journal/${post.slug}`
+                }))
+            },
+            {
+                "@type": ["LocalBusiness", "LodgingBusiness"],
+                "@id": "https://serengeretreat.com/#lodging",
+                "name": "Serengé Retreat Shigar",
+                "url": "https://serengeretreat.com"
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-paper pt-32 pb-20 px-6 md:px-12">
+            <StructuredData data={journalSchema} />
             <header className="max-w-3xl mx-auto mb-20 text-center space-y-6">
                 <p className="text-xs uppercase tracking-[0.4em] text-earth font-medium">Stories from Baltistan</p>
                 <h1 className="text-4xl md:text-5xl font-serif text-ink italic">The Serengé Journal</h1>

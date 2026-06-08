@@ -1,5 +1,5 @@
 # Serengé Retreat - robots.txt
-# Updated: 2026-05-26
+# Updated: 2026-06-08
 
 # ── Standard crawlers ──────────────────────────────────────────
 User-agent: *

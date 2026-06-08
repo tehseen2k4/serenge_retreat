@@ -115,5 +115,59 @@ export const postsData: JournalPost[] = [
       "I recently sat with Hassan, one of our senior village stone masons, on his quiet wooden veranda overlooking the Shigar River. As we waited for the kettle to boil over a small charcoal fire, we talked about the art of patience. Hassan explained that standard city life is obsessed with speed, but stone and mountains teach you that everything of value takes time.",
       "He served us traditional Balti tea—a unique, salted pink tea made with local mountain herbs and goat milk. As we sipped the warm, comforting tea under the afternoon shadow of Khosar Gang, I realized that true hospitality requires no elaborate luxury. It only requires a warm fire, a humble heart, and the time to sit and truly listen."
     ]
+  },
+  {
+    slug: "preparing-for-karakoram-altitude-guide",
+    title: "Preparing for the Karakoram: A Guide to Altitude and Attitude",
+    date: "June 08, 2026",
+    excerpt: "Essential altitude acclimatization tips and physical preparations for trekking in Skardu, Shigar, and K2 Base Camp.",
+    image: "/images/land/Khosar Gang.webp",
+    readTime: "7 min read",
+    author: "Aslam Shigri",
+    category: "Trekking",
+    paragraphs: [
+      "Stepping off the plane at Skardu Airport, you are immediately greeted by the crisp mountain air and a sweeping view of dry granite giants. At 2,230 meters (7,300 feet) above sea level, Skardu is already high enough for the body to feel the difference. For hikers and climbers planning to venture towards K2 Base Camp or summit Khosar Gang, proper acclimatization is the difference between a successful journey and severe altitude sickness.",
+      "Many travelers immediately check into hotels in Skardu town and rush their itineraries. However, the best practice for high-altitude adjustment is to move slowly. Skardu hotels in the busy city center can sometimes be loud, which disrupts sleep—a critical component of acclimatization. We highly recommend spending your first few nights in Shigar Valley. Nestled at a slightly lower altitude than Skardu and blessed with dense willow and apricot orchards that produce higher oxygen levels, it provides the perfect transition zone.",
+      "Acclimatization in Gilgit-Baltistan is as much about attitude as it is about biology. The mountains demand humility. Drink four to five liters of water daily, eat light local meals rich in complex carbohydrates, and strictly avoid overexertion during your first forty-eight hours. When staying at Serenge Retreat in Shigar, our local mountain guides help monitor your body's response, guiding you on slow morning walks through Alchori Village to build your tolerance.",
+      "Instead of choosing standard hotels in Skardu or concrete hotels in Shigar, finding a quiet sanctuary that respects the slow rhythm of the land will give your body the rest it needs. Allow the altitude and your attitude to align, and the Karakoram will open its secrets to you."
+    ],
+    blockquote: "Altitude acclimation is not just physical prep—it is learning the mountain's pace before you start your ascent.",
+    quoteAuthor: "Aslam Shigri"
+  },
+  {
+    slug: "art-of-dry-stone-wall-baltistan-masonry",
+    title: "The Art of the Dry-Stone Wall: Baltistan's Traditional Masonry",
+    date: "July 08, 2026",
+    excerpt: "Exploring the eco-friendly architectural heritage, poplar timber structures, and traditional dry-stone masonry of Gilgit-Baltistan.",
+    image: "/images/story/Aslam.webp",
+    readTime: "6 min read",
+    author: "Aslam Shigri",
+    category: "Heritage",
+    paragraphs: [
+      "Look closely at the houses in Alchori Village or the historic palaces of Shigar, and you will notice a construction style that has survived centuries of seismic activity and harsh mountain winters. Traditional Balti architecture relies on a brilliant combination of dry-stone masonry, sun-dried mud bricks, and local poplar timber. This is not just rustic design; it is a highly engineered, eco-friendly solution for extreme mountain environments.",
+      "Unlike modern concrete hotels in Skardu or new lodging options in Shigar Valley that rely on heavy energy consumption, traditional buildings possess natural thermal mass. Mud-and-straw bricks insulate rooms by absorbing heat during sunny days and releasing it slowly during freezing mountain nights. Poplar wood beams provide flexibility, allowing structures to sway gently and withstand earthquakes that would crack solid concrete walls.",
+      "At Serenge Retreat, we collaborated with local master masons to construct our cabins using these ancestral techniques. The result is a boutique stay that honors the region's heritage. For travelers looking at hotels in Shigar Valley or searching for authentic accommodation options, experiencing a building built from local earth offers a sensory connection to the land that a standard hotel room simply cannot replicate.",
+      "Sustainable masonry is a form of conservation. By preserving these traditional building styles, we support local craftsmen and ensure that future construction in Gilgit-Baltistan remains in harmony with the natural environment."
+    ],
+    blockquote: "Traditional masonry does not fight the earth—it bends with the movements of the valley.",
+    quoteAuthor: "Hassan (Balti Stone Mason)"
+  },
+  {
+    slug: "birdwatching-beside-shigar-river",
+    title: "Birdwatching Beside the Shigar River: An Analog Guide",
+    date: "August 08, 2026",
+    excerpt: "Discover the migratory birds, willow canopies, and slow-paced river wildlife of Shigar Valley, Baltistan.",
+    image: "/images/home/Nature Immersions.webp",
+    readTime: "5 min read",
+    author: "Aslam Shigri",
+    category: "Nature",
+    paragraphs: [
+      "In the early hours of the morning, before the sun rises above the granite peaks of Shigar, the valley belongs to the birds. The rushing waters of the Shigar River and the surrounding willow canopies form a sanctuary for both local wildlife and migratory species traveling across the Karakoram range.",
+      "While most tourists staying at Skardu hotels are rushing towards the popular tourist sights, slow observation along the riverbanks reveals a different world. You might spot a Eurasian Hoopoe feeding in the sandy dunes, or hear the gentle call of migratory ducks resting in the quiet pools. This is an analog experience—requiring only a pair of binoculars, a notebook, and patience.",
+      "Our retreat offers an ideal alternative to standard hotels in Skardu or hotels in Shigar town for nature enthusiasts. Resting directly on the river's edge, guests can sit silently on the shore, observing the black-billed magpies and mountain choughs in their natural habitats. It is a form of active meditation that screens and busy sightseeing itineraries cannot offer.",
+      "Taking the time to watch the flight of a bird against a backdrop of snow-capped mountains resets the nervous system, connecting you with the ancient rhythms of Baltistan."
+    ],
+    blockquote: "In the silence of the riverbank, the birds carry the songs of the Karakoram.",
+    quoteAuthor: "Serenge Guide"
   }
 ];

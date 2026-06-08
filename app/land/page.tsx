@@ -2,11 +2,49 @@ import SeasonsScroll from "../components/SeasonsScroll";
 import InteractiveMap from "../components/InteractiveMap";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../components/StructuredData";
 
 
 export default function LandPage() {
+    const landSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://serengeretreat.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "The Land",
+                        "item": "https://serengeretreat.com/land"
+                    }
+                ]
+            },
+            {
+                "@type": "AboutPage",
+                "@id": "https://serengeretreat.com/land/#about",
+                "url": "https://serengeretreat.com/land",
+                "name": "The Land: Shigar Valley & Baltistan | Serengé Retreat",
+                "description": "Information about Shigar Valley, Khosar Gang, Spantik Peak, K2 Basecamp, and Alchori Village surrounding Serengé Retreat in Baltistan.",
+                "mainEntity": {
+                    "@type": ["LocalBusiness", "LodgingBusiness"],
+                    "@id": "https://serengeretreat.com/#lodging",
+                    "name": "Serengé Retreat Shigar",
+                    "url": "https://serengeretreat.com"
+                }
+            }
+        ]
+    };
+
     return (
         <div className="bg-canvas min-h-screen">
+            <StructuredData data={landSchema} />
             <section className="h-[70vh] flex items-center justify-center bg-stone/30 relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
