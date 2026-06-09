@@ -22,65 +22,65 @@ export default function JourneysPage() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://serengeretreat.com"
+                        "item": "https://www.serengeretreatpakistan.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Journeys",
-                        "item": "https://serengeretreat.com/journeys"
+                        "item": "https://www.serengeretreatpakistan.com/journeys"
                     }
                 ]
             },
             {
                 "@type": "CollectionPage",
-                "@id": "https://serengeretreat.com/journeys/#collection",
-                "url": "https://serengeretreat.com/journeys",
+                "@id": "https://www.serengeretreatpakistan.com/journeys/#collection",
+                "url": "https://www.serengeretreatpakistan.com/journeys",
                 "name": "Wellness Journeys & Spiritual Retreats | Serengé Retreat",
                 "description": "Explore our hand-curated wellness journeys, spiritual retreats, K2 hiking preparations, and nature immersions in the Karakoram mountains.",
                 "publisher": {
                     "@type": "Organization",
                     "name": "Serenge Retreat",
-                    "url": "https://serengeretreat.com"
+                    "url": "https://www.serengeretreatpakistan.com"
                 },
                 "hasPart": [
                     {
                         "@type": "CreativeWork",
                         "name": "Soul Journey Retreat",
                         "description": "A slow, unstructured retreat where the silence of Shigar Valley does the work.",
-                        "url": "https://serengeretreat.com/journeys/soulful-retreat"
+                        "url": "https://www.serengeretreatpakistan.com/journeys/soulful-retreat"
                     },
                     {
                         "@type": "CreativeWork",
                         "name": "Wellness & Healing Retreat",
                         "description": "Breathwork, somatic healing, and yoga practiced in open air under the Karakoram sky.",
-                        "url": "https://serengeretreat.com/journeys/wellness-healing-retreat"
+                        "url": "https://www.serengeretreatpakistan.com/journeys/wellness-healing-retreat"
                     },
                     {
                         "@type": "CreativeWork",
                         "name": "Hiking & Mountain Immersion",
                         "description": "Gentle to moderate hikes toward alpine meadows and high mountain passes, combined with grounding.",
-                        "url": "https://serengeretreat.com/journeys/hiking-mountain-immersion"
+                        "url": "https://www.serengeretreatpakistan.com/journeys/hiking-mountain-immersion"
                     },
                     {
                         "@type": "CreativeWork",
                         "name": "Spring Blossom Retreat",
                         "description": "Experience Shigar during apricot blossom season. Pink trees, snow peaks, and peaceful village life.",
-                        "url": "https://serengeretreat.com/journeys/spring-blossom-retreat"
+                        "url": "https://www.serengeretreatpakistan.com/journeys/spring-blossom-retreat"
                     },
                     {
                         "@type": "CreativeWork",
                         "name": "Nature Immersion & Star Gazing",
                         "description": "Glacial streams, powerful landscapes, and nights under the Milky Way.",
-                        "url": "https://serengeretreat.com/journeys/nature-immersion-star-gazing"
+                        "url": "https://www.serengeretreatpakistan.com/journeys/nature-immersion-star-gazing"
                     }
                 ]
             },
             {
                 "@type": ["LocalBusiness", "LodgingBusiness"],
-                "@id": "https://serengeretreat.com/#lodging",
+                "@id": "https://www.serengeretreatpakistan.com/#lodging",
                 "name": "Serengé Retreat Shigar",
-                "url": "https://serengeretreat.com",
+                "url": "https://www.serengeretreatpakistan.com",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Alchori Village",

@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = postsData.find((p) => p.slug === slug);
-  
+
   if (!post) {
     return {
       title: "Story Not Found | Serengé Retreat",
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://serengeretreat.com/journal/${post.slug}`,
+      url: `https://www.serengeretreatpakistan.com/journal/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
@@ -59,7 +59,7 @@ export default async function JournalPostPage({ params }: PageProps) {
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
-    "image": `https://serengeretreat.com${post.image}`,
+    "image": `https://www.serengeretreatpakistan.com${post.image}`,
     "datePublished": post.date,
     "author": {
       "@type": "Person",
@@ -71,12 +71,12 @@ export default async function JournalPostPage({ params }: PageProps) {
       "name": "Serengé Retreat",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://serengeretreat.com/images/logo_brown.png"
+        "url": "https://www.serengeretreatpakistan.com/images/logo_brown.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://serengeretreat.com/journal/${post.slug}`
+      "@id": `https://www.serengeretreatpakistan.com/journal/${post.slug}`
     }
   };
 
@@ -88,19 +88,19 @@ export default async function JournalPostPage({ params }: PageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Journal",
-        "item": "https://serengeretreat.com/journal"
+        "item": "https://www.serengeretreatpakistan.com/journal"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": post.title,
-        "item": `https://serengeretreat.com/journal/${post.slug}`
+        "item": `https://www.serengeretreatpakistan.com/journal/${post.slug}`
       }
     ]
   };
@@ -129,7 +129,7 @@ export default async function JournalPostPage({ params }: PageProps) {
             </span>
             <span>{post.date}</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-serif text-ink italic leading-tight">
             {post.title}
           </h1>

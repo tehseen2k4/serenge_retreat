@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How to Reach Serenge Retreat Shigar | Travel Guide",
     description: "Plan your trip to Shigar Valley. Details on Skardu flights, safe road conditions, and airport transfer services.",
-    url: "https://serengeretreat.com/how-to-reach-serenge-retreat",
+    url: "https://www.serengeretreatpakistan.com/how-to-reach-serenge-retreat",
   }
 };
 
@@ -20,10 +20,10 @@ export default function HowToReachPage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function HowToReachPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "How to Reach Serenge Retreat",
-        "item": "https://serengeretreat.com/how-to-reach-serenge-retreat"
+        "item": "https://www.serengeretreatpakistan.com/how-to-reach-serenge-retreat"
       }
     ]
   };
@@ -125,17 +125,17 @@ export default function HowToReachPage() {
 
         {/* Core Content Blocks */}
         <section className="space-y-12 text-ink-soft font-light text-base md:text-lg leading-relaxed">
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">1. Reaching Skardu</h2>
             <p>
               Your journey to Shigar Valley begins by reaching Skardu, the main regional hub of Baltistan. There are two primary ways to travel to Skardu:
             </p>
-            
+
             <div className="space-y-4 pt-2">
               <h3 className="text-xl font-serif text-ink font-semibold">Option A: By Air (Highly Recommended)</h3>
               <p>
-                Pakistan International Airlines (PIA) operates daily direct flights from <strong>Islamabad</strong> to Skardu. Weekly direct flights are also available from <strong>Lahore</strong> and <strong>Karachi</strong>. 
+                Pakistan International Airlines (PIA) operates daily direct flights from <strong>Islamabad</strong> to Skardu. Weekly direct flights are also available from <strong>Lahore</strong> and <strong>Karachi</strong>.
               </p>
               <div className="bg-paper p-6 border-l-4 border-earth rounded-sm text-sm space-y-2">
                 <p><strong>Note on Weather Operations:</strong> Flights to Skardu are highly scenic as they pass over Nanga Parbat and the high Karakoram, but they are dependent on visual flight conditions. We highly advise booking your flights with a day or two of buffer time in case of weather-related cancellations.</p>
@@ -221,7 +221,7 @@ export default function HowToReachPage() {
                 Serenge Retreat is approximately 35 to 45 kilometers from Skardu International Airport (KDU). The drive takes around 40 minutes on a smooth, fully paved two-lane road that winds past the Indus River and the majestic Sarfaranga Cold Desert.
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">Is the road to Shigar Valley safe?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">

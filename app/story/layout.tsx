@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         title: "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
         description: "Aslam Shigri's journey from carrying K2 loads to building a riverside sanctuary in Shigar Valley.",
         images: [{ url: "/images/story/Aslam.webp", width: 1200, height: 630 }],
-        url: "https://serengeretreat.com/story"
+        url: "https://www.serengeretreatpakistan.com/story"
     },
     twitter: {
         card: "summary_large_image",

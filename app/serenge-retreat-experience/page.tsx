@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Serenge Retreat Experience | Nature, Mountains & Riverside Living",
     description: "Experience the sacred silence, local Balti cuisine, and riverside stargazing at Serenge Retreat in Gilgit-Baltistan.",
-    url: "https://serengeretreat.com/serenge-retreat-experience",
+    url: "https://www.serengeretreatpakistan.com/serenge-retreat-experience",
   }
 };
 
@@ -20,10 +20,10 @@ export default function ExperiencePage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function ExperiencePage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Serenge Retreat Experience",
-        "item": "https://serengeretreat.com/serenge-retreat-experience"
+        "item": "https://www.serengeretreatpakistan.com/serenge-retreat-experience"
       }
     ]
   };
@@ -125,7 +125,7 @@ export default function ExperiencePage() {
 
         {/* Core Content Blocks */}
         <section className="space-y-12 text-ink-soft font-light text-base md:text-lg leading-relaxed">
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">The Morning Experience</h2>
             <p>
@@ -182,7 +182,7 @@ export default function ExperiencePage() {
                 The experience includes boutique eco-conscious lodging, freshly prepared traditional organic Balti and Pakistani farm-to-table meals, daily guided somatic wellness breathwork, unlimited herbal local teas, access to private river beach paths, and participation in evening community bonfires.
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">Is the retreat suitable for long stays?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">

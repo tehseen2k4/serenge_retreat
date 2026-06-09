@@ -22,29 +22,29 @@ export default function StoryPage() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://serengeretreat.com"
+                        "item": "https://www.serengeretreatpakistan.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Our Story",
-                        "item": "https://serengeretreat.com/story"
+                        "item": "https://www.serengeretreatpakistan.com/story"
                     }
                 ]
             },
             {
                 "@type": ["LocalBusiness", "LodgingBusiness"],
-                "@id": "https://serengeretreat.com/#lodging",
+                "@id": "https://www.serengeretreatpakistan.com/#lodging",
                 "name": "Serengé Retreat Shigar",
-                "url": "https://serengeretreat.com"
+                "url": "https://www.serengeretreatpakistan.com"
             },
             {
                 "@type": "Person",
-                "@id": "https://serengeretreat.com/#founder",
+                "@id": "https://www.serengeretreatpakistan.com/#founder",
                 "name": "Aslam Shigri",
                 "jobTitle": "Founder & Storyteller",
                 "worksFor": {
-                    "@id": "https://serengeretreat.com/#lodging"
+                    "@id": "https://www.serengeretreatpakistan.com/#lodging"
                 },
                 "sameAs": [
                     "https://www.reegoadventure.com"
@@ -54,22 +54,22 @@ export default function StoryPage() {
                 "@type": "Article",
                 "headline": "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
                 "author": {
-                    "@id": "https://serengeretreat.com/#founder"
+                    "@id": "https://www.serengeretreatpakistan.com/#founder"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "Serengé Retreat",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://serengeretreat.com/images/logo_brown.png"
+                        "url": "https://www.serengeretreatpakistan.com/images/logo_brown.png"
                     }
                 },
                 "datePublished": "2026-01-01",
-                "image": "https://serengeretreat.com/images/story/Aslam.webp",
+                "image": "https://www.serengeretreatpakistan.com/images/story/Aslam.webp",
                 "articleBody": "In the quiet village of Alchori, along the banks of the Shigar River and beneath the vast sky of the Karakoram, a childhood dream slowly took root...",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://serengeretreat.com/story"
+                    "@id": "https://www.serengeretreatpakistan.com/story"
                 }
             }
         ]

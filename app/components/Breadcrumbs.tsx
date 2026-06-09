@@ -20,13 +20,13 @@ export default function Breadcrumbs() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://serengeretreat.com"
+                "item": "https://www.serengeretreatpakistan.com"
             },
             ...paths.map((path, index) => ({
                 "@type": "ListItem",
                 "position": index + 2,
                 "name": path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, " "),
-                "item": `https://serengeretreat.com/${paths.slice(0, index + 1).join("/")}`
+                "item": `https://www.serengeretreatpakistan.com/${paths.slice(0, index + 1).join("/")}`
             }))
         ]
     };

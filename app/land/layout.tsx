@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         title: "The Land - Shigar Valley & Karakoram Mountains",
         description: "Gateway to K2, surrounded by 7000m peaks. Explore Baltistan's timeless beauty.",
         images: [{ url: "/images/land/land_hero.webp", width: 1200, height: 630 }],
-        url: "https://serengeretreat.com/land"
+        url: "https://www.serengeretreatpakistan.com/land"
     },
     twitter: {
         card: "summary_large_image",

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Digital Detox Retreat in Pakistan | Serenge Retreat Shigar",
     description: "An intentional space to unplug. Experience slow living, silent river beaches, and starlit skies in Shigar Valley.",
-    url: "https://serengeretreat.com/digital-detox-pakistan",
+    url: "https://www.serengeretreatpakistan.com/digital-detox-pakistan",
   }
 };
 
@@ -20,10 +20,10 @@ export default function DigitalDetoxPage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function DigitalDetoxPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Digital Detox Pakistan",
-        "item": "https://serengeretreat.com/digital-detox-pakistan"
+        "item": "https://www.serengeretreatpakistan.com/digital-detox-pakistan"
       }
     ]
   };
@@ -125,7 +125,7 @@ export default function DigitalDetoxPage() {
 
         {/* Core Content Blocks */}
         <section className="space-y-12 text-ink-soft font-light text-base md:text-lg leading-relaxed">
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">Why a Digital Detox Matters</h2>
             <p>
@@ -139,7 +139,7 @@ export default function DigitalDetoxPage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">Why Shigar Valley is the Ultimate Detox Destination</h2>
             <p>
-              A true digital detox requires a supportive physical setting. Shigar Valley is geographically insulated by the giant stone towers of the Karakoram. 
+              A true digital detox requires a supportive physical setting. Shigar Valley is geographically insulated by the giant stone towers of the Karakoram.
             </p>
             <p>
               Here, the absolute lack of urban noise instantly lowers your heart rate. The local Balti culture is naturally slow-paced, friendly, and unhurried. Surrounded by apricot orchards and glacial rivers, the visual environment invites you to look outward rather than down at a screen.
@@ -175,7 +175,7 @@ export default function DigitalDetoxPage() {
                 A digital detox retreat is an intentional travel experience designed to help you disconnect from digital screens, constant email notifications, and social media feeds. The goal is to reduce cognitive overload, allow the nervous system to settle, and cultivate presence through nature immersion, silence, and mindfulness.
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">Is there internet access at Serenge Retreat?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">

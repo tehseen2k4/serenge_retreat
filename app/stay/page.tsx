@@ -20,22 +20,22 @@ export default function StayPage() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://serengeretreat.com"
+                        "item": "https://www.serengeretreatpakistan.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Stay",
-                        "item": "https://serengeretreat.com/stay"
+                        "item": "https://www.serengeretreatpakistan.com/stay"
                     }
                 ]
             },
             {
                 "@type": ["LocalBusiness", "LodgingBusiness"],
-                "@id": "https://serengeretreat.com/#lodging",
+                "@id": "https://www.serengeretreatpakistan.com/#lodging",
                 "name": "Serengé Retreat Shigar",
                 "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Providing traditional mud-and-stone cabin stays.",
-                "url": "https://serengeretreat.com/stay",
+                "url": "https://www.serengeretreatpakistan.com/stay",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Alchori Village",
@@ -50,11 +50,11 @@ export default function StayPage() {
                         "name": "Traditional Deluxe Mud-and-Stone Cabin",
                         "description": "Authentic Balti design mud-and-stone cabin with mountain and river views, fully insulated and eco-friendly.",
                         "offers": {
-                          "@type": "Offer",
-                          "priceCurrency": "USD",
-                          "price": "120.00",
-                          "availability": "https://schema.org/InStock",
-                          "validFrom": "2026-01-01"
+                            "@type": "Offer",
+                            "priceCurrency": "USD",
+                            "price": "120.00",
+                            "availability": "https://schema.org/InStock",
+                            "validFrom": "2026-01-01"
                         }
                     },
                     {
@@ -62,11 +62,11 @@ export default function StayPage() {
                         "name": "Cozy Twin Heritage Room",
                         "description": "Poplar timber interiors and hand-carved details with standard amenities for families or solo adventurers.",
                         "offers": {
-                          "@type": "Offer",
-                          "priceCurrency": "USD",
-                          "price": "90.00",
-                          "availability": "https://schema.org/InStock",
-                          "validFrom": "2026-01-01"
+                            "@type": "Offer",
+                            "priceCurrency": "USD",
+                            "price": "90.00",
+                            "availability": "https://schema.org/InStock",
+                            "validFrom": "2026-01-01"
                         }
                     },
                     {
@@ -74,18 +74,18 @@ export default function StayPage() {
                         "name": "Riverside Glamping Dome",
                         "description": "Luxury geodesic dome on the edge of the Shigar River, perfect for stargazing and couples seeking romantic getaways.",
                         "offers": {
-                          "@type": "Offer",
-                          "priceCurrency": "USD",
-                          "price": "150.00",
-                          "availability": "https://schema.org/InStock",
-                          "validFrom": "2026-01-01"
+                            "@type": "Offer",
+                            "priceCurrency": "USD",
+                            "price": "150.00",
+                            "availability": "https://schema.org/InStock",
+                            "validFrom": "2026-01-01"
                         }
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://serengeretreat.com/stay/#faq",
+                "@id": "https://www.serengeretreatpakistan.com/stay/#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",

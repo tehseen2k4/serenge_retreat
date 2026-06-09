@@ -18,16 +18,16 @@ export default function Home() {
     "@graph": [
       {
         "@type": "LodgingBusiness",
-        "@id": "https://serengeretreat.com/#lodging",
+        "@id": "https://www.serengeretreatpakistan.com/#lodging",
         "name": "Serengé Retreat Shigar",
         "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Founded by Aslam Shigri, the retreat specializes in digital detox, somatic healing, and Karakoram mountain immersion.",
         "image": [
-          "https://serengeretreat.com/images/night%20retreat.png",
-          "https://serengeretreat.com/images/home/Wellness%20Retreat.webp"
+          "https://www.serengeretreatpakistan.com/images/night%20retreat.png",
+          "https://www.serengeretreatpakistan.com/images/home/Wellness%20Retreat.webp"
         ],
         "priceRange": "$$$",
         "telephone": "+923349669198",
-        "url": "https://serengeretreat.com",
+        "url": "https://www.serengeretreatpakistan.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Alchori Village",
@@ -62,7 +62,7 @@ export default function Home() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://serengeretreat.com/#faq",
+        "@id": "https://www.serengeretreatpakistan.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",

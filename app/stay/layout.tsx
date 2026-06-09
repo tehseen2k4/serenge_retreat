@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         title: "Eco Rooms & Direct Booking - Serengé Retreat",
         description: "Mud brick architecture and personalized retreat planning in Shigar Valley.",
         images: [{ url: "/images/stay/Stay Hero.webp", width: 1200, height: 630 }],
-        url: "https://serengeretreat.com/stay"
+        url: "https://www.serengeretreatpakistan.com/stay"
     },
     twitter: {
         card: "summary_large_image",

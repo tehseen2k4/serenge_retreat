@@ -16,20 +16,20 @@ export default function JournalPage() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://serengeretreat.com"
+                        "item": "https://www.serengeretreatpakistan.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Journal",
-                        "item": "https://serengeretreat.com/journal"
+                        "item": "https://www.serengeretreatpakistan.com/journal"
                     }
                 ]
             },
             {
                 "@type": "Blog",
-                "@id": "https://serengeretreat.com/journal/#blog",
-                "url": "https://serengeretreat.com/journal",
+                "@id": "https://www.serengeretreatpakistan.com/journal/#blog",
+                "url": "https://www.serengeretreatpakistan.com/journal",
                 "name": "The Serengé Journal | Stories from Baltistan",
                 "description": "Timeless notes from Shigar Valley. Stories of ancient mountain land, slow-paced Balti culture, the craft of sustainable sanctuary building, and somatic mindfulness.",
                 "publisher": {
@@ -37,7 +37,7 @@ export default function JournalPage() {
                     "name": "Serengé Retreat",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://serengeretreat.com/images/logo_brown.png"
+                        "url": "https://www.serengeretreatpakistan.com/images/logo_brown.png"
                     }
                 },
                 "blogPost": postsData.map((post) => ({
@@ -45,14 +45,14 @@ export default function JournalPage() {
                     "headline": post.title,
                     "description": post.excerpt,
                     "datePublished": post.date,
-                    "url": `https://serengeretreat.com/journal/${post.slug}`
+                    "url": `https://www.serengeretreatpakistan.com/journal/${post.slug}`
                 }))
             },
             {
                 "@type": ["LocalBusiness", "LodgingBusiness"],
-                "@id": "https://serengeretreat.com/#lodging",
+                "@id": "https://www.serengeretreatpakistan.com/#lodging",
                 "name": "Serengé Retreat Shigar",
-                "url": "https://serengeretreat.com"
+                "url": "https://www.serengeretreatpakistan.com"
             }
         ]
     };

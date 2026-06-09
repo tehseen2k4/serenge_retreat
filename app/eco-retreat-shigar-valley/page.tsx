@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eco Retreat in Shigar Valley | Serenge Retreat",
     description: "Handcrafted mud-and-stone cabins, riverside silence, and authentic Balti hospitality in the heart of the Karakoram.",
-    url: "https://serengeretreat.com/eco-retreat-shigar-valley",
+    url: "https://www.serengeretreatpakistan.com/eco-retreat-shigar-valley",
   }
 };
 
@@ -20,10 +20,10 @@ export default function EcoRetreatPage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function EcoRetreatPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Eco Retreat Shigar Valley",
-        "item": "https://serengeretreat.com/eco-retreat-shigar-valley"
+        "item": "https://www.serengeretreatpakistan.com/eco-retreat-shigar-valley"
       }
     ]
   };
@@ -125,7 +125,7 @@ export default function EcoRetreatPage() {
 
         {/* Core Content Blocks */}
         <section className="space-y-12 text-ink-soft font-light text-base md:text-lg leading-relaxed">
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">Why Choose an Eco Retreat in Shigar Valley</h2>
             <p>
@@ -149,7 +149,7 @@ export default function EcoRetreatPage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">The Riverside Experience</h2>
             <p>
-              The Shigar River is the lifeblood of our property. Guests can begin their mornings with quiet walks on the soft sand banks, practicing silent meditation or simple breathwork on the shore. 
+              The Shigar River is the lifeblood of our property. Guests can begin their mornings with quiet walks on the soft sand banks, practicing silent meditation or simple breathwork on the shore.
             </p>
             <p>
               As evening falls, the riverside comes alive with soft bonfires, local acoustic music, stargazing beneath one of the darkest night skies in Pakistan, and professional-grade landscape photography opportunities under the pink light of sunset.
@@ -184,7 +184,7 @@ export default function EcoRetreatPage() {
                 Unlike crowded, commercial concrete hotels in busy Skardu city, Serenge Retreat is an eco-conscious sanctuary located 30 minutes away in the quiet village of Alchori in Shigar Valley. We prioritize local mud-and-stone Balti architecture, slow travel, organic meals, and absolute quiet, right on the edge of the rushing Shigar River.
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">Is Serenge Retreat suitable for couples?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">

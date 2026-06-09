@@ -16,27 +16,27 @@ export default function LandPage() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://serengeretreat.com"
+                        "item": "https://www.serengeretreatpakistan.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "The Land",
-                        "item": "https://serengeretreat.com/land"
+                        "item": "https://www.serengeretreatpakistan.com/land"
                     }
                 ]
             },
             {
                 "@type": "AboutPage",
-                "@id": "https://serengeretreat.com/land/#about",
-                "url": "https://serengeretreat.com/land",
+                "@id": "https://www.serengeretreatpakistan.com/land/#about",
+                "url": "https://www.serengeretreatpakistan.com/land",
                 "name": "The Land: Shigar Valley & Baltistan | Serengé Retreat",
                 "description": "Information about Shigar Valley, Khosar Gang, Spantik Peak, K2 Basecamp, and Alchori Village surrounding Serengé Retreat in Baltistan.",
                 "mainEntity": {
                     "@type": ["LocalBusiness", "LodgingBusiness"],
-                    "@id": "https://serengeretreat.com/#lodging",
+                    "@id": "https://www.serengeretreatpakistan.com/#lodging",
                     "name": "Serengé Retreat Shigar",
-                    "url": "https://serengeretreat.com"
+                    "url": "https://www.serengeretreatpakistan.com"
                 }
             }
         ]

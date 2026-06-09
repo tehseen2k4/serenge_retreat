@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Things to Do in Shigar Valley | Explore Northern Pakistan",
     description: "Explore the ancient fort, mountain vistas, cold desert, and riverside paths in Shigar Valley, Baltistan.",
-    url: "https://serengeretreat.com/things-to-do-shigar-valley",
+    url: "https://www.serengeretreatpakistan.com/things-to-do-shigar-valley",
   }
 };
 
@@ -20,10 +20,10 @@ export default function ThingsToDoPage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function ThingsToDoPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Things to Do in Shigar Valley",
-        "item": "https://serengeretreat.com/things-to-do-shigar-valley"
+        "item": "https://www.serengeretreatpakistan.com/things-to-do-shigar-valley"
       }
     ]
   };
@@ -125,7 +125,7 @@ export default function ThingsToDoPage() {
 
         {/* Core Content Blocks */}
         <section className="space-y-12 text-ink-soft font-light text-base md:text-lg leading-relaxed">
-          
+
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">1. Visit the Historic Shigar Fort (Fong-Khar)</h2>
             <p>
@@ -139,7 +139,7 @@ export default function ThingsToDoPage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">2. Explore Scenic Riverside Landscapes</h2>
             <p>
-              The massive Shigar River bed features high-altitude sand beaches, pristine glacial pools, and dense stands of willow and poplar trees. 
+              The massive Shigar River bed features high-altitude sand beaches, pristine glacial pools, and dense stands of willow and poplar trees.
             </p>
             <p>
               We recommend taking a slow morning or evening walk directly along the river shoreline. It is an incredible space to sit in silence, listen to the moving water, gather beautiful river quartz rocks, and photograph the dramatic golden hour sun casting long shadows across the valley floor.
@@ -149,7 +149,7 @@ export default function ThingsToDoPage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">3. Experience Authentic Balti Culture</h2>
             <p>
-              Baltistan has a unique cultural heritage influenced by ancient Tibetan, Ladakhi, and Persian histories. 
+              Baltistan has a unique cultural heritage influenced by ancient Tibetan, Ladakhi, and Persian histories.
             </p>
             <p>
               During your stay at Serenge Retreat in Alchori, you can experience local culture first-hand:
@@ -164,7 +164,7 @@ export default function ThingsToDoPage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">4. Stargazing & Bonfire Gatherings</h2>
             <p>
-              At night, the low light pollution of Shigar Valley offers a window into the universe. The Milky Way stands out clearly across the night sky, framed by the dark, high outlines of the surrounding Karakoram peaks. 
+              At night, the low light pollution of Shigar Valley offers a window into the universe. The Milky Way stands out clearly across the night sky, framed by the dark, high outlines of the surrounding Karakoram peaks.
             </p>
             <p>
               We gather nightly around our crackling river-stone bonfire pit, sharing folklore and enjoying quiet moments beneath the immense starry sky.
@@ -199,7 +199,7 @@ export default function ThingsToDoPage() {
                 Shigar Valley is globally famous as the gateway to the high Karakoram peaks, including K2, Broad Peak, and Gasherbrum. It is also renowned for its sweet organic apricots, the stunning 400-year-old Shigar Fort, pristine high-altitude cold deserts, and its serene, quiet atmosphere perfect for wellness retreats.
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">How many days should I stay in Shigar?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">
