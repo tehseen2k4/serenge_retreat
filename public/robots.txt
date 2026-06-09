@@ -14,7 +14,6 @@ Allow: /journal
 Allow: /journal/
 Allow: /images/
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 Crawl-delay: 1
 
@@ -42,4 +41,4 @@ User-agent: Omgilibot
 Allow: /
 
 # ── Sitemap ────────────────────────────────────────────────────
-Sitemap: https://serengeretreat.com/sitemap.xml
+Sitemap: https://serengeretreatpakistan.com/sitemap.xml
