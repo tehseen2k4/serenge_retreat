@@ -8,6 +8,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import StructuredData from "./components/StructuredData";
 import Breadcrumbs from "./components/Breadcrumbs";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 
 const geistSans = Geist({
@@ -282,6 +283,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
