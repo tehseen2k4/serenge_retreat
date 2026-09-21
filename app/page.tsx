@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import GoogleReviews from "./components/GoogleReviews";
+import HomeHero from "./components/HomeHero";
 import { Home as HomeIcon, Waves, Sprout, Flame, Mountain } from "lucide-react";
 import StructuredData from "./components/StructuredData";
 
@@ -100,74 +101,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      {/* SECTION 1: HERO */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-stone/20 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/night retreat.png"
-            alt="Serengé Retreat hero image showing the eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
-            fill
-            className="object-cover opacity-96"
-            priority
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay */}
-        </div>
-
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-16">
-          {/* <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="text-3xl md:text-6xl font-serif text-white tracking-tight uppercase leading-tight drop-shadow-lg"
-          >
-             <br /> <span className="italic text-earth-light">The Serenity in the heart of Shigar</span>
-            <span className="sr-only"> | Serengé Retreat Shigar Valley</span>
-          </motion.h1> */}
-          {/* <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-4xl text-white/90 font-serif font-light tracking-[0.1em] drop-shadow-lg"
-          >
-            EXPERIENCE THE SERENITY  <br /> in the heart of Shigar
-          </motion.p> */}
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-            className="text-3xl md:text-5xl text-white/90 font-serif font-light tracking-[0.21em] drop-shadow-lg"
-          >
-            EXPERIENCE THE SERENITY
-          </motion.p>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/90">In the heart of Shigar</p>
-          <div className="h-5" />
-
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            transition={{ delay: 0.4 }}
-            className="pt-8 flex flex-col md:flex-row gap-4 justify-center items-center"
-          >
-            <Link
-              href="/stay#booking-form"
-              className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full text-sm uppercase tracking-[0.01em] hover:bg-earth hover:text-white transition-all duration-500 shadow-xl"
-            >
-              Find Your Sanctuary
-            </Link>
-            {/* <Link
-              href="/story"
-              className="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm uppercase tracking-widest text-white hover:bg-white/20 transition-all duration-500"
-            >
-              Our Story
-            </Link> */}
-          </motion.div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* SECTION 1.2: DENSE DEFINITION BLOCK (GEO AI ANCHOR) */}
       <section className="py-16 px-6 bg-paper border-b border-earth/5">

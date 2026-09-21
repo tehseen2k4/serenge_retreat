@@ -16,6 +16,8 @@
 :root {
   --background: var(--color-canvas);
   --foreground: var(--color-ink);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 body {
@@ -30,4 +32,69 @@ body {
 ::selection {
   background: var(--color-sand);
   color: var(--color-ink);
+}
+
+/* Homepage hero: same path, four seasons, 6s holds */
+@keyframes serenge-hero-fade {
+  0% { opacity: 0; }
+  5%, 20% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+@keyframes serenge-hero-fade-first {
+  0%, 20% { opacity: 1; }
+  25%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes serenge-hero-ken {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.08); }
+}
+
+.hero-plate {
+  animation: serenge-hero-fade 24s linear infinite;
+}
+
+.hero-plate-first {
+  animation-name: serenge-hero-fade-first;
+}
+
+.hero-plate-inner {
+  animation: serenge-hero-ken 6s var(--ease-in-out) infinite alternate;
+  will-change: transform;
+}
+
+.hero-cta {
+  transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease;
+}
+
+.hero-cta:active {
+  transform: scale(0.97);
+}
+
+.hero-cta:focus-visible {
+  outline: 2px solid var(--color-sand);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta:hover {
+    background-color: var(--color-earth);
+    color: var(--color-paper);
+  }
+}
+
+.hero-paused .hero-plate,
+.hero-paused .hero-plate-inner {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-plate,
+  .hero-plate-first,
+  .hero-plate-inner {
+    animation: none;
+    will-change: auto;
+  }
 }
