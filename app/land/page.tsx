@@ -176,7 +176,7 @@ export default function LandPage() {
                         <h2 className="text-3xl font-serif text-ink">Alchori & Shigar Fort</h2>
                         <p className="text-ink-soft font-light leading-relaxed">
                             Just 25 minutes away lies the 400-year-old Shigar Fort (Fong Khar).
-                            But here in Alchori, the experience is raw and authentic—village walks,
+                            But here in Alchori, the experience is raw and authentic. Village walks,
                             organic farming, and the warm smiles of the Balti people.
                         </p>
                     </div>

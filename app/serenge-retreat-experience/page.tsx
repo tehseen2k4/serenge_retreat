@@ -162,7 +162,7 @@ export default function ExperiencePage() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-serif text-ink italic">Intentionally Structured for Digital Detox</h2>
             <p>
-              Our retreat is a slow sanctuary. We invite you to experience a gentle digital detox—placing your phone in our safe box, reading books from our collection, writing in journals, and engaging in deep, unhurried conversations with other travelers. By reducing screen-time, you invite the quietness of the mountains to fill your mind.
+              Our retreat is a slow sanctuary. We invite you to experience a gentle digital detox: placing your phone in our safe box, reading books from our collection, writing in journals, and engaging in deep, unhurried conversations with other travelers. By reducing screen-time, you invite the quietness of the mountains to fill your mind.
             </p>
           </div>
 

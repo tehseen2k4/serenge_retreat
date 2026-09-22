@@ -5,8 +5,11 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import GoogleReviews from "./components/GoogleReviews";
 import HomeHero from "./components/HomeHero";
+import JourneyCarousel from "./components/JourneyCarousel";
+import HomeInquire from "./components/HomeInquire";
+import BookingDotComLink from "./components/BookingDotComLink";
+import FromTheHouse from "./components/FromTheHouse";
 import { Home as HomeIcon, Waves, Sprout, Flame, Mountain } from "lucide-react";
-import StructuredData from "./components/StructuredData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -126,7 +129,7 @@ export default function Home() {
           <p className="text-lg md:text-xl">
             Inspired by the Tibetan word <span className="text-ink font-serif italic">Tsering</span>, meaning "Long Life."
             In the high valleys of Baltistan, it is a word of blessing, often heard in the greeting
-            <span className="text-earth italic"> Tashi Serengé</span> — An auspicious long life.
+            <span className="text-earth italic"> Tashi Serengé</span>. An auspicious long life.
           </p>
           <div className="w-12 h-px bg-earth/20 mx-auto" />
           <p className="max-w-xl mx-auto text-sm text-ink-muted italic">
@@ -197,61 +200,13 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.4em] text-earth">Your Path</p>
             <h2 className="text-3xl md:text-5xl font-serif text-ink italic">Choose Your Journey</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <Link href="/journeys#soul" className="group block space-y-4">
-              <div className="h-96 w-full bg-stone/20 overflow-hidden relative rounded-sm">
-                <Image
-                  src="/images/home/Soul Journeys.webp"
-                  alt="Soul Journeys - Guided introspection and silence at Serengé Retreat"
-                  fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-stone/10 group-hover:bg-transparent transition-colors" />
-              </div>
-              <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Soul Journeys</h3>
-              <p className="text-sm text-ink-muted leading-relaxed">
-                Guided introspection, silence, and deep rest. For those seeking clarity.
-              </p>
-            </Link>
+          <JourneyCarousel />
+        </div>
+      </section>
 
-            {/* Card 2 */}
-            <Link href="/journeys#wellness" className="group block space-y-4">
-              <div className="h-96 w-full bg-sand/30 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
-                <Image
-                  src="/images/home/Wellness Retreat.webp"
-                  alt="Wellness Retreats - Breathwork and yoga in the Karakoram mountains"
-                  fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-sand/10 group-hover:bg-transparent transition-colors" />
-              </div>
-              <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Wellness Retreats</h3>
-              <p className="text-sm text-ink-muted leading-relaxed">
-                Breathwork, yoga, and somatic healing led by expert practitioners.
-              </p>
-            </Link>
-
-            {/* Card 3 */}
-            <Link href="/journeys#immersion" className="group block space-y-4">
-              <div className="h-96 w-full bg-earth/20 transition-all duration-700 ease-out overflow-hidden relative rounded-sm">
-                <Image
-                  src="/images/home/Nature Immersions.webp"
-                  alt="Nature Immersions - Glacier walks and star-gazing in Shigar Valley"
-                  fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-earth/10 group-hover:bg-transparent transition-colors" />
-              </div>
-              <h3 className="text-xl font-serif text-ink group-hover:text-earth transition-colors">Nature Immersions</h3>
-              <p className="text-sm text-ink-muted leading-relaxed">
-                Walks on the glacier, star-gazing, and connection with the ancient land.
-              </p>
-            </Link>
-          </div>
+      <section className="overflow-hidden bg-canvas px-6 py-16 md:px-12 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <GoogleReviews />
         </div>
       </section>
 
@@ -370,13 +325,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: TESTIMONIALS */}
-      <section className="py-24 px-6 md:px-12 bg-canvas overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <GoogleReviews />
-        </div>
-      </section>
-
       {/* SECTION 5: FINAL CTA */}
       <section className="py-32 bg-paper text-center space-y-8 px-6 border-t border-earth/5">
         <h3 className="text-3xl md:text-5xl font-serif text-ink italic">Ready to step into the silence?</h3>
@@ -384,13 +332,16 @@ export default function Home() {
           We prefer human connection over automated systems.
           Message us to begin planning your stay at Serengé.
         </p>
-        <div className="pt-6">
+        <div className="pt-6 flex flex-col items-center gap-4">
           <Link
-            href="/stay#book"
+            href="/stay#booking-form"
             className="inline-block px-12 py-4 bg-earth text-white text-sm uppercase tracking-widest hover:bg-ink transition-colors duration-500 shadow-lg"
           >
             Start the Conversation
           </Link>
+          <p className="text-sm font-light text-ink-soft">
+            Or reserve on <BookingDotComLink />.
+          </p>
         </div>
       </section>
 
@@ -409,6 +360,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <FromTheHouse />
+      <HomeInquire />
     </div>
   );
 }

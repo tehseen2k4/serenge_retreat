@@ -155,11 +155,14 @@ export default function GoogleReviews() {
 
   useEffect(() => {
     fetch("/api/reviews")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("reviews unavailable");
+        return res.json();
+      })
       .then((json) => {
         if (json.reviews && json.reviews.length > 0) {
           setData(json);
-          setIsGoogle(true);
+          setIsGoogle(Boolean(json.live));
         }
       })
       .catch(() => {
@@ -169,7 +172,7 @@ export default function GoogleReviews() {
   }, []);
 
   const reviews: GoogleReview[] =
-    isGoogle && data?.reviews?.length ? data.reviews : FALLBACK_REVIEWS;
+    data?.reviews?.length ? data.reviews : FALLBACK_REVIEWS;
 
   return (
     <div className="space-y-16">

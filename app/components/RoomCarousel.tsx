@@ -1,100 +1,135 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { ROOMS_PDF } from "../lib/inquiry";
 
-interface Slide {
-    id: number;
-    src: string;
-    label: string;
-}
+type RoomId = "deluxe" | "twin" | "hut";
 
-const slides: Slide[] = [
-    { id: 1, src: "/images/stay/Riverside Hut.webp", label: "Riverside Hut" },
-    { id: 2, src: "/images/stay/Deluxe Room.webp", label: "Deluxe Room" },
-    { id: 3, src: "/images/stay/Twin Room.webp", label: "Twin Room" },
+const rooms: {
+  id: RoomId;
+  name: string;
+  kicker: string;
+  copy: string;
+  photos: { src: string; alt: string }[];
+}[] = [
+  {
+    id: "deluxe",
+    name: "Baltoro Deluxe Room",
+    kicker: "For two, or one who wants space",
+    copy: "Inspired by the Baltoro. A wide bed, mountain cloth on the wall, and a window onto the fields.",
+    photos: [
+      { src: "/images/stay/rooms/deluxe-window.jpg", alt: "Deluxe room bed facing the orchard window" },
+      { src: "/images/stay/rooms/deluxe-bed.jpg", alt: "Deluxe wooden bed with embroidered mountain hoops" },
+      { src: "/images/stay/rooms/deluxe-bath.jpg", alt: "Deluxe bathroom with stone floor and wooden towel ladder" },
+      { src: "/images/stay/rooms/deluxe-shower.jpg", alt: "Rain shower against mud plaster and bamboo shade" },
+    ],
+  },
+  {
+    id: "twin",
+    name: "Arandu Twin Room",
+    kicker: "Friends, family, travel companions",
+    copy: "Two beds, poplar beams, and the same valley light. Built for people who want their own sleep and a shared view.",
+    photos: [
+      { src: "/images/stay/rooms/twin-sitting.jpg", alt: "Twin beds beside a mountain window and sitting corner" },
+      { src: "/images/stay/rooms/twin-beds.jpg", alt: "Twin room looking out to trees and peaks" },
+      { src: "/images/stay/rooms/twin-bath.jpg", alt: "Twin room bathroom with timber ceiling and rain shower" },
+    ],
+  },
+  {
+    id: "hut",
+    name: "Riverside Hut",
+    kicker: "Wood, river, and the mountain",
+    copy: "A timber hut under the trees, with a deck over the Shigar River. The bed faces glass, water, and stone.",
+    photos: [
+      { src: "/images/stay/rooms/hut-deck.jpg", alt: "Hut deck looking across the Shigar River to the mountains" },
+      { src: "/images/stay/rooms/hut-exterior.jpg", alt: "Riverside hut exterior under trees" },
+      { src: "/images/stay/rooms/hut-interior.jpg", alt: "Hut bedroom with sliding glass to the river deck" },
+      { src: "/images/stay/rooms/hut-bed.jpg", alt: "Sun on the hut bed and timber walls" },
+    ],
+  },
 ];
 
 export default function RoomCarousel() {
-    const [index, setIndex] = useState(0);
+  const [roomId, setRoomId] = useState<RoomId>("deluxe");
+  const [shot, setShot] = useState(0);
+  const room = rooms.find((r) => r.id === roomId) ?? rooms[0];
+  const featured = room.photos[shot] ?? room.photos[0];
 
-    const nextSlide = () => {
-        setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
+  const chooseRoom = (id: RoomId) => {
+    setRoomId(id);
+    setShot(0);
+  };
 
-    const prevSlide = () => {
-        setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    };
+  return (
+    <div className="space-y-8">
+      <div className="relative aspect-[16/7] overflow-hidden bg-stone/20">
+        <Image
+          src="/images/stay/rooms/lodge-path.jpg"
+          alt="Stone path to Serenge Retreat beneath the Karakoram"
+          fill
+          className="object-cover object-[center_70%]"
+          sizes="100vw"
+          priority
+        />
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {rooms.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => chooseRoom(item.id)}
+            className={`px-4 py-2 text-[11px] uppercase tracking-[0.16em] transition-colors ${
+              roomId === item.id ? "bg-earth text-paper" : "bg-paper text-ink-soft hover:text-earth"
+            }`}
+          >
+            {item.name.replace(" Room", "").replace("Baltoro ", "").replace("Arandu ", "")}
+          </button>
+        ))}
+      </div>
 
-    const swipeConfidenceThreshold = 10000;
-    const swipePower = (offset: number, velocity: number) => {
-        return Math.abs(offset) * velocity;
-    };
-
-    return (
-        <div className="relative w-full h-[500px] bg-canvas overflow-hidden group rounded-sm">
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5 }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(e, { offset, velocity }) => {
-                        const swipe = swipePower(offset.x, velocity.x);
-
-                        if (swipe < -swipeConfidenceThreshold) {
-                            nextSlide();
-                        } else if (swipe > swipeConfidenceThreshold) {
-                            prevSlide();
-                        }
-                    }}
-                    className="absolute inset-0 w-full h-full"
-                >
-                    <Image
-                        src={slides[index].src}
-                        alt={slides[index].label}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-
-                    {/* Label Overlay */}
-                    <div className="absolute bottom-8 left-8 bg-paper/90 px-4 py-2 text-ink text-sm tracking-widest uppercase shadow-sm border border-earth/10">
-                        {slides[index].label}
-                    </div>
-                </motion.div>
-            </AnimatePresence>
-
-            {/* Buttons - Always visible on touch, hover effect on desktop */}
-            <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-paper/80 backdrop-blur-sm p-3 rounded-full text-ink shadow-sm hover:bg-earth hover:text-white transition-all duration-300 z-10"
-            >
-                <ChevronLeft size={20} />
-            </button>
-            <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-paper/80 backdrop-blur-sm p-3 rounded-full text-ink shadow-sm hover:bg-earth hover:text-white transition-all duration-300 z-10"
-            >
-                <ChevronRight size={20} />
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-8 right-8 flex gap-2 z-10">
-                {slides.map((_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => setIndex(i)}
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${i === index ? "bg-earth" : "bg-white/50"}`}
-                    />
-                ))}
-            </div>
+      <div className="grid items-start gap-8 lg:grid-cols-12">
+        <div className="space-y-4 lg:col-span-4">
+          <p className="text-[10px] uppercase tracking-[0.22em] text-earth">{room.kicker}</p>
+          <h4 className="font-serif text-3xl italic text-ink">{room.name}</h4>
+          <p className="max-w-sm font-light leading-relaxed text-ink-soft">{room.copy}</p>
+          <a
+            href={ROOMS_PDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-[10px] uppercase tracking-widest text-earth underline underline-offset-4"
+          >
+            Full room sheet (PDF)
+          </a>
         </div>
-    );
+
+        <div className="space-y-3 lg:col-span-8">
+          <div className="relative aspect-[16/10] overflow-hidden bg-stone/20">
+            <Image
+              src={featured.src}
+              alt={featured.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              priority
+            />
+          </div>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+            {room.photos.map((photo, i) => (
+              <button
+                key={photo.src}
+                type="button"
+                onClick={() => setShot(i)}
+                className={`relative aspect-[4/3] overflow-hidden ${i === shot ? "ring-2 ring-earth ring-offset-2 ring-offset-canvas" : "opacity-80 hover:opacity-100"}`}
+                aria-label={photo.alt}
+                aria-pressed={i === shot}
+              >
+                <Image src={photo.src} alt="" fill className="object-cover" sizes="180px" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

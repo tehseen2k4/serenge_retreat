@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Riverside Stays Near Skardu | Serenge Retreat Shigar",
     description: "Handcrafted riverfront cabins and peaceful retreats near Skardu. Experience slow travel in Northern Pakistan.",
-    url: "https://serengeretreat.com/best-riverside-stays-skardu",
+    url: "https://www.serengeretreatpakistan.com/best-riverside-stays-skardu",
   }
 };
 
@@ -20,10 +20,10 @@ export default function RiversideStaysPage() {
   const lodgingSchema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://serengeretreat.com/#lodging",
+    "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
     "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
-    "url": "https://serengeretreat.com",
+    "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alchori Village",
@@ -41,13 +41,13 @@ export default function RiversideStaysPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://serengeretreat.com"
+        "item": "https://www.serengeretreatpakistan.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Riverside Stays Skardu",
-        "item": "https://serengeretreat.com/best-riverside-stays-skardu"
+        "item": "https://www.serengeretreatpakistan.com/best-riverside-stays-skardu"
       }
     ]
   };
@@ -156,7 +156,7 @@ export default function RiversideStaysPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Couples:</strong> Share a quiet candle-lit evening bonfire, watch the mountain sunset, and sleep in cozy local pine-scented cabins.</li>
               <li><strong>Landscape Photographers:</strong> Capture the dramatic, sharp peaks of Spantik and Khosar Gang reflected in the quiet pools of the river.</li>
-              <li><strong>Digital Nomads & Remote Workers:</strong> Access reliable connectivity in our silent, cozy dining room, then step straight out onto the river beach for a sensory screen break.</li>
+              <li><strong>Digital Nomads & Remote Workers:</strong> There is lodge internet in our quiet dining room, though it is not high-speed. Then step straight out onto the river beach for a sensory screen break.</li>
               <li><strong>Digital Detox Visitors:</strong> Intentionally unplug and practice slow living under the vast Northern sky.</li>
             </ul>
           </div>

@@ -69,7 +69,7 @@ export default function DigitalDetoxPage() {
         "name": "Is there internet access at Serenge Retreat?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we have reliable internet access available in our central lodge building for guests who need to check in periodically or work remotely. However, we intentionally do not have Wi-Fi in the guest cabins, encouraging guests to unplug and rest in their private sanctuaries."
+          "text": "There is internet in the central lodge for guests who need to check in. It is not high-speed wifi, and weather can slow it. Guest cabins do not have wifi, so rooms stay quiet."
         }
       },
       {
@@ -179,7 +179,7 @@ export default function DigitalDetoxPage() {
             <div className="bg-white p-6 rounded-sm border border-earth/10 space-y-2">
               <h3 className="font-serif text-lg text-ink font-medium">Is there internet access at Serenge Retreat?</h3>
               <p className="text-sm text-ink-muted leading-relaxed font-light">
-                Yes, we have reliable internet access available in our central lodge building for guests who need to check in periodically or work remotely. However, we intentionally do not have Wi-Fi in the guest cabins, encouraging guests to unplug and rest in their private sanctuaries.
+                There is internet in the central lodge for guests who need to check in. It is not high-speed wifi, and weather can slow it. Guest cabins do not have wifi, so rooms stay quiet.
               </p>
             </div>
 

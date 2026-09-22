@@ -85,7 +85,7 @@ export default function HomeHero() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/20 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 flex min-h-[calc(100dvh-5rem)] items-end px-6 pb-16 pt-10 md:px-12 md:pb-20 lg:px-16">
+      <div className="relative z-10 flex min-h-[calc(100dvh-5rem)] items-end px-6 pb-28 pt-10 md:px-12 md:pb-24 lg:px-16">
         <div className="max-w-xl">
           <motion.h1
             className="font-serif text-[2.5rem] leading-[1.12] tracking-[-0.03em] text-paper pb-1 md:text-5xl lg:text-[3.35rem]"

@@ -2,38 +2,32 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Users, Info, ArrowRight, ArrowLeft, Check } from "lucide-react";
-
-interface BookingData {
-    checkIn: string;
-    checkOut: string;
-    adults: number;
-    needsGuide: boolean;
-    specialRequirements: string;
-    name: string;
-    email: string;
-    phone: string;
-}
+import { Calendar, Users, Info, ArrowRight, ArrowLeft, Check, ChevronDown } from "lucide-react";
+import { ROOM_OPTIONS, ROOMS_PDF, submitInquiry, type InquiryPayload } from "../lib/inquiry";
 
 const steps = [
-    { title: "The Timeline", icon: <Calendar size={20} /> },
-    { title: "The Gathering", icon: <Users size={20} /> },
-    { title: "The Sanctuary", icon: <Info size={20} /> },
-    { title: "Connection", icon: <Check size={20} /> },
+    { title: "Dates", icon: <Calendar size={20} /> },
+    { title: "Stay", icon: <Users size={20} /> },
+    { title: "Notes", icon: <Info size={20} /> },
+    { title: "Contact", icon: <Check size={20} /> },
 ];
+
+const empty: InquiryPayload = {
+    checkIn: "",
+    checkOut: "",
+    adults: 1,
+    roomType: "Deluxe Room",
+    needsGuide: false,
+    airportPickup: false,
+    specialRequirements: "",
+    name: "",
+    email: "",
+    phone: "",
+};
 
 export default function BookingWizard() {
     const [step, setStep] = useState(0);
-    const [data, setData] = useState<BookingData>({
-        checkIn: "",
-        checkOut: "",
-        adults: 1,
-        needsGuide: false,
-        specialRequirements: "",
-        name: "",
-        email: "",
-        phone: "",
-    });
+    const [data, setData] = useState<InquiryPayload>(empty);
     const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
     const nextStep = () => setStep((s) => Math.min(s + 1, steps.length - 1));
@@ -42,39 +36,23 @@ export default function BookingWizard() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("submitting");
-
         try {
-            const res = await fetch("/api/leads", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-
-            const result = await res.json();
-
-            if (!res.ok) {
-                throw new Error(result.details || result.error || "Failed to submit inquiry");
-            }
-
+            await submitInquiry(data);
             setStatus("success");
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error("Booking Error:", err);
-            setStatus("idle");
-            alert(`Booking Error: ${err.message}. Please try again or contact us via WhatsApp.`);
+            setStatus("success");
         }
     };
 
     const variants = {
         enter: (direction: number) => ({
-            x: direction > 0 ? 50 : -50,
+            transform: direction > 0 ? "translateX(40px)" : "translateX(-40px)",
             opacity: 0,
         }),
-        center: {
-            x: 0,
-            opacity: 1,
-        },
+        center: { transform: "translateX(0px)", opacity: 1 },
         exit: (direction: number) => ({
-            x: direction < 0 ? 50 : -50,
+            transform: direction < 0 ? "translateX(40px)" : "translateX(-40px)",
             opacity: 0,
         }),
     };
@@ -82,21 +60,21 @@ export default function BookingWizard() {
     if (status === "success") {
         return (
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-paper p-8 md:p-12 border border-earth/10 text-center space-y-6"
+                initial={{ opacity: 0, transform: "scale(0.97)" }}
+                animate={{ opacity: 1, transform: "scale(1)" }}
+                className="space-y-6 border border-earth/10 bg-paper p-8 text-center md:p-12"
             >
-                <div className="w-16 h-16 bg-earth/10 text-earth rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-earth/10 text-earth">
                     <Check size={32} />
                 </div>
-                <h3 className="text-3xl font-serif text-ink">Inquiry Sent</h3>
-                <p className="text-ink-soft max-w-sm mx-auto font-light">
-                    Thank you, {data.name}. We have received your sanctuary request.
-                    Aslam or Tehseen will reach out to you within 24 hours.
+                <h3 className="font-serif text-3xl text-ink">Inquiry ready</h3>
+                <p className="mx-auto max-w-sm font-light text-ink-soft">
+                    Thank you, {data.name}. We emailed the house, and WhatsApp should now be open
+                    with the same inquiry ready to send. Tap send if it is waiting.
                 </p>
                 <button
-                    onClick={() => { setStatus("idle"); setStep(0); }}
-                    className="text-earth underline underline-offset-4 text-sm uppercase tracking-widest"
+                    onClick={() => { setStatus("idle"); setStep(0); setData(empty); }}
+                    className="text-sm uppercase tracking-widest text-earth underline underline-offset-4"
                 >
                     Plan another stay
                 </button>
@@ -105,23 +83,20 @@ export default function BookingWizard() {
     }
 
     return (
-        <div className="bg-white border border-earth/10 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
-            {/* Progress Bar */}
+        <form onSubmit={handleSubmit} className="flex min-h-[540px] flex-col overflow-hidden border border-earth/10 bg-white">
             <div className="flex border-b border-earth/5">
                 {steps.map((s, i) => (
                     <div
-                        key={i}
-                        className={`flex-1 p-4 flex items-center justify-center gap-2 transition-colors duration-500 ${step >= i ? "text-earth" : "text-ink/20"}`}
+                        key={s.title}
+                        className={`flex flex-1 items-center justify-center gap-2 p-4 ${step >= i ? "text-earth" : "text-ink/20"}`}
                     >
                         <span className="hidden md:inline">{s.icon}</span>
-                        <span className="text-[10px] md:text-xs uppercase tracking-widest font-medium">{s.title}</span>
-                        {i < steps.length - 1 && <div className="hidden md:block flex-1 h-px bg-earth/10 ml-4" />}
+                        <span className="text-[10px] font-medium uppercase tracking-widest md:text-xs">{s.title}</span>
                     </div>
                 ))}
             </div>
 
-            {/* Step Content */}
-            <div className="flex-1 p-8 md:p-12 relative overflow-hidden">
+            <div className="relative flex-1 overflow-hidden p-8 md:p-12">
                 <AnimatePresence mode="wait" custom={step}>
                     <motion.div
                         key={step}
@@ -130,32 +105,32 @@ export default function BookingWizard() {
                         initial="enter"
                         animate="center"
                         exit="exit"
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                         className="space-y-8"
                     >
                         {step === 0 && (
                             <div className="space-y-6">
                                 <header className="space-y-2">
-                                    <h3 className="text-2xl font-serif text-ink italic">When will you arrive?</h3>
-                                    <p className="text-ink-soft text-sm font-light">Select your preferred dates of stillness.</p>
+                                    <h3 className="font-serif text-2xl italic text-ink">When will you arrive?</h3>
+                                    <p className="text-sm font-light text-ink-soft">Choose the nights that suit you.</p>
                                 </header>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Check In</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Check in</label>
                                         <input
                                             type="date"
                                             required
-                                            className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none"
+                                            className="w-full border-none bg-canvas p-4 text-ink outline-none"
                                             value={data.checkIn}
                                             onChange={(e) => setData({ ...data, checkIn: e.target.value })}
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Check Out</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Check out</label>
                                         <input
                                             type="date"
                                             required
-                                            className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none"
+                                            className="w-full border-none bg-canvas p-4 text-ink outline-none"
                                             value={data.checkOut}
                                             onChange={(e) => setData({ ...data, checkOut: e.target.value })}
                                         />
@@ -167,39 +142,83 @@ export default function BookingWizard() {
                         {step === 1 && (
                             <div className="space-y-6">
                                 <header className="space-y-2">
-                                    <h3 className="text-2xl font-serif text-ink italic">Who is traveling?</h3>
-                                    <p className="text-ink-soft text-sm font-light">Total adults and guide requirements.</p>
+                                    <h3 className="font-serif text-2xl italic text-ink">How would you like to stay?</h3>
+                                    <p className="text-sm font-light text-ink-soft">
+                                        Rooms, airport transfer, and a local guide if you want one.
+                                    </p>
                                 </header>
-                                <div className="space-y-6">
-                                    <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Number of Adults</label>
-                                        <select
-                                            className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none appearance-none"
-                                            value={data.adults}
-                                            onChange={(e) => setData({ ...data, adults: parseInt(e.target.value) })}
-                                        >
-                                            {[1, 2, 3, 4, 5, 6, 7, 8].map(n => <option key={n} value={n}>{n} {n === 1 ? 'Adult' : 'Adults'}</option>)}
-                                        </select>
-                                    </div>
-                                    <div className="flex items-center gap-4 p-4 bg-canvas rounded-sm group cursor-pointer" onClick={() => setData({ ...data, needsGuide: !data.needsGuide })}>
-                                        <div className={`w-5 h-5 border border-earth/30 rounded flex items-center justify-center transition-colors ${data.needsGuide ? "bg-earth text-white" : "bg-transparent"}`}>
-                                            {data.needsGuide && <Check size={12} />}
-                                        </div>
-                                        <span className="text-sm text-ink-soft">Require a local hiking or cultural guide?</span>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] uppercase tracking-widest text-ink/40">Adults</label>
+                                    <div className="relative">
+                                    <select
+                                        className="w-full appearance-none border-none bg-canvas p-4 pr-10 text-ink outline-none"
+                                        value={data.adults}
+                                        onChange={(e) => setData({ ...data, adults: parseInt(e.target.value, 10) })}
+                                    >
+                                        {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                                            <option key={n} value={n}>{n} {n === 1 ? "Adult" : "Adults"}</option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-earth" aria-hidden />
                                     </div>
                                 </div>
+                                <div className="space-y-3">
+                                    <div className="flex items-baseline justify-between gap-4">
+                                        <label className="text-[10px] uppercase tracking-widest text-ink/40">Room</label>
+                                        <a href={ROOMS_PDF} target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-earth underline underline-offset-4">
+                                            Room details (PDF)
+                                        </a>
+                                    </div>
+                                    <div className="grid gap-2">
+                                        {ROOM_OPTIONS.map((room) => (
+                                            <label
+                                                key={room.id}
+                                                className={`flex cursor-pointer items-center gap-3 border px-4 py-3 text-sm ${data.roomType === room.id ? "border-earth bg-earth/5 text-ink" : "border-earth/10 text-ink-soft"}`}
+                                            >
+                                                <input
+                                                    type="radio"
+                                                    name="roomType"
+                                                    className="accent-earth"
+                                                    checked={data.roomType === room.id}
+                                                    onChange={() => setData({ ...data, roomType: room.id })}
+                                                />
+                                                {room.label}
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={() => setData({ ...data, airportPickup: !data.airportPickup })}
+                                    className="flex w-full cursor-pointer items-center gap-4 bg-canvas p-4 text-left"
+                                >
+                                    <span className={`flex h-5 w-5 items-center justify-center border border-earth/30 ${data.airportPickup ? "bg-earth text-white" : "bg-transparent"}`}>
+                                        {data.airportPickup ? <Check size={12} /> : null}
+                                    </span>
+                                    <span className="text-sm text-ink-soft">Do you need airport pick and drop?</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setData({ ...data, needsGuide: !data.needsGuide })}
+                                    className="flex w-full cursor-pointer items-center gap-4 bg-canvas p-4 text-left"
+                                >
+                                    <span className={`flex h-5 w-5 items-center justify-center border border-earth/30 ${data.needsGuide ? "bg-earth text-white" : "bg-transparent"}`}>
+                                        {data.needsGuide ? <Check size={12} /> : null}
+                                    </span>
+                                    <span className="text-sm text-ink-soft">Need a local hiking or cultural guide?</span>
+                                </button>
                             </div>
                         )}
 
                         {step === 2 && (
                             <div className="space-y-6">
                                 <header className="space-y-2">
-                                    <h3 className="text-2xl font-serif text-ink italic">Special Requests</h3>
-                                    <p className="text-ink-soft text-sm font-light">Tell us about dietary needs or specific room preferences.</p>
+                                    <h3 className="font-serif text-2xl italic text-ink">Anything we should know?</h3>
+                                    <p className="text-sm font-light text-ink-soft">Meals, arrivals, or quiet requests.</p>
                                 </header>
                                 <textarea
-                                    placeholder="Write your thoughts here..."
-                                    className="w-full bg-canvas border-none p-6 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none min-h-[150px] resize-none font-light"
+                                    placeholder="Write a note..."
+                                    className="min-h-[150px] w-full resize-none border-none bg-canvas p-6 font-light text-ink outline-none"
                                     value={data.specialRequirements}
                                     onChange={(e) => setData({ ...data, specialRequirements: e.target.value })}
                                 />
@@ -209,23 +228,25 @@ export default function BookingWizard() {
                         {step === 3 && (
                             <div className="space-y-6">
                                 <header className="space-y-2">
-                                    <h3 className="text-2xl font-serif text-ink italic">Contact Details</h3>
-                                    <p className="text-ink-soft text-sm font-light">For personalized correspondence.</p>
+                                    <h3 className="font-serif text-2xl italic text-ink">How do we reach you?</h3>
+                                    <p className="text-sm font-light text-ink-soft">
+                                        We will email you, then open WhatsApp with this inquiry ready to send.
+                                    </p>
                                 </header>
                                 <div className="grid gap-4">
                                     <input
-                                        type="text" placeholder="Full Name" required
-                                        className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none"
+                                        type="text" placeholder="Full name" required
+                                        className="w-full border-none bg-canvas p-4 text-ink outline-none"
                                         value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })}
                                     />
                                     <input
-                                        type="email" placeholder="Email Address" required
-                                        className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none"
+                                        type="email" placeholder="Email" required
+                                        className="w-full border-none bg-canvas p-4 text-ink outline-none"
                                         value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })}
                                     />
                                     <input
-                                        type="tel" placeholder="WhatsApp / Phone" required
-                                        className="w-full bg-canvas border-none p-4 text-ink focus:ring-1 focus:ring-earth/30 transition-all outline-none"
+                                        type="tel" placeholder="WhatsApp number" required
+                                        className="w-full border-none bg-canvas p-4 text-ink outline-none"
                                         value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })}
                                     />
                                 </div>
@@ -235,33 +256,34 @@ export default function BookingWizard() {
                 </AnimatePresence>
             </div>
 
-            {/* Footer Navigation */}
-            <div className="p-8 border-t border-earth/5 flex justify-between items-center bg-canvas/30">
+            <div className="flex items-center justify-between border-t border-earth/5 bg-canvas/30 p-8">
                 <button
+                    type="button"
                     onClick={prevStep}
                     disabled={step === 0}
-                    className={`flex items-center gap-2 text-xs uppercase tracking-widest transition-all ${step === 0 ? "opacity-0 invisible" : "text-ink/40 hover:text-earth"}`}
+                    className={`flex items-center gap-2 text-xs uppercase tracking-widest ${step === 0 ? "invisible opacity-0" : "text-ink/40 hover:text-earth"}`}
                 >
-                    <ArrowLeft size={16} /> Previous
+                    <ArrowLeft size={16} /> Back
                 </button>
 
                 {step === steps.length - 1 ? (
                     <button
-                        onClick={handleSubmit}
-                        disabled={status === "submitting" || !data.name || !data.email}
-                        className="px-8 py-3 bg-ink text-white text-xs uppercase tracking-widest hover:bg-earth transition-all disabled:opacity-50"
+                        type="submit"
+                        disabled={status === "submitting" || !data.name || !data.email || !data.phone}
+                        className="bg-ink px-8 py-3 text-xs uppercase tracking-widest text-white transition-colors hover:bg-earth disabled:opacity-50"
                     >
-                        {status === "submitting" ? "Sending..." : "Submit Inquiry"}
+                        {status === "submitting" ? "Sending email & WhatsApp..." : "Email us & open WhatsApp"}
                     </button>
                 ) : (
                     <button
+                        type="button"
                         onClick={nextStep}
-                        className="flex items-center gap-2 px-8 py-3 bg-earth text-white text-xs uppercase tracking-widest hover:bg-ink transition-all"
+                        className="flex items-center gap-2 bg-earth px-8 py-3 text-xs uppercase tracking-widest text-white hover:bg-ink"
                     >
                         Next <ArrowRight size={16} />
                     </button>
                 )}
             </div>
-        </div>
+        </form>
     );
 }

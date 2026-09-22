@@ -63,6 +63,16 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <a href="/docs/serenge-menu.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">
+                Kitchen Menu (PDF)
+              </a>
+            </li>
+            <li>
+              <a href="/docs/serenge-rooms.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">
+                Room Details (PDF)
+              </a>
+            </li>
+            <li>
               <Link href="/things-to-do-shigar-valley" className="hover:text-earth transition-colors">
                 Things to Do in Shigar
               </Link>
@@ -73,13 +83,14 @@ export default function Footer() {
         {/* Left Section: Context */}
         <div className="space-y-6">
           <p className="text-ink-soft italic font-light max-w-sm text-sm md:text-base leading-relaxed">
-            &ldquo;We aim to offer not just a stay — but a sense of belonging, calm, and meaningful connection with the land and its people.&rdquo;
+            &ldquo;We aim to offer not just a stay, but a sense of belonging, calm, and meaningful connection with the land and its people.&rdquo;
           </p>
           <div className="pt-6 space-y-4">
             <p className="text-xs uppercase tracking-[0.2em] text-earth">Social connection</p>
             <div className="flex gap-6 text-sm text-ink-soft">
               <a href="https://www.instagram.com/serengeretreat" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">Instagram</a>
               <a href="https://www.facebook.com/share/1Ctpfh7Lwf/" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">Facebook</a>
+              <a href="https://www.booking.com/Pulse-zJRGAy" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">Booking.com</a>
             </div>
           </div>
         </div>

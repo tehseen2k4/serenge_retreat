@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BookingWizard from "../components/BookingWizard";
 import StructuredData from "../components/StructuredData";
+import BookingDotComLink from "../components/BookingDotComLink";
 
 export default function StayPage() {
     const staySchema = {
@@ -150,7 +151,10 @@ export default function StayPage() {
                             </h3>
                             <p className="text-ink-soft text-lg font-light leading-relaxed max-w-md">
                                 Large windows, warm wood details, and serene views of the mountains and river.
-                                Ideal for those who love comfort blended with nature.
+                                Ideal for those who love comfort blended with nature.{" "}
+                                <a href="/docs/serenge-rooms.pdf" target="_blank" rel="noopener noreferrer" className="text-earth underline underline-offset-4">
+                                    Room details (PDF)
+                                </a>
                             </p>
                         </div>
 
@@ -160,7 +164,7 @@ export default function StayPage() {
                                 <ul className="text-[10px] text-ink-soft space-y-1 uppercase tracking-wider">
                                     <li>• Organic Breakfast</li>
                                     <li>• Running Hot Water</li>
-                                    <li>• High Speed Wi-Fi</li>
+                                    <li>• Lodge internet</li>
                                     <li>• Room Service</li>
                                 </ul>
                             </div>
@@ -180,6 +184,7 @@ export default function StayPage() {
                     {/* Right Column: The Wizard */}
                     <div className="space-y-8">
                         <BookingWizard />
+                        <BookingDotComLink variant="block" />
                         <div className="p-8 bg-paper/50 border border-earth/5 text-center">
                             <p className="text-xs text-ink-soft font-light italic">
                                 Prefer a standard form? <Link href="/book" className="text-earth underline underline-offset-4">Visit our Booking Page</Link>
@@ -192,9 +197,13 @@ export default function StayPage() {
             {/* Room Details Overlay/Carousel */}
             <section className="pb-32 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="mb-12 flex justify-between items-end">
-                        <h3 className="text-2xl font-serif text-ink italic">The Aesthetic</h3>
-                        <p className="text-xs uppercase tracking-widest text-ink/40">Scroll to explore rooms</p>
+                    <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                        <div className="space-y-2">
+                            <h3 className="text-2xl font-serif text-ink italic md:text-4xl">The Aesthetic</h3>
+                            <p className="max-w-md text-sm font-light text-ink-soft">
+                                Deluxe, Twin, and the Riverside Hut, as they stand. These photographs come from the house itself.
+                            </p>
+                        </div>
                     </div>
                     <RoomCarousel />
                 </div>
@@ -241,6 +250,14 @@ export default function StayPage() {
                     <h2 className="text-sm uppercase tracking-[0.4em] text-earth">Nourishment</h2>
                     <h3 className="text-4xl font-serif text-ink">The Menu</h3>
                     <p className="text-ink-soft font-italic">Wholesome, home-cooked, and rooted in the mountains.</p>
+                    <a
+                        href="/docs/serenge-menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-xs uppercase tracking-widest text-earth border-b border-earth/20 pb-1 hover:text-ink hover:border-ink"
+                    >
+                        Open the kitchen menu (PDF)
+                    </a>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-16">

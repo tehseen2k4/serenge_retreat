@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
-    title: "Eco Rooms & Booking | Serengé Retreat Shigar Valley ★",
-    description: "Stay in our eco-friendly mud brick retreat. Book your room or inquire about personalized wellness journeys in Shigar Valley. Authentic mountain silence guaranteed ✓",
+    title: "Eco Rooms & Booking | Serengé Retreat Shigar Valley",
+    description: "Stay in our eco-friendly mud brick retreat. Book your room or inquire about personalized wellness journeys in Shigar Valley.",
     keywords: [
         "book shigar valley retreat",
         "eco accommodation pakistan",
@@ -36,7 +36,7 @@ const faqSchema = {
             "name": "How far is Serenge Retreat from Skardu Airport?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Serenge Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough track, best for 4x4 vehicles — drive slowly or request a pickup."
+                "text": "Serenge Retreat is 57 km (1 hr 45 min) from Skardu Airport and 17 km (25 min) from Shigar Fort. The last 1.4 km is a rough track, best for 4x4 vehicles. Drive slowly or request a pickup."
             }
         },
         {

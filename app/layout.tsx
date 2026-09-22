@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
 import AudioPlayer from "./components/AudioPlayer";
+import TashiChat from "./components/TashiChat";
 import StructuredData from "./components/StructuredData";
 import Breadcrumbs from "./components/Breadcrumbs";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -24,8 +25,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.serengeretreatpakistan.com"),
-  title: "Serengé Retreat | Eco Wellness Sanctuary in Shigar Valley ★",
-  description: "Experience the sacred silence of the Karakoram. Authentic Balti hospitality, soul journeys, and wellness retreats in the heart of Shigar Valley. Welcome to your long life ✓",
+  applicationName: "Serengé Retreat",
+  title: {
+    default: "Serengé Retreat | Eco Wellness Sanctuary in Shigar Valley",
+    template: "%s",
+  },
+  description: "Riverside retreat in Alchori, Shigar Valley. Balti hospitality, quiet rooms, and wellness journeys under the Karakoram.",
+  alternates: {
+    canonical: "https://www.serengeretreatpakistan.com",
+  },
   keywords: [
     "serenge retreat",
     "aslam shigri",
@@ -56,8 +64,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.serengeretreatpakistan.com",
     siteName: "Serengé Retreat",
-    title: "Serengé Retreat - Where Peace Meets The Mountains",
-    description: "Eco wellness retreat in Shigar Valley, Baltistan. Soul journeys, nature immersion, authentic Balti culture.",
+    title: "Serengé Retreat | Eco Wellness Sanctuary in Shigar Valley",
+    description: "Riverside retreat in Alchori, Shigar Valley. Balti hospitality, quiet rooms, and wellness journeys under the Karakoram.",
     images: [
       {
         url: "/images/logo_brown.png",
@@ -98,7 +106,8 @@ const organizationSchema = {
     {
       "@type": "Organization",
       "@id": "https://www.serengeretreatpakistan.com/#organization",
-      "name": "Serenge Retreat",
+      "name": "Serengé Retreat",
+      "alternateName": ["Serenge Retreat", "Serenge Retreat Pakistan"],
       "url": "https://www.serengeretreatpakistan.com",
       "logo": {
         "@type": "ImageObject",
@@ -107,7 +116,8 @@ const organizationSchema = {
       },
       "sameAs": [
         "https://www.instagram.com/serengeretreat",
-        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8",
+        "https://www.booking.com/Pulse-zJRGAy"
       ],
       "founder": {
         "@type": "Person",
@@ -121,8 +131,9 @@ const organizationSchema = {
       "@type": "WebSite",
       "@id": "https://www.serengeretreatpakistan.com/#website",
       "url": "https://www.serengeretreatpakistan.com",
-      "name": "Serenge Retreat",
-      "description": "Eco-conscious wellness sanctuary in Shigar Valley, Baltistan, Pakistan",
+      "name": "Serengé Retreat",
+      "alternateName": ["Serenge Retreat", "Serenge Retreat Pakistan"],
+      "description": "Riverside retreat in Alchori, Shigar Valley, Baltistan, Pakistan",
       "publisher": {
         "@id": "https://www.serengeretreatpakistan.com/#organization"
       }
@@ -181,17 +192,18 @@ const organizationSchema = {
         { "@type": "LocationFeatureSpecification", "name": "Riverside Location on Shigar River", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Digital Detox Space", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Guided Wellness Retreats", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "WiFi Available", "value": true }
+        { "@type": "LocationFeatureSpecification", "name": "Lodge internet (variable in the mountains)", "value": true }
       ],
       "sameAs": [
         "https://www.instagram.com/serengeretreat",
-        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+        "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8",
+        "https://www.booking.com/Pulse-zJRGAy"
       ]
     },
     {
       "@type": "TouristAttraction",
       "@id": "https://www.serengeretreatpakistan.com/#attraction",
-      "name": "Serengé Retreat — Eco Wellness Sanctuary in Shigar Valley",
+      "name": "Serengé Retreat, Eco Wellness Sanctuary in Shigar Valley",
       "description": "A boutique eco-wellness sanctuary and tourist destination in Alchori Village, Shigar Valley, Baltistan, Pakistan. Offering somatic healing, cultural immersion, and Karakoram mountain experiences.",
       "url": "https://www.serengeretreatpakistan.com",
       "touristType": ["Eco-Travelers", "Wellness Seekers", "Couples", "Digital Nomads", "Nature Photographers", "Trekkers"],
@@ -277,6 +289,7 @@ export default function RootLayout({
         <Breadcrumbs />
         <SmoothScroll />
         <AudioPlayer />
+        <TashiChat />
         <main className="flex-grow pt-20">
           {children}
         </main>

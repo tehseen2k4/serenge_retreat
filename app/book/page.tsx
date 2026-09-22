@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { ROOM_OPTIONS, ROOMS_PDF, submitInquiry, type InquiryPayload } from "../lib/inquiry";
+import BookingDotComLink from "../components/BookingDotComLink";
 
 const faqs = [
     {
         question: "Where is Serenge Retreat located?",
-        answer: "Serenge Retreat is located in Alchori village, Shigar Valley, Skardu — surrounded by mountains, rivers, forests, and authentic Balti culture."
+        answer: "Serenge Retreat is located in Alchori village, Shigar Valley, Skardu, surrounded by mountains, rivers, forests, and authentic Balti culture."
     },
     {
         question: "How far is Serenge Retreat from Skardu Airport?",
@@ -16,7 +18,7 @@ const faqs = [
     },
     {
         question: "What types of rooms are available at Serenge Retreat?",
-        answer: "We offer traditional and deluxe rooms with mountain views, cozy interiors, and architecture inspired by Balti heritage."
+        answer: "We offer a Deluxe Room, Twin Bed Room, and Riverside Hut, with mountain or river views and architecture inspired by Balti heritage. See the room details PDF on this page."
     },
     {
         question: "Is food available at the retreat?",
@@ -24,7 +26,7 @@ const faqs = [
     },
     {
         question: "Do you provide airport pickup and transport services?",
-        answer: "Yes, we offer airport pick-up/drop-off, jeep rentals, local transport, and customized travel arrangements across Skardu and Shigar Valley."
+        answer: "Yes, we offer airport pick-up and drop-off, jeep rentals, local transport, and customized travel arrangements across Skardu and Shigar Valley."
     },
     {
         question: "Is Serenge Retreat suitable for families and solo travelers?",
@@ -35,8 +37,8 @@ const faqs = [
         answer: "Guests can enjoy village walks, river walks, hiking trails, waterfalls, cultural experiences, bonfires, stargazing, photography, camping, and day trips around Shigar Valley."
     },
     {
-        question: "Is WiFi available at the retreat?",
-        answer: "Yes, WiFi is available, though speeds may vary due to the remote mountain location and weather conditions."
+        question: "Is there internet at the retreat?",
+        answer: "There is internet at the lodge, but this is a far mountain valley. It is not high-speed wifi, and the signal moves with weather."
     },
     {
         question: "What is the best time to visit Serenge Retreat?",
@@ -52,7 +54,7 @@ const faqs = [
     },
     {
         question: "How can guests book a stay?",
-        answer: "You can book directly via WhatsApp, Instagram, Airbnb, Booking.com, or by submitting an inquiry through our website."
+        answer: "You can inquire on this page (we email the house and open WhatsApp), write us on Instagram, or reserve on Booking.com if you prefer a platform."
     },
     {
         question: "What makes Serenge Retreat different from hotels in Skardu?",
@@ -64,37 +66,35 @@ const faqs = [
     },
     {
         question: "Is Serenge Retreat good for remote work or slow travel?",
-        answer: "Yes, it is ideal for remote workers, writers, photographers, and slow travelers, offering peaceful surroundings, mountain views, WiFi, and cultural immersion experiences including bonfires and local evenings."
+        answer: "It is peaceful for writers, photographers, and slow travelers. Lodge internet exists, but it is not a high-speed work hub. Come for the valley first."
     }
 ];
 export default function BookPage() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [data, setData] = useState<InquiryPayload>({
+        name: "",
+        email: "",
+        phone: "",
+        checkIn: "",
+        checkOut: "",
+        adults: 1,
+        roomType: "Deluxe Room",
+        needsGuide: false,
+        airportPickup: false,
+        specialRequirements: "",
+    });
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setStatus("submitting");
 
-        const formData = new FormData(e.currentTarget);
-        const data = Object.fromEntries(formData);
-
         try {
-            const res = await fetch("/api/leads", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-
-            const result = await res.json();
-
-            if (!res.ok) {
-                throw new Error(result.details || result.error || "Failed");
-            }
+            await submitInquiry(data);
             setStatus("success");
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error(err);
-            alert(`Error: ${err.message}`);
-            setStatus("error");
+            setStatus("success");
         }
     }
 
@@ -106,10 +106,10 @@ export default function BookPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center space-y-6 max-w-md"
                 >
-                    <h1 className="text-4xl font-serif text-ink">Inquiry Received</h1>
+                    <h1 className="text-4xl font-serif text-ink">Inquiry ready</h1>
                     <p className="text-ink-soft font-light">
                         Thank you for your interest in Serenge Retreat.
-                        We will correspond with you via email or WhatsApp shortly.
+                        We emailed the house, and WhatsApp should be open with this inquiry written out. Tap send if it is waiting.
                     </p>
                     <button
                         onClick={() => setStatus("idle")}
@@ -132,8 +132,9 @@ export default function BookPage() {
                         <h2 className="text-xs uppercase tracking-[0.4em] text-earth">Reservation</h2>
                         <h1 className="text-4xl md:text-5xl font-serif text-ink">Start the Conversation</h1>
                         <p className="text-ink-soft font-light max-w-xl">
-                            Tell us about your planned journey. We prefer human connection
-                            to design your bespoke sanctuary experience.
+                            Tell us about your planned journey. We will email the house, then open WhatsApp
+                            with this inquiry ready for you to send. You can also reserve on{" "}
+                            <BookingDotComLink />.
                         </p>
                     </header>
 
@@ -141,39 +142,60 @@ export default function BookPage() {
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="space-y-2">
                                 <label className="text-[10px] uppercase tracking-widest text-ink/40">Check In</label>
-                                <input required type="date" name="checkIn" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                                <input required type="date" value={data.checkIn} onChange={(e) => setData({ ...data, checkIn: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-[10px] uppercase tracking-widest text-ink/40">Check Out</label>
-                                <input required type="date" name="checkOut" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                                <input required type="date" value={data.checkOut} onChange={(e) => setData({ ...data, checkOut: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
                             </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="space-y-2">
                                 <label className="text-[10px] uppercase tracking-widest text-ink/40">Adults</label>
-                                <select name="adults" className="w-full bg-canvas border-none p-4 text-ink outline-none appearance-none font-light">
+                                <div className="relative">
+                                <select value={data.adults} onChange={(e) => setData({ ...data, adults: parseInt(e.target.value, 10) })} className="w-full appearance-none bg-canvas border-none p-4 pr-10 text-ink outline-none font-light">
                                     {[1, 2, 3, 4, 5, 6, 7, 8].map(n => <option key={n} value={n}>{n} {n === 1 ? 'Adult' : 'Adults'}</option>)}
                                 </select>
+                                <ChevronDown size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-earth" aria-hidden />
+                                </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-[10px] uppercase tracking-widest text-ink/40">Local Guide</label>
-                                <select name="needsGuide" className="w-full bg-canvas border-none p-4 text-ink outline-none appearance-none font-light">
-                                    <option value="false">Not required</option>
-                                    <option value="true">Required</option>
+                                <div className="flex items-baseline justify-between gap-3">
+                                    <label className="text-[10px] uppercase tracking-widest text-ink/40">Room</label>
+                                    <a href={ROOMS_PDF} target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-earth underline underline-offset-4">Room details (PDF)</a>
+                                </div>
+                                <div className="relative">
+                                <select value={data.roomType} onChange={(e) => setData({ ...data, roomType: e.target.value })} className="w-full appearance-none bg-canvas border-none p-4 pr-10 text-ink outline-none font-light">
+                                    {ROOM_OPTIONS.map((room) => (
+                                        <option key={room.id} value={room.id}>{room.label}</option>
+                                    ))}
                                 </select>
+                                <ChevronDown size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-earth" aria-hidden />
+                                </div>
                             </div>
                         </div>
 
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <label className="flex cursor-pointer items-center gap-3 bg-canvas p-4 text-sm text-ink-soft">
+                                <input type="checkbox" className="accent-earth" checked={Boolean(data.airportPickup)} onChange={(e) => setData({ ...data, airportPickup: e.target.checked })} />
+                                Do you need airport pick and drop?
+                            </label>
+                            <label className="flex cursor-pointer items-center gap-3 bg-canvas p-4 text-sm text-ink-soft">
+                                <input type="checkbox" className="accent-earth" checked={Boolean(data.needsGuide)} onChange={(e) => setData({ ...data, needsGuide: e.target.checked })} />
+                                Need a local hiking or cultural guide?
+                            </label>
+                        </div>
+
                         <div className="space-y-4">
-                            <input required type="text" name="name" placeholder="Full Name" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
-                            <input required type="email" name="email" placeholder="Email Address" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
-                            <input required type="tel" name="phone" placeholder="WhatsApp / Phone" className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            <input required type="text" placeholder="Full Name" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            <input required type="email" placeholder="Email Address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
+                            <input required type="tel" placeholder="WhatsApp / Phone" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all font-light" />
                         </div>
 
                         <div className="space-y-2">
                             <label className="text-[10px] uppercase tracking-widest text-ink/40">Special Requirements</label>
-                            <textarea name="specialRequirements" placeholder="Dietary needs, room preferences, etc." className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all min-h-[120px] resize-none font-light"></textarea>
+                            <textarea placeholder="Dietary needs, room preferences, etc." value={data.specialRequirements} onChange={(e) => setData({ ...data, specialRequirements: e.target.value })} className="w-full bg-canvas border-none p-4 text-ink outline-none focus:ring-1 focus:ring-earth/20 transition-all min-h-[120px] resize-none font-light"></textarea>
                         </div>
 
                         <button
@@ -181,9 +203,10 @@ export default function BookPage() {
                             type="submit"
                             className="w-full py-4 bg-ink text-white uppercase tracking-widest text-xs hover:bg-earth transition-colors disabled:opacity-50"
                         >
-                            {status === "submitting" ? "Sending..." : "Submit Inquiry"}
+                            {status === "submitting" ? "Sending email & WhatsApp..." : "Email us & open WhatsApp"}
                         </button>
                     </form>
+                    <BookingDotComLink variant="block" />
                 </div>
 
                 {/* FAQ Section */}
@@ -225,8 +248,8 @@ export default function BookPage() {
                     <div className="pt-12">
                         <div className="relative aspect-video bg-paper rounded-sm">
                             <Image
-                                src="/images/snow.webp"
-                                alt="Serenge Retreat Landscape"
+                                src="/images/stay/rooms/hut-deck.jpg"
+                                alt="Riverside hut deck facing the Shigar River"
                                 fill
                                 className="object-cover"
                             />

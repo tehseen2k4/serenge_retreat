@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Our Story — Serengé Retreat | From K2 Trail to Sanctuary ★",
-    description: "Discover the journey of Aslam Shigri, from K2 porter to founder of Serengé Retreat. A story of resilience, mountains, and the search for soul stillness in Baltistan ✓",
+    title: "Our Story | Serengé Retreat | From K2 Trail to Sanctuary",
+    description: "Discover the journey of Aslam Shigri, from K2 porter to founder of Serengé Retreat. A story of resilience, mountains, and the search for soul stillness in Baltistan.",
     keywords: [
         "aslam shigri",
         "serenge retreat founder",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         "mountain guide pakistan"
     ],
     openGraph: {
-        title: "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
+        title: "Our Story | Serengé Retreat | From K2 Trail to Sanctuary",
         description: "Aslam Shigri's journey from carrying K2 loads to building a riverside sanctuary in Shigar Valley.",
         images: [{ url: "/images/story/Aslam.webp", width: 1200, height: 630 }],
         url: "https://www.serengeretreatpakistan.com/story"

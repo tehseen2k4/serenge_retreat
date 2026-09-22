@@ -3,7 +3,7 @@ import TheRelease from "../components/TheRelease";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Digital Sanctuary | Interactive Mountain Meditation — Serengé Retreat",
+    title: "Digital Sanctuary | Interactive Mountain Meditation | Serengé Retreat",
     description: "Experience the stillness of Shigar Valley through our interactive digital sanctuary. Practice mountain breathwork and sacrificial rituals designed to center your soul.",
     openGraph: {
         title: "Digital Sanctuary | Interactive Rituals by Serengé Retreat",
@@ -23,7 +23,7 @@ export default function DigitalSanctuaryPage() {
                         THE DIGITAL <br /> SANCTUARY
                     </h1>
                     <p className="text-xl text-ink-soft font-light leading-relaxed">
-                        A space for those who cannot reach the valley today. Use these tools to cultivate the Serengé state of mind — a blend of conscious breath and intentional release.
+                        A space for those who cannot reach the valley today. Use these tools to cultivate the Serengé state of mind, a blend of conscious breath and intentional release.
                     </p>
                 </header>
 

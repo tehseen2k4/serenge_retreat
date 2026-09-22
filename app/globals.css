@@ -90,6 +90,21 @@ body {
   animation-play-state: paused;
 }
 
+.experience-tile img {
+  filter: brightness(1);
+  transition: filter 200ms var(--ease-out);
+}
+
+.experience-tile:hover img,
+.experience-tile:focus-visible img {
+  filter: brightness(0.92);
+}
+
+.experience-tile:focus-visible {
+  outline: 2px solid var(--color-earth);
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-plate,
   .hero-plate-first,

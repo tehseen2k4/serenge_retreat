@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Shigar Valley Guide | K2, Spantik & Karakoram Attractions ★",
-    description: "Discover Shigar Valley: gateway to K2, Khosar Gang peak, and Baltoro Glacier. Explore seasons, attractions, and how to reach the heart of Baltistan ✓",
+    title: "Shigar Valley Guide | K2, Spantik & Karakoram Attractions",
+    description: "Discover Shigar Valley: gateway to K2, Khosar Gang peak, and Baltoro Glacier. Explore seasons, attractions, and how to reach the heart of Baltistan.",
     keywords: [
         "shigar valley pakistan",
         "k2 base camp route",

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Wellness Journeys | Soul, Yoga & Nature Retreats in Baltistan ★",
-    description: "Choose your sanctuary: Soul retreats for silence, guided wellness with somatic healing, hiking immersions, spring blossom experiences, or cosmic star gazing in Shigar Valley ✓",
+    title: "Wellness Journeys | Soul, Yoga & Nature Retreats in Baltistan",
+    description: "Choose your sanctuary: Soul retreats for silence, guided wellness with somatic healing, hiking immersions, spring blossom experiences, or cosmic star gazing in Shigar Valley.",
     keywords: [
         "meditation retreat pakistan",
         "yoga retreat baltistan",
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
         "shigar valley wellness"
     ],
     openGraph: {
-        title: "5 Transformative Journeys — Serengé Retreat",
+        title: "5 Transformative Journeys | Serengé Retreat",
         description: "Explore our curated retreats: Soul, Wellness, Hiking, Spring Blossom, and Nature Immersion in Shigar Valley, Baltistan.",
         images: [{ url: "/images/journeys/Journeys Hero.webp", width: 1200, height: 630 }],
-        url: "https://serengeretreat.com/journeys"
+        url: "https://www.serengeretreatpakistan.com/journeys"
     },
     twitter: {
         card: "summary_large_image",

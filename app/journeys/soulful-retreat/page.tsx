@@ -70,7 +70,7 @@ export default function SoulfulRetreatPage() {
                     <div className="space-y-8">
                         <h2 className="text-3xl font-serif text-ink italic">Mountains, space, and deep rest.</h2>
                         <p className="text-ink-soft text-lg leading-relaxed font-light">
-                            A slow, unstructured retreat where the silence of <Link href="/land" className="text-earth hover:underline">Shigar Valley</Link> does the work. There is no rush, no strict schedule — just mountains, space, and deep rest.
+                            A slow, unstructured retreat where the silence of <Link href="/land" className="text-earth hover:underline">Shigar Valley</Link> does the work. There is no rush and no strict schedule. Just mountains, space, and deep rest.
                         </p>
                         <ul className="space-y-4 text-ink-soft">
                             <li className="flex gap-4">
@@ -99,7 +99,7 @@ export default function SoulfulRetreatPage() {
                             <li>• Organic garden</li>
                             <li>• Bonfire space</li>
                             <li>• Mountain-view terrace</li>
-                            <li>• Limited WiFi</li>
+                            <li>• Lodge internet (not high-speed)</li>
                         </ul>
                         <div className="pt-4">
                             <Link href="/stay#booking-form" className="inline-block w-full text-center py-4 bg-ink text-white uppercase tracking-widest text-xs hover:bg-earth transition-colors">

@@ -52,7 +52,7 @@ export default function StoryPage() {
             },
             {
                 "@type": "Article",
-                "headline": "Our Story — Serengé Retreat | From K2 Trail to Sanctuary",
+                "headline": "Our Story | Serengé Retreat | From K2 Trail to Sanctuary",
                 "author": {
                     "@id": "https://www.serengeretreatpakistan.com/#founder"
                 },
@@ -92,7 +92,7 @@ export default function StoryPage() {
                         initial="hidden" animate="visible" variants={fadeIn}
                         className="text-4xl md:text-7xl font-serif text-ink italic leading-tight"
                     >
-                        Our Story — <br /> Serengé Retreat <br /> <span className="text-earth"><Link href="/land" className="text-earth hover:underline">Shigar</Link></span>
+                        Our Story <br /> Serengé Retreat <br /> <span className="text-earth"><Link href="/land" className="text-earth hover:underline">Shigar</Link></span>
                     </motion.h1>
                     <div className="w-12 h-px bg-earth/20 mx-auto pt-4" />
                 </header>
@@ -122,13 +122,13 @@ export default function StoryPage() {
                                 In the quiet village of Alchori, along the banks of the Shigar River and beneath the vast sky of the Karakoram, a childhood dream slowly took root.
                             </p>
                             <p>
-                                I am <span className="text-ink font-medium">Aslam Shigri</span>, born and raised in this valley. As a teenager, I worked as a porter on the trail to <strong>K2 Base Camp</strong> — carrying the weight of other people’s expeditions before I understood the shape of my own. Those early journeys through glacier and stone taught me resilience, humility, and the sacred silence of high places.
+                                I am <span className="text-ink font-medium">Aslam Shigri</span>, born and raised in this valley. As a teenager, I worked as a porter on the trail to <strong>K2 Base Camp</strong>, carrying the weight of other people’s expeditions before I understood the shape of my own. Those early journeys through glacier and stone taught me resilience, humility, and the sacred silence of high places.
                             </p>
                             <p>
-                                Over time, guiding became more than work. The mountains drew me into storytelling and photography. They showed me that adventure is not only about reaching summits — it is about listening. In 2017, I founded <strong>Reego Adventure Pakistan</strong> to share the hidden valleys and towering peaks of Gilgit-Baltistan with travelers from around the world.
+                                Over time, guiding became more than work. The mountains drew me into storytelling and photography. They showed me that adventure is not only about reaching summits. It is about listening. In 2017, I founded <strong>Reego Adventure Pakistan</strong> to share the hidden valleys and towering peaks of Gilgit-Baltistan with travelers from around the world.
                             </p>
                             <p>
-                                Years later, after summiting <strong>Khosar Gang (6,400m)</strong> in 48 hours — pushing my physical limits — I realized something deeper: while the climb demands strength, the soul asks for stillness.
+                                Years later, after summiting <strong>Khosar Gang (6,400m)</strong> in 48 hours, pushing my physical limits, I realized something deeper: while the climb demands strength, the soul asks for stillness.
                             </p>
                             <p className="text-2xl font-serif italic text-ink border-l-2 border-earth pl-6 py-2">
                                 Serengé Retreat was born from that understanding.
@@ -137,13 +137,13 @@ export default function StoryPage() {
                             <div className="pt-8 space-y-6">
                                 <h2 className="text-2xl font-serif text-ink italic">The Meaning of Serengé</h2>
                                 <p>
-                                    The name “Serengé” is inspired by the Tibetan word <em>Tsering</em>, meaning Long Life. In Baltistan, it echoes in the blessing <em>Tashi Serengé</em> — a wish for an auspicious and meaningful life.
+                                    The name “Serengé” is inspired by the Tibetan word <em>Tsering</em>, meaning Long Life. In Baltistan, it echoes in the blessing <em>Tashi Serengé</em>, a wish for an auspicious and meaningful life.
                                 </p>
                                 <p>
                                     Serengé is not simply a place to stay. It is a sanctuary shaped by the rhythm of the river and the wisdom of our elders.
                                 </p>
                                 <p>
-                                    Built slowly and intentionally on five acres of land in Alchori, the retreat uses local wood, mud bricks, river stones, and recycled materials. Every beam and stone carries the story of the valley. In front flows the Shigar River; beyond rise the silent Karakoram mountains. Here, nature is not a backdrop — it is the teacher.
+                                    Built slowly and intentionally on five acres of land in Alchori, the retreat uses local wood, mud bricks, river stones, and recycled materials. Every beam and stone carries the story of the valley. In front flows the Shigar River; beyond rise the silent Karakoram mountains. Here, nature is not a backdrop. It is the teacher.
                                 </p>
                             </div>
 
@@ -156,7 +156,7 @@ export default function StoryPage() {
                                     Guests come here not only to see the mountains, but to feel them. To wake with sunlight on the peaks. To walk along the river in quiet reflection. To gather for storytelling, yoga, or simple conversation beneath the stars.
                                 </p>
                                 <p>
-                                    Serengé is for those who seek reconnection — with nature, with community, and with themselves.
+                                    Serengé is for those who seek reconnection with nature, with community, and with themselves.
                                 </p>
                             </div>
 
@@ -192,7 +192,7 @@ export default function StoryPage() {
                             </div>
 
                             <p className="pt-12">
-                                From carrying loads on mountain trails to building a riverside sanctuary, this journey has always been about connection — between people and place, adventure and stillness, strength and softness.
+                                From carrying loads on mountain trails to building a riverside sanctuary, this journey has always been about connection: between people and place, adventure and stillness, strength and softness.
                             </p>
                             <p className="text-2xl font-serif text-ink italic">
                                 Serengé Retreat stands as a quiet offering from our valley to the world. <br />

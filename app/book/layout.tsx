@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Book Your Retreat | Serengé Wellness Sanctuary Shigar ★",
-    description: "Secure your path to silence. Inquire about our seasonal soul journeys, wellness programs, and boutique mountain stays. Start your long life journey today ✓",
+    title: "Book Your Retreat | Serengé Wellness Sanctuary Shigar",
+    description: "Secure your path to silence. Inquire about our seasonal soul journeys, wellness programs, and boutique mountain stays.",
     keywords: [
         "book serenge retreat",
         "shigar valley reservation",
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
         "baltistan luxury retreat"
     ],
     openGraph: {
-        title: "Book Your Retreat — Serengé Wellness Sanctuary",
+        title: "Book Your Retreat | Serengé Wellness Sanctuary",
         description: "Secure your path to silence in the heart of Shigar Valley.",
         images: [{ url: "/images/stay/Stay Hero.webp", width: 1200, height: 630 }],
-        url: "https://serengeretreat.com/book"
+        url: "https://www.serengeretreatpakistan.com/book"
     }
 };
 
