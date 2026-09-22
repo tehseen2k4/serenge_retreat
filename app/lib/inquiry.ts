@@ -45,9 +45,25 @@ export function formatWhatsAppMessage(data: InquiryPayload) {
   return lines.join("\n");
 }
 
+export function whatsAppHref(opts?: {
+  text?: string;
+  medium?: string;
+  campaign?: string;
+}) {
+  const params = new URLSearchParams();
+  if (opts?.text) params.set("text", opts.text);
+  params.set("utm_source", "site");
+  params.set("utm_medium", opts?.medium || "inquire");
+  params.set("utm_campaign", opts?.campaign || "stay");
+  return `https://wa.me/${WHATSAPP_NUMBER}?${params.toString()}`;
+}
+
 export function openWhatsAppInquiry(data: InquiryPayload) {
-  const text = formatWhatsAppMessage(data);
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  const url = whatsAppHref({
+    text: formatWhatsAppMessage(data),
+    medium: "inquire",
+    campaign: "stay",
+  });
   window.open(url, "_blank", "noopener,noreferrer");
 }
 

@@ -93,7 +93,7 @@ export default function FromTheHouse() {
   const photo = open === null ? null : photos[open];
 
   return (
-    <section className="border-t border-earth/10 bg-paper px-6 py-24 md:px-12 md:py-32">
+    <section id="days-at-the-river" className="border-t border-earth/10 bg-paper px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto max-w-7xl">
         <header className="mb-12 max-w-xl space-y-4 md:mb-16">
           <h2 className="font-serif text-3xl italic leading-tight text-ink md:text-5xl">

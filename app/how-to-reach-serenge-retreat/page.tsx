@@ -4,13 +4,14 @@ import Image from "next/image";
 import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "How to Reach Serenge Retreat Shigar | Travel Guide",
-  description: "Complete travel guide to reaching Serenge Retreat in Shigar Valley, Gilgit-Baltistan. Find flights to Skardu, road conditions, and private transfer information.",
-  keywords: ["how to reach shigar valley", "how to reach serenge retreat", "travel guide skardu to shigar", "skardu airport to shigar"],
+  title: "How to Reach Serengé Retreat from Skardu Airport",
+  description: "Skardu Airport to Alchori is 57 km, about 1 hour 45 minutes. The last 1.4 km is a rough track. Request pickup, then stay by the river.",
+  keywords: ["how to reach shigar valley", "how to reach serenge retreat", "skardu airport to shigar", "gilgit to shigar"],
   openGraph: {
-    title: "How to Reach Serenge Retreat Shigar | Travel Guide",
-    description: "Plan your trip to Shigar Valley. Details on Skardu flights, safe road conditions, and airport transfer services.",
+    title: "How to Reach Serengé Retreat from Skardu Airport",
+    description: "57 km from Skardu Airport, about 1 hour 45 minutes. Last rough track into Alchori. Pickup on request.",
     url: "https://www.serengeretreatpakistan.com/how-to-reach-serenge-retreat",
+    images: [{ url: "/images/og/home.jpg", width: 1200, height: 630 }],
   }
 };
 
@@ -22,7 +23,7 @@ export default function HowToReachPage() {
     "@type": "LodgingBusiness",
     "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
-    "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
+    "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
     "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
@@ -257,7 +258,7 @@ export default function HowToReachPage() {
               href="/stay#booking-form"
               className="inline-block px-8 py-3 bg-earth text-white rounded-full text-xs uppercase tracking-widest hover:bg-ink transition-colors duration-500 shadow-md"
             >
-              Coordinate My Arrival
+              Rooms in Shigar
             </Link>
             <Link
               href="/things-to-do-shigar-valley"

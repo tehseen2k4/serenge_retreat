@@ -1,20 +1,18 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Book Your Retreat | Serengé Wellness Sanctuary Shigar",
-    description: "Secure your path to silence. Inquire about our seasonal soul journeys, wellness programs, and boutique mountain stays.",
+    title: "Inquire for Rooms in Shigar | Serengé Retreat",
+    description: "WhatsApp the house to plan nights in Alchori. Three riverside rooms, airport pickup from Skardu, Balti kitchen. We reply as people.",
     keywords: [
         "book serenge retreat",
         "shigar valley reservation",
-        "wellness retreat pricing",
-        "retreat availability pakistan",
-        "aslam shigri booking",
-        "baltistan luxury retreat"
+        "rooms in shigar",
+        "aslam shigri booking"
     ],
     openGraph: {
-        title: "Book Your Retreat | Serengé Wellness Sanctuary",
-        description: "Secure your path to silence in the heart of Shigar Valley.",
-        images: [{ url: "/images/stay/Stay Hero.webp", width: 1200, height: 630 }],
+        title: "Inquire for Rooms in Shigar | Serengé Retreat",
+        description: "WhatsApp the house to plan nights in Alchori. Three rooms, pickup, Balti kitchen.",
+        images: [{ url: "/images/og/stay.jpg", width: 1200, height: 630, alt: "Riverside hut deck at Serengé Retreat" }],
         url: "https://www.serengeretreatpakistan.com/book"
     }
 };

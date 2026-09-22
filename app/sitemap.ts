@@ -1,173 +1,73 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { postsData } from "./journal/postsData";
+
+const BASE = "https://www.serengeretreatpakistan.com";
+
+const LASTMOD: Record<string, string> = {
+  "/": "2026-09-23",
+  "/stay": "2026-09-23",
+  "/book": "2026-09-23",
+  "/journal": "2026-09-23",
+  "/journeys": "2026-09-23",
+  "/journeys/soulful-retreat": "2026-09-23",
+  "/journeys/wellness-healing-retreat": "2026-09-23",
+  "/journeys/hiking-mountain-immersion": "2026-09-23",
+  "/journeys/spring-blossom-retreat": "2026-09-23",
+  "/journeys/nature-immersion-star-gazing": "2026-09-23",
+  "/enhancements": "2026-06-01",
+  "/digital-sanctuary": "2026-09-23",
+  "/land": "2026-09-23",
+  "/story": "2026-09-23",
+  "/eco-retreat-shigar-valley": "2026-05-26",
+  "/best-riverside-stays-skardu": "2026-09-23",
+  "/serenge-retreat-experience": "2026-09-23",
+  "/digital-detox-pakistan": "2026-09-23",
+  "/how-to-reach-serenge-retreat": "2026-05-26",
+  "/things-to-do-shigar-valley": "2026-05-26",
+};
+
+function page(
+  path: string,
+  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>,
+  priority: number
+): MetadataRoute.Sitemap[number] {
+  return {
+    url: path === "/" ? BASE : `${BASE}${path}`,
+    lastModified: LASTMOD[path] || "2026-09-23",
+    changeFrequency,
+    priority,
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.serengeretreatpakistan.com'
-    const lastModified = new Date()
+  const journalPosts = postsData.map((post) => ({
+    url: `${BASE}/journal/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.7,
+  }));
 
-    return [
-        {
-            url: baseUrl,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/journeys`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/journeys/soulful-retreat`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journeys/wellness-healing-retreat`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journeys/hiking-mountain-immersion`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journeys/spring-blossom-retreat`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journeys/nature-immersion-star-gazing`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/stay`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/enhancements`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/digital-sanctuary`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/land`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/story`,
-            lastModified,
-            changeFrequency: 'yearly',
-            priority: 0.6,
-        },
-        // GEO-Optimized AI Query Pages
-        {
-            url: `${baseUrl}/eco-retreat-shigar-valley`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/best-riverside-stays-skardu`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/serenge-retreat-experience`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/digital-detox-pakistan`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/how-to-reach-serenge-retreat`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/things-to-do-shigar-valley`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        // Deep Narrative Articles
-        {
-            url: `${baseUrl}/journal/story-behind-serenge`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/life-in-shigar-valley`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/why-we-built-riverside-eco-retreat`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/season-of-apricots`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/silence-of-winter`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/tea-with-hassan`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/preparing-for-karakoram-altitude-guide`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/art-of-dry-stone-wall-baltistan-masonry`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/journal/birdwatching-beside-shigar-river`,
-            lastModified,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-    ]
+  return [
+    page("/", "weekly", 1),
+    page("/stay", "weekly", 0.95),
+    page("/book", "monthly", 0.85),
+    page("/journal", "monthly", 0.7),
+    page("/journeys", "monthly", 0.85),
+    page("/journeys/soulful-retreat", "monthly", 0.75),
+    page("/journeys/wellness-healing-retreat", "monthly", 0.75),
+    page("/journeys/hiking-mountain-immersion", "monthly", 0.75),
+    page("/journeys/spring-blossom-retreat", "monthly", 0.75),
+    page("/journeys/nature-immersion-star-gazing", "monthly", 0.75),
+    page("/enhancements", "monthly", 0.7),
+    page("/digital-sanctuary", "monthly", 0.7),
+    page("/land", "monthly", 0.7),
+    page("/story", "yearly", 0.6),
+    page("/eco-retreat-shigar-valley", "monthly", 0.9),
+    page("/best-riverside-stays-skardu", "monthly", 0.9),
+    page("/serenge-retreat-experience", "monthly", 0.85),
+    page("/digital-detox-pakistan", "monthly", 0.85),
+    page("/how-to-reach-serenge-retreat", "monthly", 0.9),
+    page("/things-to-do-shigar-valley", "monthly", 0.9),
+    ...journalPosts,
+  ];
 }

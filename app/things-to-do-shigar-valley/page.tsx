@@ -4,13 +4,14 @@ import Image from "next/image";
 import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Things to Do in Shigar Valley | Explore Northern Pakistan",
-  description: "Complete guide on the best things to do in Shigar Valley. Visit the historic 17th-century Shigar Fort, explore cold deserts, and hike the Karakoram mountains.",
-  keywords: ["things to do in shigar valley", "places to visit near skardu", "shigar valley travel guide", "shigar fort tourism"],
+  title: "Things to Do in Shigar Valley | Stay by the River",
+  description: "Shigar Fort, river walks, and village days from Alchori. Stay by the river, not in Skardu city. WhatsApp the house for rooms in Shigar.",
+  keywords: ["things to do in shigar valley", "shigar fort", "stay in alchori", "shigar valley travel guide"],
   openGraph: {
-    title: "Things to Do in Shigar Valley | Explore Northern Pakistan",
-    description: "Explore the ancient fort, mountain vistas, cold desert, and riverside paths in Shigar Valley, Baltistan.",
+    title: "Things to Do in Shigar Valley | Stay by the River",
+    description: "Fort, river, and village days from a 3-room house in Alchori. Stay here, not in Skardu city.",
     url: "https://www.serengeretreatpakistan.com/things-to-do-shigar-valley",
+    images: [{ url: "/images/og/home.jpg", width: 1200, height: 630 }],
   }
 };
 
@@ -22,7 +23,7 @@ export default function ThingsToDoPage() {
     "@type": "LodgingBusiness",
     "@id": "https://www.serengeretreatpakistan.com/#lodging",
     "name": "Serengé Retreat",
-    "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan.",
+    "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
     "url": "https://www.serengeretreatpakistan.com",
     "address": {
       "@type": "PostalAddress",
@@ -228,14 +229,14 @@ export default function ThingsToDoPage() {
           <p className="text-xs uppercase tracking-[0.3em] text-earth">Explore the Sacred Valley</p>
           <h2 className="text-2xl md:text-3xl font-serif text-ink italic">Ready to Experience Shigar Valley?</h2>
           <p className="text-ink-soft max-w-xl mx-auto font-light text-sm">
-            Make Serenge Retreat your home in the mountains. Reserve your mud cabin or glamping dome directly to begin your exploration of Gilgit-Baltistan.
+            Stay in Alchori, not Skardu city. Three riverside rooms, Balti kitchen, and a quiet night after the fort and the river.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/stay#booking-form"
               className="inline-block px-8 py-3 bg-earth text-white rounded-full text-xs uppercase tracking-widest hover:bg-ink transition-colors duration-500 shadow-md"
             >
-              Book My Stay
+              Rooms in Shigar
             </Link>
             <Link
               href="/how-to-reach-serenge-retreat"

@@ -2,28 +2,29 @@ import { Metadata } from "next";
 import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
-    title: "Eco Rooms & Booking | Serengé Retreat Shigar Valley",
-    description: "Stay in our eco-friendly mud brick retreat. Book your room or inquire about personalized wellness journeys in Shigar Valley.",
+    title: "Rooms in Shigar Valley | Serengé Retreat",
+    description: "Three riverside rooms in Alchori, Shigar Valley: Deluxe, Twin, or Hut. Breakfast, airport pickup from Skardu. WhatsApp the house.",
     keywords: [
-        "book shigar valley retreat",
-        "eco accommodation pakistan",
+        "rooms in shigar valley",
+        "shigar valley stay",
+        "hotels in shigar",
+        "shigar hotels",
         "serenge retreat booking",
-        "sustainable retreat baltistan",
-        "mud brick architecture",
-        "organic farm stay pakistan",
-        "k2 base camp accommodation",
-        "wellness retreat inquiry pakistan"
+        "alchori riverside rooms",
+        "airport pickup skardu",
+        "mud brick architecture"
     ],
     openGraph: {
-        title: "Eco Rooms & Direct Booking - Serengé Retreat",
-        description: "Mud brick architecture and personalized retreat planning in Shigar Valley.",
-        images: [{ url: "/images/stay/Stay Hero.webp", width: 1200, height: 630 }],
+        title: "Rooms in Shigar Valley | Serengé Retreat",
+        description: "Three riverside rooms in Alchori. Breakfast, airport pickup, WhatsApp the house.",
+        images: [{ url: "/images/og/stay.jpg", width: 1200, height: 630, alt: "Riverside hut deck at Serengé Retreat" }],
         url: "https://www.serengeretreatpakistan.com/stay"
     },
     twitter: {
         card: "summary_large_image",
-        title: "Stay & Book - Serengé Retreat",
-        description: "Sustainable mud brick rooms and wellness journeys in Shigar Valley.",
+        title: "Rooms in Shigar Valley | Serengé Retreat",
+        description: "Three riverside rooms in Alchori. Breakfast, airport pickup, WhatsApp the house.",
+        images: ["/images/og/stay.jpg"],
     }
 };
 

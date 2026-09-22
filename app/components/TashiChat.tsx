@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
-import { MENU_PDF, ROOMS_PDF } from "../lib/inquiry";
+import { MENU_PDF, ROOMS_PDF, whatsAppHref } from "../lib/inquiry";
 
 type Turn = { from: "tashi" | "you"; text: string };
 
@@ -73,7 +73,7 @@ const follow: Record<string, { href: string; label: string } | undefined> = {
   eat: { href: MENU_PDF, label: "Open the menu" },
   reach: { href: "/how-to-reach-serenge-retreat", label: "Travel notes" },
   book: { href: "/stay#booking-form", label: "Open the stay form" },
-  pay: { href: "https://wa.me/923349669198", label: "Chat with the house" },
+  pay: { href: whatsAppHref({ medium: "tashi", campaign: "stay" }), label: "Chat with the house" },
   fort: { href: "/land", label: "The land around us" },
 };
 

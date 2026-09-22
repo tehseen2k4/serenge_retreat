@@ -27,23 +27,23 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.serengeretreatpakistan.com"),
   applicationName: "Serengé Retreat",
   title: {
-    default: "Serengé Retreat | Eco Wellness Sanctuary in Shigar Valley",
+    default: "Serengé Retreat | Eco Wellness Stay in Shigar Valley",
     template: "%s",
   },
-  description: "Riverside retreat in Alchori, Shigar Valley. Balti hospitality, quiet rooms, and wellness journeys under the Karakoram.",
+  description: "Alchori, Shigar Valley. Three riverside rooms, Balti kitchen, airport pickup from Skardu. WhatsApp the house to plan nights. Not a city hotel.",
   alternates: {
     canonical: "https://www.serengeretreatpakistan.com",
   },
   keywords: [
     "serenge retreat",
+    "serenge retreat shigar",
+    "rooms in shigar valley",
+    "shigar valley stay",
     "aslam shigri",
-    "shigar valley retreat",
+    "alchori village stay",
+    "eco retreat pakistan",
     "baltistan wellness retreat",
     "karakoram sanctuary",
-    "eco retreat pakistan",
-    "aslam shigri porter",
-    "spiritual retreat karakoram",
-    "alchori village stay",
     "tsering long life"
   ],
   authors: [{ name: "Aslam Shigri", url: "https://www.reegoadventure.com" }],
@@ -64,22 +64,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.serengeretreatpakistan.com",
     siteName: "Serengé Retreat",
-    title: "Serengé Retreat | Eco Wellness Sanctuary in Shigar Valley",
-    description: "Riverside retreat in Alchori, Shigar Valley. Balti hospitality, quiet rooms, and wellness journeys under the Karakoram.",
+    title: "Serengé Retreat | Eco Wellness Stay in Shigar Valley",
+    description: "Alchori, Shigar Valley. Three riverside rooms, Balti kitchen, airport pickup from Skardu. WhatsApp the house to plan nights. Not a city hotel.",
     images: [
       {
-        url: "/images/logo_brown.png",
-        width: 800,
-        height: 600,
-        alt: "Serengé Retreat Logo - Eco Wellness Sanctuary in Shigar Valley",
+        url: "/images/og/home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dining table at Serengé Retreat looking out to the Shigar riverbed",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Serengé Retreat | Wellness Sanctuary in Karakoram",
-    description: "Eco retreat in Shigar Valley, Baltistan. Experience authentic mountain hospitality.",
-    images: ["/images/logo_brown.png"],
+    title: "Serengé Retreat | Eco Wellness Stay in Shigar Valley",
+    description: "Three riverside rooms in Alchori, Shigar Valley. Breakfast, airport pickup, WhatsApp the house.",
+    images: ["/images/og/home.jpg"],
   },
   robots: {
     index: true,
@@ -133,7 +133,7 @@ const organizationSchema = {
       "url": "https://www.serengeretreatpakistan.com",
       "name": "Serengé Retreat",
       "alternateName": ["Serenge Retreat", "Serenge Retreat Pakistan"],
-      "description": "Riverside retreat in Alchori, Shigar Valley, Baltistan, Pakistan",
+      "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
       "publisher": {
         "@id": "https://www.serengeretreatpakistan.com/#organization"
       }
@@ -142,20 +142,32 @@ const organizationSchema = {
       "@type": ["LocalBusiness", "LodgingBusiness"],
       "@id": "https://www.serengeretreatpakistan.com/#lodging",
       "name": "Serengé Retreat Shigar",
-      "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Specializing in digital detox, somatic healing, and Karakoram mountain immersion.",
+      "alternateName": ["Serenge Retreat", "Serenge Retreat Pakistan"],
+      "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
       "url": "https://www.serengeretreatpakistan.com",
       "telephone": "+923349669198",
       "priceRange": "$$$",
+      "numberOfRooms": 3,
       "image": [
         {
           "@type": "ImageObject",
-          "url": "https://www.serengeretreatpakistan.com/images/night%20retreat.png",
-          "caption": "Serengé Retreat beside the Shigar River at night"
+          "url": "https://www.serengeretreatpakistan.com/images/og/home.jpg",
+          "caption": "Dining at Serengé Retreat looking out to the Shigar river"
         },
         {
           "@type": "ImageObject",
-          "url": "https://www.serengeretreatpakistan.com/images/home/Wellness%20Retreat.webp",
-          "caption": "Eco-conscious wellness sanctuary in Shigar Valley, Baltistan"
+          "url": "https://www.serengeretreatpakistan.com/images/og/stay.jpg",
+          "caption": "Riverside hut deck at Serengé Retreat, Alchori"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.serengeretreatpakistan.com/images/home/experience/riverside-hut.webp",
+          "caption": "The riverside hut under a willow tree"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.serengeretreatpakistan.com/images/home/experience/breakfast-table.webp",
+          "caption": "Breakfast laid in the dining room"
         }
       ],
       "address": {
@@ -179,11 +191,41 @@ const organizationSchema = {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "14",
-        "bestRating": "5.0",
-        "worstRating": "1.0"
+        "ratingValue": "4.8",
+        "reviewCount": "4",
+        "bestRating": "5",
+        "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Elena" },
+          "datePublished": "2025-01",
+          "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+          "reviewBody": "The location is absolutely stunning- one of the most beautiful we've seen. We loved walking by the river, playing in the fields, and watching the sunsets."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Ariz" },
+          "datePublished": "2025-09",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Loved our stay at The Serenge Retreat. Beautiful place in a peaceful location with lots of cute animals around. Super cosy, really friendly hosts."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Tassil Ali" },
+          "datePublished": "2025-04",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Secluded spot. 30 minutes from Shigar. Pin drop silence perfect for self reflection. Highly recommended for solo travels."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Naveed" },
+          "datePublished": "2023-07",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "An isolated basic hut where you could enjoy peace with scenes of the Indus River and mountains. Axlam is very friendly and accommodating."
+        }
+      ],
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Organic Farm-to-Table Meals", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Yoga & Meditation Space", "value": true },
@@ -203,8 +245,8 @@ const organizationSchema = {
     {
       "@type": "TouristAttraction",
       "@id": "https://www.serengeretreatpakistan.com/#attraction",
-      "name": "Serengé Retreat, Eco Wellness Sanctuary in Shigar Valley",
-      "description": "A boutique eco-wellness sanctuary and tourist destination in Alchori Village, Shigar Valley, Baltistan, Pakistan. Offering somatic healing, cultural immersion, and Karakoram mountain experiences.",
+      "name": "Serengé Retreat, riverside stay in Shigar Valley",
+      "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
       "url": "https://www.serengeretreatpakistan.com",
       "touristType": ["Eco-Travelers", "Wellness Seekers", "Couples", "Digital Nomads", "Nature Photographers", "Trekkers"],
       "address": {
@@ -219,6 +261,14 @@ const organizationSchema = {
         "latitude": 35.4211,
         "longitude": 75.7422
       }
+    },
+    {
+      "@type": "ImageGallery",
+      "@id": "https://www.serengeretreatpakistan.com/#days-at-the-river",
+      "name": "Days at the river",
+      "description": "Rooms, meals, willow weaving, the walk to the water, and the sky after dark. Photographed at Serengé Retreat in Alchori, Shigar Valley.",
+      "url": "https://www.serengeretreatpakistan.com/#days-at-the-river",
+      "isPartOf": { "@id": "https://www.serengeretreatpakistan.com/#lodging" }
     },
     {
       "@type": "FAQPage",

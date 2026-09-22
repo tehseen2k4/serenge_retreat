@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WeatherWidget from "./WeatherWidget";
+import { whatsAppHref } from "../lib/inquiry";
 
 
 export default function Footer() {
@@ -23,7 +24,7 @@ export default function Footer() {
             <p className="font-medium text-ink">Alchori Ranga, Shigar</p>
             <p>Gilgit-Baltistan, Pakistan</p>
             <div className="pt-2 flex flex-col gap-1">
-              <a href="https://wa.me/923349669198" target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">+92 334 9669198</a>
+              <a href={whatsAppHref({ medium: "footer", campaign: "nap" })} target="_blank" rel="noopener noreferrer" className="hover:text-earth transition-colors">+92 334 9669198</a>
               <a href="mailto:axlamshigri@gmail.com" className="hover:text-earth transition-colors">axlamshigri@gmail.com</a>
             </div>
           </div>
@@ -37,6 +38,21 @@ export default function Footer() {
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.2em] text-earth font-medium">Sanctuary Guides</p>
           <ul className="space-y-3 text-sm text-ink-soft font-light">
+            <li>
+              <Link href="/stay" className="hover:text-earth transition-colors">
+                Rooms in Shigar
+              </Link>
+            </li>
+            <li>
+              <Link href="/book" className="hover:text-earth transition-colors">
+                Inquire for nights
+              </Link>
+            </li>
+            <li>
+              <Link href="/journal" className="hover:text-earth transition-colors">
+                Journal
+              </Link>
+            </li>
             <li>
               <Link href="/eco-retreat-shigar-valley" className="hover:text-earth transition-colors">
                 Eco Retreat in Shigar Valley

@@ -24,10 +24,11 @@ export default function Home() {
         "@type": "LodgingBusiness",
         "@id": "https://www.serengeretreatpakistan.com/#lodging",
         "name": "Serengé Retreat Shigar",
-        "description": "An eco-conscious wellness sanctuary located beside the Shigar River in Alchori Village, Shigar Valley, Pakistan. Founded by Aslam Shigri, the retreat specializes in digital detox, somatic healing, and Karakoram mountain immersion.",
+        "description": "Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel.",
+        "numberOfRooms": 3,
         "image": [
-          "https://www.serengeretreatpakistan.com/images/night%20retreat.png",
-          "https://www.serengeretreatpakistan.com/images/home/Wellness%20Retreat.webp"
+          "https://www.serengeretreatpakistan.com/images/og/home.jpg",
+          "https://www.serengeretreatpakistan.com/images/og/stay.jpg"
         ],
         "priceRange": "$$$",
         "telephone": "+923349669198",
@@ -61,7 +62,8 @@ export default function Home() {
         },
         "sameAs": [
           "https://www.instagram.com/serengeretreat",
-          "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8"
+          "https://maps.app.goo.gl/vpKyRZLyVZaswYHM8",
+          "https://www.booking.com/Pulse-zJRGAy"
         ]
       },
       {
@@ -112,7 +114,7 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.4em] text-earth font-medium">Core Identity Anchor</p>
           <h2 className="sr-only">About Serengé Retreat - Eco-conscious Wellness in Shigar Valley</h2>
           <p className="text-xl md:text-2xl font-serif text-ink italic leading-relaxed">
-            &ldquo;Serengé Retreat is a premier, eco-conscious wellness sanctuary located in the quiet village of Alchori in Shigar Valley, Skardu, Gilgit-Baltistan, Pakistan. Under the sub-zero peaks of the Karakoram, the retreat offers an authentic space for digital detox, somatic healing, and immersive nature experiences beside the pristine Shigar River.&rdquo;
+            &ldquo;Serengé Retreat is a 3-room riverside retreat in Alchori, Shigar Valley, Gilgit-Baltistan, Pakistan. Founder Aslam Shigri. 57 km from Skardu Airport. Not a Skardu city hotel. Guests come for quiet rooms, Balti meals, and days beside the Shigar River.&rdquo;
           </p>
         </div>
       </section>
