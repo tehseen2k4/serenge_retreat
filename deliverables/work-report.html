@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Serengé Retreat — Work report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: A4; margin: 16mm 17mm 16mm 17mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #f4efe6; color: #1f1f1f; }
+    body {
+      font-family: "Source Sans 3", Georgia, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .sheet { max-width: 180mm; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #cbbfaf;
+    }
+    .mark {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 22pt;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+    .mark span {
+      display: block;
+      margin-top: 6px;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 8pt;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7a5c3e;
+    }
+    .meta { text-align: right; font-size: 8.5pt; color: #6b6b6b; line-height: 1.55; }
+    .meta strong { display: block; color: #1f1f1f; font-weight: 600; letter-spacing: 0.04em; }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 24pt;
+      line-height: 1.12;
+      margin: 16px 0 8px;
+    }
+    h1 em { font-style: italic; font-weight: 500; }
+    .letter { font-size: 10.3pt; color: #3a3a3a; max-width: 155mm; margin: 0 0 12px; }
+    .letter p { margin: 0 0 7px; }
+    .letter p:last-child { margin-bottom: 0; }
+    .work-label {
+      font-size: 8pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7a5c3e;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .work-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7a5c3e;
+      font-weight: 600;
+      border-bottom: 1px solid #cbbfaf;
+      padding: 0 0 6px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid #e8e1d6;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .page2 { break-before: page; page-break-before: always; }
+    .item {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 13.5pt;
+      font-weight: 600;
+      line-height: 1.15;
+      margin: 0 0 3px;
+    }
+    .desc { margin: 0; color: #3a3a3a; font-size: 9.6pt; }
+    .hrs {
+      flex: 0 0 16mm;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      padding-top: 3px;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 16pt;
+      font-weight: 600;
+    }
+    .note {
+      margin: 14px 0 0;
+      padding: 10px 13px;
+      background: #efe8dc;
+      border-left: 3px solid #7a5c3e;
+      break-inside: avoid;
+    }
+    .note p { margin: 0; font-size: 10.2pt; color: #2a2a2a; }
+    .note strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 12.5pt;
+      font-weight: 600;
+    }
+    footer.sign {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      break-inside: avoid;
+    }
+    .close { max-width: 120mm; font-size: 10.2pt; color: #3a3a3a; }
+    .close p { margin: 0 0 8px; }
+    .hours-pill { text-align: right; min-width: 42mm; }
+    .hours-pill b {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 28pt;
+      font-weight: 600;
+      line-height: 1;
+      color: #7a5c3e;
+    }
+    .hours-pill span {
+      display: block;
+      margin-top: 4px;
+      font-size: 7.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+    }
+    .out {
+      margin-top: 14px;
+      font-size: 8.6pt;
+      color: #6b6b6b;
+      border-top: 1px solid #cbbfaf;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <div class="mark">
+        Serengé Retreat
+        <span>Work report · this sprint</span>
+      </div>
+      <div class="meta">
+        <strong>Prepared for the house</strong>
+        Aslam Shigri · Alchori, Shigar Valley<br />
+        www.serengeretreatpakistan.com<br />
+        23 September 2026
+      </div>
+    </header>
+
+    <h1>What we built after<br /><em>the pictures began to move.</em></h1>
+
+    <div class="letter">
+      <p>This was not a tidy-up. The homepage now opens the way a guest would hope: seasons that hold, type that sits in the landscape, and a path to write the house without fighting the page.</p>
+      <p>From that hero we carried the same standard through inquire, Tashi, the rooms, the river photographs, and the way Google is allowed to describe you. The work is live. It is quieter, more honest, and built to turn a stranger into a night by the river.</p>
+    </div>
+
+    <p class="work-label">Delivered work</p>
+    <div class="work-head"><span>Item</span><span>Hours</span></div>
+
+    <div class="row">
+      <div>
+        <p class="item">Cinematic homepage hero</p>
+        <p class="desc">Seasonal stills with a held crossfade between pictures. New overlay layout and copy. The first screen finally feels like the valley, not a template.</p>
+      </div>
+      <div class="hrs">12</div>
+    </div>
+    <div class="row">
+      <div>
+        <p class="item">Inquire, WhatsApp, and Booking.com</p>
+        <p class="desc">Full stay panel on the homepage — dates, room, airport pickup, notes. It hides to a chip instead of vanishing. Submit emails the house and opens WhatsApp already written. Booking.com Pulse as a second door. Stay and Book wizards brought into the same language. Honest lodge internet, no invented high-speed wifi.</p>
+      </div>
+      <div class="hrs">14</div>
+    </div>
+    <div class="row">
+      <div>
+        <p class="item">Chat Tashi</p>
+        <p class="desc">The house chatbot, with the mark and eighteen real answers: rooms, kitchen, airport, winter, children, how to pay. Payment now sends a guest to WhatsApp with you — there is no machine between you. Links into the menu and room sheets.</p>
+      </div>
+      <div class="hrs">8</div>
+    </div>
+    <div class="row">
+      <div>
+        <p class="item">Rooms, kitchen, and Stay gallery</p>
+        <p class="desc">Photographs lifted from the rooms PDF and built into Deluxe, Twin, and Riverside Hut carousels. Menu and room-detail PDFs on the site. Copy and punctuation cleaned across Stay, Book, Story, Land, and the journeys.</p>
+      </div>
+      <div class="hrs">12</div>
+    </div>
+    <div class="row">
+      <div>
+        <p class="item">Journey carousel and guest reviews</p>
+        <p class="desc">“Choose Your Journey” now moves itself on a phone. Reviews sit higher on the homepage, where a guest actually reads them. The reviews service no longer breaks the page when Google is quiet — the house stories still show.</p>
+      </div>
+      <div class="hrs">6</div>
+    </div>
+    <div class="page2">
+    <p class="work-label">Delivered work · continued</p>
+    <div class="row">
+      <div>
+        <p class="item">Days at the river</p>
+        <p class="desc">Thirty-five photographs from the house, converted and laid as a masonry wall on desktop with a lightbox. On a phone: a modern, auto-moving peek carousel. This is the property, not stock. It is some of the strongest work on the site.</p>
+      </div>
+      <div class="hrs">12</div>
+    </div>
+    <div class="row">
+      <div>
+        <p class="item">Indexing and search sprint</p>
+        <p class="desc">Ninety-day traffic plan written. Sitemap now includes Book and Journal, with real dates. Google is no longer slowed. Share cards are river and hut photographs, not the logo. Titles say rooms in Shigar. Schema tells the truth: three rooms in Alchori, fifty-seven kilometres from Skardu Airport, not a city hotel. WhatsApp links can be counted. Footer points to rooms, inquire, and the journal.</p>
+      </div>
+      <div class="hrs">8</div>
+    </div>
+    <div class="total-row"><span>This sprint</span><span>72</span></div>
+
+    <div class="note">
+      <p><strong>We did this well.</strong> The hero holds. The inquire path is human. The rooms can be seen. The river photographs do the selling that copy used to attempt. Search is finally pointed at the door a Pakistani guest already uses — a place to sleep in Shigar — without turning the house into a hotel brochure.</p>
+    </div>
+
+    <footer class="sign">
+      <div class="close">
+        <p>We are proud of this sprint. The site is now a house you can arrive to, write to, and recommend — with pictures that belong to Alchori.</p>
+        <p>What remains (the Stay first screen as a lodging door, Google Business photographs, and Search Console indexing) is the next fortnight. It is not a hole in this work.</p>
+      </div>
+      <div class="hours-pill">
+        <b>72</b>
+        <span>hours · delivered</span>
+      </div>
+    </footer>
+
+    <p class="out">Outside this report: live Google review fetch (needs billing on the Cloud project) and the days 15–45 Stay rewrite. Live site: www.serengeretreatpakistan.com</p>
+    </div>
+  </div>
+</body>
+</html>

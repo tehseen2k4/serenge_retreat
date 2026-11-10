@@ -48,36 +48,36 @@ export default function StayPage() {
                 "containsPlace": [
                     {
                         "@type": "Accommodation",
-                        "name": "Traditional Deluxe Mud-and-Stone Cabin",
-                        "description": "Authentic Balti design mud-and-stone cabin with mountain and river views, fully insulated and eco-friendly.",
+                        "name": "Baltoro Deluxe Room (King Bed)",
+                        "description": "Authentic Balti design mud-and-stone deluxe room with mountain and river views, fully insulated and eco-friendly.",
                         "offers": {
                             "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "120.00",
+                            "priceCurrency": "PKR",
+                            "price": "13500.00",
                             "availability": "https://schema.org/InStock",
                             "validFrom": "2026-01-01"
                         }
                     },
                     {
                         "@type": "Accommodation",
-                        "name": "Cozy Twin Heritage Room",
-                        "description": "Poplar timber interiors and hand-carved details with standard amenities for families or solo adventurers.",
+                        "name": "Arandu Twin Room",
+                        "description": "Poplar timber interiors and hand-carved details with standard amenities for families or travel companions.",
                         "offers": {
                             "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "90.00",
+                            "priceCurrency": "PKR",
+                            "price": "13000.00",
                             "availability": "https://schema.org/InStock",
                             "validFrom": "2026-01-01"
                         }
                     },
                     {
                         "@type": "Accommodation",
-                        "name": "Riverside Glamping Dome",
-                        "description": "Luxury geodesic dome on the edge of the Shigar River, perfect for stargazing and couples seeking romantic getaways.",
+                        "name": "Riverside Hut",
+                        "description": "Cozy traditional hut located near the Shigar River, offering a peaceful atmosphere and beautiful mountain views.",
                         "offers": {
                             "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "150.00",
+                            "priceCurrency": "PKR",
+                            "price": "9500.00",
                             "availability": "https://schema.org/InStock",
                             "validFrom": "2026-01-01"
                         }
